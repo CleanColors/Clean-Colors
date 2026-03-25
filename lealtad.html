@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plan de Lealtad | Clean Colors Lavandería</title>
+  <meta name="description" content="Programa de recompensas Clean Colors. Adquiere tu tarjeta inteligente y acumula cashback desde tu primera recarga."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .page-hero{background:var(--navy);color:var(--white);padding:10rem 5% 4rem;text-align:center;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(43,159,212,.15) 0%,transparent 65%);border-radius:50%;top:-200px;right:-100px;pointer-events:none}
+    .page-hero .s-label{display:inline-block;margin-bottom:1rem}
+    .page-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin-bottom:1rem}
+    .page-hero p{max-width:600px;margin:0 auto;color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.65}
+    .tarjeta-section{background:var(--off-white);padding:5rem 5%}
+    .tarjeta-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1000px;margin:0 auto}
+    .tarjeta-info h2{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;margin-bottom:1rem;color:var(--navy)}
+    .tarjeta-info p{color:var(--gray);line-height:1.7;margin-bottom:1.5rem}
+    .tarjeta-detail{display:flex;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
+    .tarjeta-detail span:last-child{font-weight:700;color:var(--blue-dark)}
+    .tarjeta-visual{background:linear-gradient(135deg,var(--navy),#153a54);border-radius:20px;padding:2.5rem;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(11,29,53,.2)}
+    .tarjeta-visual img{width:100%;max-width:300px;filter:drop-shadow(0 0 3px rgba(255,255,255,0.5))}
+    .niveles-section{padding:5rem 5%;background:var(--white)}
+    .niveles-section .s-header{text-align:center;margin-bottom:3rem}
+    .niveles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+    .nivel-card{background:var(--white);border-radius:18px;padding:2rem 1.5rem;border:1.5px solid rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s;text-align:center}
+    .nivel-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(43,159,212,.12)}
+    .nivel-icon{font-size:2.5rem;margin-bottom:.8rem}
+    .nivel-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;color:var(--navy);margin-bottom:.3rem}
+    .nivel-cashback{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--blue-dark);margin-bottom:.6rem}
+    .nivel-range{font-size:.88rem;color:var(--gray);line-height:1.5}
+    .cta-section{background:var(--navy);padding:4rem 5%;text-align:center}
+    .cta-section h2{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--white);margin-bottom:1rem}
+    .cta-section p{color:rgba(255,255,255,.7);max-width:500px;margin:0 auto 2rem}
+    @media(max-width:768px){.tarjeta-grid{grid-template-columns:1fr}.niveles-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.niveles-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Clean Colors Logo"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#instalaciones">Instalaciones</a></li>
+    <li><a href="index.html#promociones">Promociones</a></li>
+    <li class="nav-dropdown">
+      <a href="#">Beneficios <span class="nav-caret">&#9660;</span></a>
+      <div class="nav-dropdown-menu">
+        <a href="lealtad.html">Plan de Lealtad</a>
+        <a href="autoempleo.html">Autoempleo</a>
+      </div>
+    </li>
+    <li><a href="empresas.html">Servicio a Empresas</a></li>
+    <li><a href="index.html#testimonios">Reseñas</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="s-label">Programa de Recompensas</div>
+  <h1>Tu tarjeta,<br><em style="color:var(--blue-mid);font-style:normal;">tu cashback</em></h1>
+  <p>Adquiere tu tarjeta por <strong>$40 pesos</strong> y empieza a acumular cashback desde tu primera recarga. Entre más uses Clean Colors, mayor es tu beneficio.</p>
+</section>
+
+<section class="tarjeta-section">
+  <div class="tarjeta-grid">
+    <div class="tarjeta-info">
+      <h2>💳 Tarjeta Inteligente</h2>
+      <p>Nuestra tarjeta inteligente es tu llave para acceder a todos los beneficios del programa de lealtad. Recarga saldo, paga tus servicios y acumula cashback automáticamente.</p>
+      <div class="tarjeta-detail"><span>Costo de la tarjeta</span><span>$40</span></div>
+      <div class="tarjeta-detail"><span>Cashback inicial</span><span>5%</span></div>
+      <div class="tarjeta-detail"><span>Cashback máximo</span><span>20%</span></div>
+      <div class="tarjeta-detail"><span>Válida en</span><span>Todos los servicios</span></div>
+      <p style="margin-top:1.5rem;font-size:.9rem;color:var(--blue-dark);">💰 $5 de cashback por cada $100 abonados. Sube de nivel y aumenta tu beneficio hasta 20%.</p>
+    </div>
+    <div class="tarjeta-visual"><img src="logo.png" alt="Clean Colors Tarjeta"/></div>
+  </div>
+</section>
+
+<section class="niveles-section">
+  <div class="s-header">
+    <div class="s-label">Niveles de Cashback</div>
+    <h2 class="s-title">Crece con cada recarga</h2>
+    <p style="color:var(--gray);max-width:550px;margin:1rem auto 0;">Cada vez que recargas tu tarjeta, acumulas historial. Al alcanzar ciertos montos, subes de nivel y tu porcentaje de cashback aumenta.</p>
+  </div>
+  <div class="niveles-grid">
+    <div class="nivel-card"><div class="nivel-icon">🔵</div><div class="nivel-name">Azul</div><div class="nivel-cashback">5%</div><div class="nivel-range">Desde tu primera recarga<br>hasta $5,000 acumulados</div></div>
+    <div class="nivel-card"><div class="nivel-icon">🟤</div><div class="nivel-name">Bronce</div><div class="nivel-cashback">7%</div><div class="nivel-range">De $5,001 a $15,000<br>en recargas históricas</div></div>
+    <div class="nivel-card"><div class="nivel-icon">⚪</div><div class="nivel-name">Plata</div><div class="nivel-cashback">10%</div><div class="nivel-range">De $15,001 a $25,000<br>en recargas históricas</div></div>
+    <div class="nivel-card"><div class="nivel-icon">🟡</div><div class="nivel-name">Oro</div><div class="nivel-cashback">15%</div><div class="nivel-range">De $25,001 a $50,000<br>en recargas históricas</div></div>
+    <div class="nivel-card"><div class="nivel-icon">💎</div><div class="nivel-name">Diamante</div><div class="nivel-cashback">20%</div><div class="nivel-range">De $50,001 en adelante<br>El máximo beneficio</div></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>¿Listo para empezar a ahorrar?</h2>
+  <p>Visítanos y adquiere tu tarjeta inteligente hoy. Empieza a acumular cashback desde tu primera recarga.</p>
+  <a href="index.html#contacto" class="btn-primary">🫧 Solicitar Informes</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <img src="logo.png" alt="Clean Colors"/>
+      <p>Tu lavandería de confianza en Santa María la Ribera, CDMX. Autoservicio y lavado por encargo con la mejor tecnología.</p>
+      <div class="f-socials">
+        <a class="f-soc" href="https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/">📘</a>
+        <a class="f-soc" href="https://wa.me/525516570653">💬</a>
+        <a class="f-soc" href="https://www.google.com/maps/search/Clean+Colors+Lavander%C3%ADa+Dr+Mariano+Azuela+228+Santa+Mar%C3%ADa+la+Ribera+CDMX">🔍</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="index.html#servicios">Autoservicio</a></li>
+        <li><a href="index.html#servicios">Lavado por Encargo</a></li>
+        <li><a href="index.html#servicios">Encargo Xpress</a></li>
+        <li><a href="index.html#servicios">Edredones & Cobertores</a></li>
+        <li><a href="lealtad.html">Tarjeta Inteligente</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="index.html#promociones">Promociones</a></li>
+        <li><a href="lealtad.html">Plan de Lealtad</a></li>
+        <li><a href="index.html#testimonios">Reseñas</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Clean Colors · Lavandería de Auto Servicio. Todos los derechos reservados</span>
+    <a href="#">Aviso de Privacidad</a>
+  </div>
+</footer>
+
+</body>
+</html>
