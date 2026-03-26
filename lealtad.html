@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Plan de Lealtad | Clean Colors Lavandería</title>
-  <meta name="description" content="Programa de recompensas Clean Colors. Adquiere tu tarjeta inteligente y acumula cashback desde tu primera recarga."/>
+  <meta name="description" content="Programa de recompensas Clean Colors. Adquiere tu tarjeta inteligente y acumula 10% de cashback desde tu primera recarga."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -23,24 +23,26 @@
     .tarjeta-detail span:last-child{font-weight:700;color:var(--blue-dark)}
     .tarjeta-visual{background:linear-gradient(135deg,var(--navy),#153a54);border-radius:20px;padding:2.5rem;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(11,29,53,.2)}
     .tarjeta-visual img{width:100%;max-width:300px;filter:drop-shadow(0 0 3px rgba(255,255,255,0.5))}
-    .niveles-section{padding:5rem 5%;background:var(--white)}
-    .niveles-section .s-header{text-align:center;margin-bottom:3rem}
-    .niveles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
-    .nivel-card{background:var(--white);border-radius:18px;padding:2rem 1.5rem;border:1.5px solid rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s;text-align:center}
-    .nivel-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(43,159,212,.12)}
-    .nivel-icon{font-size:2.5rem;margin-bottom:.8rem}
-    .nivel-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;color:var(--navy);margin-bottom:.3rem}
-    .nivel-cashback{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--blue-dark);margin-bottom:.6rem}
-    .nivel-range{font-size:.88rem;color:var(--gray);line-height:1.5}
+    .beneficios-section{padding:5rem 5%;background:var(--white)}
+    .beneficios-section .s-header{text-align:center;margin-bottom:3rem}
+    .beneficios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}
+    .beneficio-card{background:var(--off-white);border-radius:18px;padding:2rem 1.5rem;border:1.5px solid rgba(0,0,0,.06);text-align:center;transition:transform .25s,box-shadow .25s}
+    .beneficio-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(43,159,212,.12)}
+    .beneficio-icon{font-size:2.5rem;margin-bottom:.8rem}
+    .beneficio-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:.5rem}
+    .beneficio-desc{font-size:.9rem;color:var(--gray);line-height:1.6}
+    .cashback-highlight{background:linear-gradient(135deg,#0A1E30,#1277A8);border-radius:20px;padding:3rem 2rem;text-align:center;max-width:700px;margin:0 auto 3rem;color:#fff}
+    .cashback-highlight .pct{font-family:'Syne',sans-serif;font-weight:800;font-size:5rem;color:#00C9AE;line-height:1}
+    .cashback-highlight .pct-label{font-size:1.1rem;color:rgba(255,255,255,.8);margin-top:.5rem}
+    .cashback-highlight .pct-note{font-size:.9rem;color:rgba(255,255,255,.6);margin-top:1rem;line-height:1.6}
     .cta-section{background:var(--navy);padding:4rem 5%;text-align:center}
     .cta-section h2{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--white);margin-bottom:1rem}
     .cta-section p{color:rgba(255,255,255,.7);max-width:500px;margin:0 auto 2rem}
-    @media(max-width:768px){.tarjeta-grid{grid-template-columns:1fr}.niveles-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:480px){.niveles-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.tarjeta-grid{grid-template-columns:1fr}.beneficios-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.beneficios-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-logo"><img src="logo.png" alt="Clean Colors Logo"/></a>
   <ul class="nav-links">
@@ -63,7 +65,7 @@
 <section class="page-hero">
   <div class="s-label">Programa de Recompensas</div>
   <h1>Tu tarjeta,<br><em style="color:var(--blue-mid);font-style:normal;">tu cashback</em></h1>
-  <p>Adquiere tu tarjeta por <strong>$40 pesos</strong> y empieza a acumular cashback desde tu primera recarga. Entre más uses Clean Colors, mayor es tu beneficio.</p>
+  <p>Adquiere tu tarjeta por <strong>$40 pesos</strong> y empieza a ganar <strong>10% de cashback</strong> desde tu primera recarga. Sin niveles, sin complicaciones.</p>
 </section>
 
 <section class="tarjeta-section">
@@ -72,27 +74,43 @@
       <h2>💳 Tarjeta Inteligente</h2>
       <p>Nuestra tarjeta inteligente es tu llave para acceder a todos los beneficios del programa de lealtad. Recarga saldo, paga tus servicios y acumula cashback automáticamente.</p>
       <div class="tarjeta-detail"><span>Costo de la tarjeta</span><span>$40</span></div>
-      <div class="tarjeta-detail"><span>Cashback inicial</span><span>5%</span></div>
-      <div class="tarjeta-detail"><span>Cashback máximo</span><span>20%</span></div>
+      <div class="tarjeta-detail"><span>Cashback</span><span>10%</span></div>
+      <div class="tarjeta-detail"><span>Recarga mínima</span><span>$100</span></div>
       <div class="tarjeta-detail"><span>Válida en</span><span>Todos los servicios</span></div>
-      <p style="margin-top:1.5rem;font-size:.9rem;color:var(--blue-dark);">💰 $5 de cashback por cada $100 abonados. Sube de nivel y aumenta tu beneficio hasta 20%.</p>
+      <p style="margin-top:1.5rem;font-size:.9rem;color:var(--blue-dark);">💰 $10 de cashback por cada $100 abonados en múltiplos de $100.</p>
     </div>
     <div class="tarjeta-visual"><img src="logo.png" alt="Clean Colors Tarjeta"/></div>
   </div>
 </section>
 
-<section class="niveles-section">
+<section class="beneficios-section">
   <div class="s-header">
-    <div class="s-label">Niveles de Cashback</div>
-    <h2 class="s-title">Crece con cada recarga</h2>
-    <p style="color:var(--gray);max-width:550px;margin:1rem auto 0;">Cada vez que recargas tu tarjeta, acumulas historial. Al alcanzar ciertos montos, subes de nivel y tu porcentaje de cashback aumenta.</p>
+    <div class="s-label">¿Qué incluye?</div>
+    <h2 class="s-title">Beneficios para<br><em>tarjetahabientes</em></h2>
   </div>
-  <div class="niveles-grid">
-    <div class="nivel-card"><div class="nivel-icon">🔵</div><div class="nivel-name">Azul</div><div class="nivel-cashback">5%</div><div class="nivel-range">Desde tu primera recarga<br>hasta $5,000 acumulados</div></div>
-    <div class="nivel-card"><div class="nivel-icon">🟤</div><div class="nivel-name">Bronce</div><div class="nivel-cashback">7%</div><div class="nivel-range">De $5,001 a $15,000<br>en recargas históricas</div></div>
-    <div class="nivel-card"><div class="nivel-icon">⚪</div><div class="nivel-name">Plata</div><div class="nivel-cashback">10%</div><div class="nivel-range">De $15,001 a $25,000<br>en recargas históricas</div></div>
-    <div class="nivel-card"><div class="nivel-icon">🟡</div><div class="nivel-name">Oro</div><div class="nivel-cashback">15%</div><div class="nivel-range">De $25,001 a $50,000<br>en recargas históricas</div></div>
-    <div class="nivel-card"><div class="nivel-icon">💎</div><div class="nivel-name">Diamante</div><div class="nivel-cashback">20%</div><div class="nivel-range">De $50,001 en adelante<br>El máximo beneficio</div></div>
+
+  <div class="cashback-highlight">
+    <div class="pct">10%</div>
+    <div class="pct-label">de cashback en cada recarga</div>
+    <div class="pct-note">Recarga en múltiplos de $100 y recibe $10 de regreso por cada $100 abonados.<br/>El cashback se acredita automáticamente a tu saldo disponible.</div>
+  </div>
+
+  <div class="beneficios-grid">
+    <div class="beneficio-card">
+      <div class="beneficio-icon">💰</div>
+      <div class="beneficio-title">10% Cashback</div>
+      <div class="beneficio-desc">Gana $10 por cada $100 que recargues. Sin niveles, sin condiciones — desde el primer día.</div>
+    </div>
+    <div class="beneficio-card">
+      <div class="beneficio-icon">🎁</div>
+      <div class="beneficio-title">Promociones Especiales</div>
+      <div class="beneficio-desc">Accede a descuentos y promociones exclusivas durante el año, disponibles solo para tarjetahabientes.</div>
+    </div>
+    <div class="beneficio-card">
+      <div class="beneficio-icon">📲</div>
+      <div class="beneficio-title">Avisos Prioritarios</div>
+      <div class="beneficio-desc">Entérate primero de todas las ofertas y novedades de Clean Colors antes que el público general.</div>
+    </div>
   </div>
 </section>
 
@@ -119,7 +137,7 @@
         <li><a href="index.html#servicios">Autoservicio</a></li>
         <li><a href="index.html#servicios">Lavado por Encargo</a></li>
         <li><a href="index.html#servicios">Encargo Xpress</a></li>
-        <li><a href="index.html#servicios">Edredones & Cobertores</a></li>
+        <li><a href="index.html#servicios">Edredones &amp; Cobertores</a></li>
         <li><a href="lealtad.html">Tarjeta Inteligente</a></li>
       </ul>
     </div>
@@ -138,6 +156,5 @@
     <a href="aviso-de-privacidad.html">Aviso de Privacidad</a>
   </div>
 </footer>
-
 </body>
 </html>
