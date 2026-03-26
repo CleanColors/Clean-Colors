@@ -9,15 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
-  <style>h
-    .page-hero{background:linear-gradient(160deg,#0A2E1A 0%,#0F3A2F 50%,#145040 100%);color:var(--white);padding:14rem 5% 4.5rem;text-align:center;position:relative;overflow:hidden}
-    .page-hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(0,201,174,.15) 0%,transparent 65%);border-radius:50%;top:-200px;right:-100px;pointer-events:none}
+  <style>
+    .page-hero{background:linear-gradient(160deg,#1a6b42 0%,#1e8050 50%,#22965e 100%);color:var(--white);padding:8rem 5% 4.5rem;text-align:center;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(0,201,174,.2) 0%,transparent 65%);border-radius:50%;top:-200px;right:-100px;pointer-events:none}
     .page-hero .s-label{display:inline-block;margin-bottom:1rem}
     .page-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,4vw,2.9rem);line-height:1.2;max-width:750px;margin:0 auto 1rem}
-    .page-hero p{max-width:600px;margin:0 auto 2rem;color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.65}
+    .page-hero p{max-width:600px;margin:0 auto 2rem;color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.65}
     .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-    .btn-secondary-emp{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:50px;font-size:.95rem;font-weight:600;color:#fff;border:2px solid rgba(0,201,174,.5);background:transparent;text-decoration:none;transition:all .3s ease}
-    .btn-secondary-emp:hover{background:rgba(0,201,174,.15);border-color:#00C9AE}
+    .btn-secondary-emp{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:50px;font-size:.95rem;font-weight:700;color:#0A2E1A;border:2px solid #0A2E1A;background:#fff;text-decoration:none;transition:all .3s ease}
+    .btn-secondary-emp:hover{background:#f0fdf4;border-color:#00C9AE;color:#0A2E1A}
     .emp-container{max-width:1100px;margin:0 auto;padding:0 5%}
     .emp-intro{background:#fff;padding:4.5rem 0}
     .emp-intro h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);color:#0A2E1A;margin-bottom:1.5rem}
@@ -64,7 +64,11 @@
     @keyframes emp-wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,.6)}}
     @media(max-width:768px){.emp-grid-clientes{grid-template-columns:repeat(2,1fr);gap:1rem}.emp-grid-beneficios{grid-template-columns:1fr}.emp-grid-pasos{grid-template-columns:1fr;gap:2.5rem}.emp-prendas-grid{gap:.6rem}.emp-prenda-tag{padding:.6rem 1.1rem;font-size:.88rem}}
     @media(max-width:480px){.emp-grid-clientes{grid-template-columns:1fr}}
-  nav{background:rgba(10,46,26,.96)!important} footer{background:#0A2E1A!important} .emp-bubbles{position:absolute;inset:0;pointer-events:none;overflow:hidden} .emp-bubble{position:absolute;border-radius:50%;opacity:0;animation:rise linear infinite;border:1.5px solid rgba(0,201,174,.25);background:radial-gradient(circle at 30% 30%,rgba(0,201,174,.15),transparent)} </style>
+    nav{background:rgba(26,107,66,.96)!important}
+    footer{background:#0A2E1A!important}
+    .emp-bubbles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+    .emp-bubble{position:absolute;border-radius:50%;opacity:0;animation:rise linear infinite;border:1.5px solid rgba(0,201,174,.25);background:radial-gradient(circle at 30% 30%,rgba(0,201,174,.15),transparent)}
+  </style>
 </head>
 <body>
 <nav>
@@ -85,15 +89,18 @@
     <li><a href="index.html#contacto">Contacto</a></li>
   </ul>
 </nav>
-<section class="page-hero"><div class="emp-bubbles" id="emp-bubbles"></div>
+
+<section class="page-hero">
+  <div class="emp-bubbles" id="emp-bubbles"></div>
   <div class="s-label">Soluciones por Volumen</div>
   <h1>Lavado profesional para tu negocio, contabilizado por piezas.</h1>
   <p>Uniformes, toallas, manteles, sábanas y más — limpios y listos cuando los necesitas.</p>
   <div class="hero-ctas">
-    <a class="btn-primary" href="index.html#contacto">🫧 Solicitar cotización</a>
+    <a class="btn-primary" href="mailto:ccrecibos@pm.me">🫧 Solicitar cotización</a>
     <a class="btn-secondary-emp" href="https://wa.me/525516570653" target="_blank">💬 Escribir por WhatsApp</a>
   </div>
 </section>
+
 <section class="emp-intro">
   <div class="emp-container">
     <h2>¿Por qué confiar tu lavandería empresarial a Clean Colors?</h2>
@@ -101,6 +108,7 @@
     <p>Manejamos todo tipo de prendas institucionales: uniformes, toallas, manteles, batas, tapetitos, sábanas, edredones y almohadas. Sin contratos complicados — solo servicio confiable y precios acordes a tu volumen.</p>
   </div>
 </section>
+
 <section class="emp-clientes">
   <div class="emp-container">
     <h2>¿A quiénes atendemos?</h2>
@@ -108,13 +116,13 @@
     <div class="emp-grid-clientes">
       <div class="emp-card-cliente"><div class="emp-card-icon">🍽️</div><h3>Restaurantes y cafeterías</h3><p>Manteles, servilletas de tela, delantales y uniformes de cocina.</p></div>
       <div class="emp-card-cliente"><div class="emp-card-icon">🏨</div><h3>Hoteles y Airbnb</h3><p>Sábanas, fundas, toallas, edredones y almohadas.</p></div>
-      <div class="emp-card-cliente"><div class="emp-card-icon">🏥</div><h3>Clínicas y consultorios</h3><p>Batas, sábanas de camilla y uniformes médicos.</p></div>
       <div class="emp-card-cliente"><div class="emp-card-icon">💇</div><h3>Salones de belleza y spas</h3><p>Toallas, batas de cliente y tapetitos.</p></div>
       <div class="emp-card-cliente"><div class="emp-card-icon">🏢</div><h3>Empresas y oficinas</h3><p>Uniformes corporativos y ropa de trabajo por volumen.</p></div>
       <div class="emp-card-cliente"><div class="emp-card-icon">🏋️</div><h3>Gimnasios</h3><p>Toallas de entrenamiento y uniformes de staff.</p></div>
     </div>
   </div>
 </section>
+
 <section class="emp-prendas">
   <div class="emp-container">
     <h2>Prendas que manejamos</h2>
@@ -131,6 +139,7 @@
     </div>
   </div>
 </section>
+
 <section class="emp-beneficios">
   <div class="emp-container">
     <h2>¿Por qué elegir Clean Colors para tu empresa?</h2>
@@ -144,6 +153,7 @@
     </div>
   </div>
 </section>
+
 <section class="emp-pasos">
   <div class="emp-container">
     <h2>¿Cómo funciona?</h2>
@@ -154,15 +164,20 @@
     </div>
   </div>
 </section>
+
 <section class="emp-cta-final">
   <div class="emp-container">
     <h2>¿Listo para mejorar la imagen de tu negocio?</h2>
     <p class="emp-cta-desc">Solicita tu cotización sin costo y sin compromiso. Te respondemos en menos de 24 horas.</p>
-    <div class="hero-ctas"><a class="btn-primary" href="index.html#contacto">🫧 Solicitar cotización</a></div>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="mailto:ccrecibos@pm.me">🫧 Solicitar cotización</a>
+    </div>
     <p class="emp-cta-apoyo">También puedes visitarnos en tienda o escribirnos por <a href="https://wa.me/525516570653" target="_blank">WhatsApp</a> y redes sociales.</p>
   </div>
 </section>
+
 <a class="emp-wa-float" href="https://wa.me/525516570653" target="_blank" title="Escríbenos por WhatsApp">💬</a>
+
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
@@ -174,13 +189,41 @@
         <a class="f-soc" href="https://www.google.com/maps/search/Clean+Colors+Lavander%C3%ADa+Dr+Mariano+Azuela+228+Santa+Mar%C3%ADa+la+Ribera+CDMX" target="_blank">🔍</a>
       </div>
     </div>
-    <div class="f-col"><h4>Servicios</h4><ul><li><a href="index.html#servicios">Autoservicio</a></li><li><a href="index.html#servicios">Lavado por Encargo</a></li><li><a href="index.html#servicios">Encargo Xpress</a></li><li><a href="index.html#servicios">Edredones &amp; Cobertores</a></li><li><a href="lealtad.html">Tarjeta Inteligente</a></li></ul></div>
-    <div class="f-col"><h4>Empresa</h4><ul><li><a href="index.html#promociones">Promociones</a></li><li><a href="lealtad.html">Plan de Lealtad</a></li><li><a href="index.html#testimonios">Reseñas</a></li><li><a href="index.html#contacto">Contacto</a></li></ul></div>
+    <div class="f-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="index.html#servicios">Autoservicio</a></li>
+        <li><a href="index.html#servicios">Lavado por Encargo</a></li>
+        <li><a href="index.html#servicios">Encargo Xpress</a></li>
+        <li><a href="index.html#servicios">Edredones &amp; Cobertores</a></li>
+        <li><a href="lealtad.html">Tarjeta Inteligente</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="index.html#promociones">Promociones</a></li>
+        <li><a href="lealtad.html">Plan de Lealtad</a></li>
+        <li><a href="index.html#testimonios">Reseñas</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 Clean Colors · Lavandería de Auto Servicio. Todos los derechos reservados.</span>
     <a href="aviso-de-privacidad.html">Aviso de Privacidad</a>
   </div>
 </footer>
-<script>const c=document.getElementById('emp-bubbles');for(let i=0;i<55;i++){const b=document.createElement('div');b.className='emp-bubble';const s=5+Math.random()*50;b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${4+Math.random()*14}s;animation-delay:${Math.random()*12}s;`;c.appendChild(b);}</script></body>
+
+<script>
+  const c = document.getElementById('emp-bubbles');
+  for(let i = 0; i < 55; i++){
+    const b = document.createElement('div');
+    b.className = 'emp-bubble';
+    const s = 5 + Math.random() * 50;
+    b.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${4+Math.random()*14}s;animation-delay:${Math.random()*12}s;`;
+    c.appendChild(b);
+  }
+</script>
+</body>
 </html>
