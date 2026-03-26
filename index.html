@@ -194,45 +194,59 @@
     <div class="s-label">Nuestro Espacio</div>
     <h2 class="s-title">Un lugar <em>limpio</em><br>y cómodo</h2>
   </div>
-  <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(12,1fr);gap:1.2rem;">
+  <div style="display:flex;flex-direction:column;gap:1.5rem;">
 
-    <!-- Fila 1: foto grande + burbuja texto grande -->
-    <div class="gi" style="grid-column:1/8;grid-row:1/2;border-radius:50px;overflow:hidden;position:relative;cursor:pointer;height:340px;"><div class="gi-photo" style="background-image:url('galeria-1.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div><div class="gi-overlay">Vista panorámica del local</div></div>
-    <div style="grid-column:8/13;grid-row:1/2;border-radius:50px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0A1E30 0%,#1277A8 100%);display:flex;align-items:center;justify-content:center;padding:2.5rem;height:340px;">
-      <div style="color:#fff;width:100%;">
-        <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:#5CC8EE;margin-bottom:1.2rem;">¿Te ha pasado esto?</p>
-        <ul style="list-style:none;padding:0;margin:0;">
-          <li style="display:flex;gap:.6rem;font-size:.95rem;line-height:1.6;margin-bottom:.7rem;"><span style="color:#00C9AE;flex-shrink:0;font-size:1.1rem;">✓</span>¿Cansado de esperar una lavadora disponible?</li>
-          <li style="display:flex;gap:.6rem;font-size:.95rem;line-height:1.6;"><span style="color:#00C9AE;flex-shrink:0;font-size:1.1rem;">✓</span>¿Sin espacio suficiente para doblar tu ropa?</li>
-        </ul>
+    <!-- Fila 1: Texto izquierda | Foto derecha -->
+    <div style="display:flex;gap:1.5rem;align-items:stretch;min-height:360px;">
+      <div style="flex:0 0 38%;background:linear-gradient(135deg,#0A1E30 0%,#1277A8 100%);border-radius:28px;display:flex;align-items:center;justify-content:center;padding:3rem 2.5rem;">
+        <div style="color:#fff;">
+          <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:#5CC8EE;margin-bottom:1.5rem;">¿Te ha pasado esto?</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem;">
+            <li style="display:flex;align-items:flex-start;gap:.8rem;font-size:1rem;line-height:1.6;"><span style="color:#00C9AE;font-size:1.2rem;flex-shrink:0;margin-top:.1rem;">✓</span>¿Cansado de esperar una lavadora disponible?</li>
+            <li style="display:flex;align-items:flex-start;gap:.8rem;font-size:1rem;line-height:1.6;"><span style="color:#00C9AE;font-size:1.2rem;flex-shrink:0;margin-top:.1rem;">✓</span>¿Sin espacio suficiente para doblar tu ropa?</li>
+            <li style="display:flex;align-items:flex-start;gap:.8rem;font-size:1rem;line-height:1.6;"><span style="color:#00C9AE;font-size:1.2rem;flex-shrink:0;margin-top:.1rem;">✓</span>¿Te estorbas con el de a lado?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gi" style="flex:1;border-radius:28px;overflow:hidden;position:relative;cursor:pointer;">
+        <div class="gi-photo" style="background-image:url('galeria-1.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
+        <div class="gi-overlay">Vista panorámica del local</div>
       </div>
     </div>
 
-    <!-- Fila 2: burbuja texto pequeña + foto mediana + burbuja texto pequeña -->
-    <div style="grid-column:1/4;grid-row:2/3;border-radius:50px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0A1E30 0%,#1277A8 100%);display:flex;align-items:center;justify-content:center;padding:1.8rem;height:240px;">
-      <div style="color:#fff;text-align:center;">
-        <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:#5CC8EE;margin-bottom:.8rem;">¿Te suena familiar?</p>
-        <p style="display:flex;gap:.5rem;font-size:.88rem;line-height:1.5;justify-content:center;"><span style="color:#00C9AE;">✓</span>¿Te estorbas con el de a lado?</p>
+    <!-- Fila 2: Foto izquierda | Texto derecha -->
+    <div style="display:flex;gap:1.5rem;align-items:stretch;min-height:340px;">
+      <div class="gi" style="flex:1;border-radius:28px;overflow:hidden;position:relative;cursor:pointer;">
+        <div class="gi-photo" style="background-image:url('galeria-2.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
+        <div class="gi-overlay">Entrada del local</div>
       </div>
-    </div>
-    <div class="gi" style="grid-column:4/10;grid-row:2/3;border-radius:50px;overflow:hidden;position:relative;cursor:pointer;height:240px;"><div class="gi-photo" style="background-image:url('galeria-2.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div><div class="gi-overlay">Entrada del local</div></div>
-    <div style="grid-column:10/13;grid-row:2/3;border-radius:50px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0A1E30 0%,#1277A8 100%);display:flex;align-items:center;justify-content:center;padding:1.5rem;height:240px;">
-      <div style="color:#fff;text-align:center;">
-        <p style="font-size:.88rem;color:rgba(255,255,255,.75);font-style:italic;line-height:1.7;">Nuestro piso no está<br>acolchonadito<br>por casualidad...</p>
+      <div style="flex:0 0 35%;background:linear-gradient(135deg,#0A1E30 0%,#1277A8 100%);border-radius:28px;display:flex;align-items:center;justify-content:center;padding:3rem 2.5rem;">
+        <div style="color:#fff;text-align:center;">
+          <p style="font-size:1.1rem;color:rgba(255,255,255,.75);font-style:italic;line-height:1.9;margin-bottom:1.5rem;">Nuestro piso no está<br>acolchonadito<br>por casualidad...</p>
+          <p style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#5CC8EE;">Cada detalle fue pensado<br>para tu comodidad.</p>
+        </div>
       </div>
     </div>
 
-    <!-- Fila 3: burbuja texto grande + foto grande -->
-    <div style="grid-column:1/6;grid-row:3/4;border-radius:50px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0A1E30 0%,#1277A8 100%);display:flex;align-items:center;justify-content:center;padding:2.5rem;height:300px;">
-      <div style="color:#fff;text-align:center;">
-        <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.45rem;color:#fff;margin-bottom:1rem;line-height:1.2;">¡En Clean Colors<br>tienes la solución!</p>
-        <p style="font-size:.92rem;color:rgba(255,255,255,.85);">✓ Cada área planeada por especialistas<br>para tu comodidad</p>
+    <!-- Fila 3: Texto izquierda | Foto derecha -->
+    <div style="display:flex;gap:1.5rem;align-items:stretch;min-height:340px;">
+      <div style="flex:0 0 35%;background:linear-gradient(135deg,#0A1E30 0%,#1277A8 100%);border-radius:28px;display:flex;align-items:center;justify-content:center;padding:3rem 2.5rem;">
+        <div style="color:#fff;text-align:center;">
+          <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;color:#fff;margin-bottom:1.2rem;line-height:1.25;">¡En Clean Colors<br>tienes la solución!</p>
+          <p style="font-size:.95rem;color:rgba(255,255,255,.8);line-height:1.7;">✓ Cada área planeada<br>por especialistas<br>para ti.</p>
+        </div>
+      </div>
+      <div class="gi" style="flex:1;border-radius:28px;overflow:hidden;position:relative;cursor:pointer;">
+        <div class="gi-photo" style="background-image:url('galeria-3.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
+        <div class="gi-overlay">Vista general con clientes</div>
       </div>
     </div>
-    <div class="gi" style="grid-column:6/13;grid-row:3/4;border-radius:50px;overflow:hidden;position:relative;cursor:pointer;height:300px;"><div class="gi-photo" style="background-image:url('galeria-3.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div><div class="gi-overlay">Vista general con clientes</div></div>
 
-    <!-- Fila 4: foto panorámica full width -->
-    <div class="gi" style="grid-column:1/13;grid-row:4/5;border-radius:50px;overflow:hidden;position:relative;cursor:pointer;height:320px;"><div class="gi-photo" style="background-image:url('galeria-4.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div><div class="gi-overlay">Vista desde el nivel superior</div></div>
+    <!-- Fila 4: Foto panorámica full width -->
+    <div class="gi" style="border-radius:28px;overflow:hidden;position:relative;cursor:pointer;height:360px;">
+      <div class="gi-photo" style="background-image:url('galeria-4.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
+      <div class="gi-overlay">Vista desde el nivel superior</div>
+    </div>
 
   </div>
 </section>
