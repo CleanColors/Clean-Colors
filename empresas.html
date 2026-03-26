@@ -45,26 +45,26 @@
     .emp-beneficio-icon{font-size:1.75rem;flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#B8F0E0,#00C9AE);border-radius:12px}
     .emp-beneficio h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#0A2E1A;margin-bottom:.25rem}
     .emp-beneficio p{font-size:.9rem;color:#4a7a6a;line-height:1.5}
-    .emp-badge-prox{display:inline-block;background:linear-gradient(135deg,var(--aqua),#00B89C);color:#fff;font-size:.68rem;font-weight:700;padding:.15rem .6rem;border-radius:50px;vertical-align:middle;margin-left:.4rem;text-transform:uppercase;letter-spacing:.5px}
+    .emp-badge-prox{display:inline-block;background:linear-gradient(135deg,#00C9AE,#00B89C);color:#fff;font-size:.68rem;font-weight:700;padding:.15rem .6rem;border-radius:50px;vertical-align:middle;margin-left:.4rem;text-transform:uppercase;letter-spacing:.5px}
     .emp-pasos{background:linear-gradient(160deg,#0F3A2F 0%,#145040 50%,#186650 100%);padding:4.5rem 0}
     .emp-pasos h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);color:#fff;text-align:center;margin-bottom:3rem}
     .emp-grid-pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
     .emp-paso{text-align:center}
-    .emp-paso-num{width:56px;height:56px;background:linear-gradient(135deg,var(--aqua),#00B89C);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;color:#fff;margin:0 auto 1.2rem;box-shadow:0 4px 16px rgba(0,201,174,.3)}
+    .emp-paso-num{width:56px;height:56px;background:linear-gradient(135deg,#00C9AE,#00B89C);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;color:#fff;margin:0 auto 1.2rem;box-shadow:0 4px 16px rgba(0,201,174,.3)}
     .emp-paso h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:.6rem}
     .emp-paso p{font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.6;max-width:280px;margin:0 auto}
     .emp-cta-final{background:#F0FBF8;padding:4.5rem 0;text-align:center}
     .emp-cta-final h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);color:#0A2E1A;margin-bottom:.75rem}
     .emp-cta-desc{font-size:1.05rem;color:#4a7a6a;margin-bottom:1.75rem}
     .emp-cta-apoyo{font-size:.9rem;color:#4a7a6a;margin-top:1.2rem}
-    .emp-cta-apoyo a{color:var(--aqua);font-weight:600;text-decoration:none}
+    .emp-cta-apoyo a{color:#00C9AE;font-weight:600;text-decoration:none}
     .emp-cta-apoyo a:hover{text-decoration:underline}
     .emp-wa-float{position:fixed;bottom:1.75rem;right:1.75rem;width:60px;height:60px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.9rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;transition:all .3s;animation:emp-wa-pulse 2s ease-in-out infinite}
     .emp-wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.5)}
     @keyframes emp-wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,.6)}}
     @media(max-width:768px){.emp-grid-clientes{grid-template-columns:repeat(2,1fr);gap:1rem}.emp-grid-beneficios{grid-template-columns:1fr}.emp-grid-pasos{grid-template-columns:1fr;gap:2.5rem}.emp-prendas-grid{gap:.6rem}.emp-prenda-tag{padding:.6rem 1.1rem;font-size:.88rem}}
     @media(max-width:480px){.emp-grid-clientes{grid-template-columns:1fr}}
-  </style>
+  nav{background:rgba(10,46,26,.96)!important} footer{background:#0A2E1A!important} .emp-bubbles{position:absolute;inset:0;pointer-events:none;overflow:hidden} .emp-bubble{position:absolute;border-radius:50%;opacity:0;animation:rise linear infinite;border:1.5px solid rgba(0,201,174,.25);background:radial-gradient(circle at 30% 30%,rgba(0,201,174,.15),transparent)} </style>
 </head>
 <body>
 <nav>
@@ -85,7 +85,7 @@
     <li><a href="index.html#contacto">Contacto</a></li>
   </ul>
 </nav>
-<section class="page-hero">
+<section class="page-hero"><div class="emp-bubbles" id="emp-bubbles"></div>
   <div class="s-label">Soluciones por Volumen</div>
   <h1>Lavado profesional para tu negocio, contabilizado por piezas.</h1>
   <p>Uniformes, toallas, manteles, sábanas y más — limpios y listos cuando los necesitas.</p>
@@ -182,5 +182,5 @@
     <a href="#">Aviso de Privacidad</a>
   </div>
 </footer>
-</body>
+<script>const c=document.getElementById('emp-bubbles');for(let i=0;i<55;i++){const b=document.createElement('div');b.className='emp-bubble';const s=5+Math.random()*50;b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${4+Math.random()*14}s;animation-delay:${Math.random()*12}s;`;c.appendChild(b);}</script></body>
 </html>
