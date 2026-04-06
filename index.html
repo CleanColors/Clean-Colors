@@ -31,22 +31,21 @@
   <a href="index.html" class="nav-logo">
     <img src="logo.png" alt="Clean Colors Logo"/>
   </a>
-  <ul class="nav-links">
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#instalaciones">Instalaciones</a></li>
     <li><a href="#promociones">Promociones</a></li>
-    <li class="nav-dropdown">
-      <a href="#">Beneficios <span class="nav-caret">&#9660;</span></a>
-      <div class="nav-dropdown-menu">
-        <a href="lealtad.html">Plan de Lealtad</a>
-        <a href="autoempleo.html">Autoempleo</a>
-      </div>
-    </li>
+    <li><a href="lealtad.html">Plan de Lealtad</a></li>
+    <li><a href="autoempleo.html">Autoempleo</a></li>
     <li><a href="empresas.html">Servicio a Empresas</a></li>
     <li><a href="#testimonios">Reseñas</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <section id="hero">
   <div class="bubbles" id="bubbles"></div>
@@ -455,6 +454,26 @@
     b.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${4+Math.random()*14}s;animation-delay:${Math.random()*12}s;`;
     container.appendChild(b);
   }
+  // Hamburger menu
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks = document.getElementById('nav-links');
+  const overlay = document.getElementById('nav-overlay');
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded','false');
+    navLinks.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    overlay.classList.toggle('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  overlay.addEventListener('click', closeMenu);
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 </script>
 </body>
 </html>
