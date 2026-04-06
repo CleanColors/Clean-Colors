@@ -10,17 +10,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
   <style>
-    /* Botones del nav alineados a la base del logo */
+    /* Consistencia visual con index.html */
     nav { padding: 0 5% !important; align-items: flex-end !important; }
-    #hero { padding-top: 4.5rem !important; justify-content: flex-start !important; background: linear-gradient(170deg,#1A3A55 0%,#1E4A70 50%,#153D5A 100%) !important; }
     .nav-logo img { height: 55px !important; width: auto !important; }
+    .page-hero {
+      background: linear-gradient(170deg,#1A3A55 0%,#1E4A70 50%,#153D5A 100%) !important;
+      color: #fff !important;
+      padding: 7rem 5% 4rem !important;
+    }
+    .page-hero .s-label { color: rgba(255,255,255,.7) !important; border-color: rgba(92,200,238,.3) !important; }
+    .page-hero h1 { color: #fff !important; }
+    .page-hero p { color: rgba(255,255,255,.85) !important; }
     @media(max-width:768px) {
       nav { padding: 0 5% !important; align-items: flex-end !important; }
-      #hero { padding-top: 3.5rem !important; }
       .nav-logo img { height: 45px !important; }
+      .page-hero { padding: 5.5rem 5% 3rem !important; }
     }
-      .badge { background: rgba(255,255,255,.14) !important; border: 1px solid rgba(92,200,238,.45) !important; }
-    .badge-label { color: rgba(255,255,255,.88) !important; }
   </style>
 </head>
 <body>
