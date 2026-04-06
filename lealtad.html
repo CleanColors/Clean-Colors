@@ -10,21 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
   <style>
-    /* Consistencia visual con index.html */
+    /* Nav sin padding vertical — queda exacto al logo */
     nav { padding: 0 5% !important; align-items: flex-end !important; }
+    #hero { padding-top: 14rem !important; justify-content: flex-start !important; }
     .nav-logo img { height: 55px !important; width: auto !important; }
-    .page-hero {
-      background: linear-gradient(170deg,#1A3A55 0%,#1E4A70 50%,#153D5A 100%) !important;
-      color: #fff !important;
-      padding: 7rem 5% 4rem !important;
-    }
-    .page-hero .s-label { color: rgba(255,255,255,.7) !important; border-color: rgba(92,200,238,.3) !important; }
-    .page-hero h1 { color: #fff !important; }
-    .page-hero p { color: rgba(255,255,255,.85) !important; }
     @media(max-width:768px) {
       nav { padding: 0 5% !important; align-items: flex-end !important; }
+      #hero { padding-top: 12rem !important; }
       .nav-logo img { height: 45px !important; }
-      .page-hero { padding: 5.5rem 5% 3rem !important; }
     }
   </style>
 </head>
