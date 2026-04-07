@@ -147,9 +147,9 @@ git push origin main
 8. **El repo git en sesión temporal** no puede estar en `/tmp/` — usar `/sessions/magical-ecstatic-cannon/cc-deploy/` (clonar si no existe).
 9. **Al agregar ítems al nav**, reconsiderar el breakpoint del hamburger en `styles.css`. Con 9 ítems el breakpoint es `1140px`.
 10. **`gracias.html` no tiene nav** — no incluirla en actualizaciones de navegación.
-11. **Animación de burbujas por página**: cada página usa su propio prefijo para evitar colisiones CSS. `index.html` → `.bubble` / `#bubbles`, `empresas.html` → `.emp-bubble` / `#emp-bubbles`, `productos.html` → `.prod-bubble` / `#prod-bubbles`. Patrón JS: IIFE que crea 55 divs con `cssText` aleatorio. El contenedor debe tener `z-index:0` y los hijos del hero `z-index:1` para que las burbujas queden detrás del contenido.
+11. **Animación de burbujas por página**: cada página usa su propio prefijo para evitar colisiones CSS. `index.html` → `.bubble` / `#bubbles`, `empresas.html` → `.emp-bubble` / `#emp-bubbles`, `productos.html` → `.prod-bubble` / `#prod-bubbles`, `autoempleo.html` → `.ae-bubble` / `#ae-bubbles`. Patrón JS: IIFE que crea 55 divs con `cssText` aleatorio. El contenedor debe tener `z-index:0` y los hijos del hero `z-index:1` para que las burbujas queden detrás del contenido.
 12. **`productos-botellas.svg`**: el diseño canónico es cuerpo blanco + tapita de color. Si se rediseña, respetar las cantidades: Detergente/Det.Neutro → 7ml, Suavizante/Desengrasante → 5ml.
-13. **Paletas de color por página**: cada página interna tiene identidad propia. `index.html` → azul navy (`#1A3A55→#1E4A70`). `empresas.html` → turquesa/aguamarina (`#004F5E→#006D80`). `productos.html` → navy oscuro (`var(--navy)→#0E3050`). `autoempleo.html` y `lealtad.html` → diseño original (no modificar sin instrucción explícita).
+13. **Paletas de color por página**: cada página interna tiene identidad propia. `index.html` → azul navy (`#1A3A55→#1E4A70`). `empresas.html` → turquesa/aguamarina (`#004F5E→#006D80`). `productos.html` → navy oscuro (`var(--navy)→#0E3050`). `autoempleo.html` → naranja/coral vibrante (`#BF3A0C→#E84F10→#FF7733→#FFB347`), acentos dorados `#FFD166`. `lealtad.html` → diseño original (no modificar sin instrucción explícita).
 
 ---
 
@@ -179,6 +179,8 @@ git push origin main
 - Empresas: `info_ventas@cleancolors.mx` (botón "Contáctanos" en hero y CTA final).
 
 ### Últimos commits (Abril 2026)
+- `47a4a5f` — "autoempleo: paleta naranja/coral vibrante, burbujas hero, acentos dorados"
+- `6c050df` — "empresas: quitar badge Próximamente del servicio de recolección"
 - `205594d` — "empresas: paleta turquesa/aguamarina — hero, prendas, pasos, burbujas, acentos"
 - `16d4469` — "docs: actualizar CLAUDE.md — burbujas hero, botellas blancas, cantidades 7ml/5ml, reglas 11-12"
 - `5c5e1f8` — "productos: botellas blancas con tapita de color, cantidades 7ml/7ml/5ml/5ml"
