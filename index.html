@@ -424,10 +424,12 @@
     </div>
     <div class="contact-form">
       <div class="form-title">Envíanos un mensaje 💬</div>
-      <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias">
-        <input type="hidden" name="form-name" value="contacto"/>
-        <input type="hidden" name="_replyto" value="info_ventas@cleancolors.mx"/>
-        <p hidden><input name="bot-field"/></p>
+      <form method="POST" action="https://formsubmit.co/info_ventas@cleancolors.mx">
+        <input type="hidden" name="_cc" value="admin@cleancolors.mx"/>
+        <input type="hidden" name="_next" value="https://cleancolors.mx/gracias"/>
+        <input type="hidden" name="_subject" value="Nuevo mensaje - Clean Colors Lavandería"/>
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"/>
         <div class="form-row">
           <div class="fg"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre" required/></div>
           <div class="fg"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+52 000 000 0000"/></div>
