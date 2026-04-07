@@ -27,7 +27,7 @@ Sitio web estático de **Clean Colors Lavandería** (cleancolors.mx), desplegado
 - **`logo.png`** — Logo principal usado en el nav (recortado, sin márgenes transparentes, 800×222px).
 - **`logo-horizontal.png`** — Versión horizontal del logo (usada en `aviso-de-privacidad.html`).
 - **`favicon.png`** — Ícono del sitio.
-- **`productos-botellas.svg`** — Ilustración SVG de las 4 botellas 10ml marca propia (inline o como `<img>`).
+- **`productos-botellas.svg`** — Ilustración SVG de las 4 botellas marca propia. **Cuerpo blanco, solo la tapita cambia de color** por producto. Cantidades: Detergente 7ml, Det. Neutro 7ml, Suavizante 5ml, Desengrasante 5ml. Usada en `productos.html` como `<img>`.
 - Imágenes del local: `local-fachada.webp`, `local-entrada.webp`, `local-panoramica.webp`, `local-equipos.webp`, `local-maquinas.webp`, `local-clientes.webp`.
 - Galería: `galeria-1.png` a `galeria-4.png`.
 - Carpeta `/img/`: versiones adicionales de imágenes y logos.
@@ -147,6 +147,8 @@ git push origin main
 8. **El repo git en sesión temporal** no puede estar en `/tmp/` — usar `/sessions/magical-ecstatic-cannon/cc-deploy/` (clonar si no existe).
 9. **Al agregar ítems al nav**, reconsiderar el breakpoint del hamburger en `styles.css`. Con 9 ítems el breakpoint es `1140px`.
 10. **`gracias.html` no tiene nav** — no incluirla en actualizaciones de navegación.
+11. **Animación de burbujas por página**: cada página usa su propio prefijo para evitar colisiones CSS. `index.html` → `.bubble` / `#bubbles`, `empresas.html` → `.emp-bubble` / `#emp-bubbles`, `productos.html` → `.prod-bubble` / `#prod-bubbles`. Patrón JS: IIFE que crea 55 divs con `cssText` aleatorio. El contenedor debe tener `z-index:0` y los hijos del hero `z-index:1` para que las burbujas queden detrás del contenido.
+12. **`productos-botellas.svg`**: el diseño canónico es cuerpo blanco + tapita de color. Si se rediseña, respetar las cantidades: Detergente/Det.Neutro → 7ml, Suavizante/Desengrasante → 5ml.
 
 ---
 
@@ -167,13 +169,16 @@ git push origin main
 - `autoempleo.html` → "Sin contratos" cambiado a **"Sin compromiso de largo plazo"**.
 - `index.html` → Título "Nuestro Espacio" ahora en un solo renglón (quitado `<br>`).
 - `empresas.html` → Botones "Solicitar cotización" → **"Contáctanos"**, email `info_ventas@cleancolors.mx`. Emoji salones de belleza: 💅. Script de burbujas estaba truncado → **reparado**.
-- `productos.html` → **Página nueva**. Línea de productos marca propia Clean Colors: Detergente, Detergente Neutro, Suavizante, Desengrasante. Todos biodegradables. CTA: solo en tienda.
-- `productos-botellas.svg` → **Archivo nuevo**. Ilustración SVG de 4 botellas 10ml con branding Clean Colors, usada en `productos.html`.
+- `productos.html` → **Página nueva**. Línea de productos marca propia Clean Colors: Detergente (7ml), Detergente Neutro (7ml), Suavizante (5ml), Desengrasante (5ml). Todos biodegradables. CTA: solo en tienda. Hero con animación de burbujas (`.prod-bubbles` / `@keyframes prod-rise`).
+- `productos-botellas.svg` → **Archivo nuevo** (rediseñado Abril 2026). Botellas blancas con gradiente sutil; tapita de color por producto: navy (Detergente), azul medio (Det. Neutro), teal (Suavizante), azul cielo (Desengrasante).
 - `index.html` → Nueva sección `#productos` (teaser de 4 cards) antes de `#testimonios`.
 
 ### Emails configurados
 - Contacto general (formulario index.html): pendiente de revisar (Cloudflare obfuscation).
 - Empresas: `info_ventas@cleancolors.mx` (botón "Contáctanos" en hero y CTA final).
 
-### Último commit
-`d9d3196` — "Sección y página de Productos Clean Colors: botellas SVG, biodegradables, marca propia, nav 9 ítems"
+### Últimos commits (Abril 2026)
+- `5c5e1f8` — "productos: botellas blancas con tapita de color, cantidades 7ml/7ml/5ml/5ml"
+- `f7158b1` — "productos.html: animación de burbujas en hero"
+- `822a066` — "docs: actualizar CLAUDE.md con estado completo Abril 2026"
+- `d9d3196` — "Sección y página de Productos Clean Colors: botellas SVG, biodegradables, marca propia, nav 9 ítems"
