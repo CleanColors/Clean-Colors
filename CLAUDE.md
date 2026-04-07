@@ -149,6 +149,7 @@ git push origin main
 10. **`gracias.html` no tiene nav** — no incluirla en actualizaciones de navegación.
 11. **Animación de burbujas por página**: cada página usa su propio prefijo para evitar colisiones CSS. `index.html` → `.bubble` / `#bubbles`, `empresas.html` → `.emp-bubble` / `#emp-bubbles`, `productos.html` → `.prod-bubble` / `#prod-bubbles`. Patrón JS: IIFE que crea 55 divs con `cssText` aleatorio. El contenedor debe tener `z-index:0` y los hijos del hero `z-index:1` para que las burbujas queden detrás del contenido.
 12. **`productos-botellas.svg`**: el diseño canónico es cuerpo blanco + tapita de color. Si se rediseña, respetar las cantidades: Detergente/Det.Neutro → 7ml, Suavizante/Desengrasante → 5ml.
+13. **Paletas de color por página**: cada página interna tiene identidad propia. `index.html` → azul navy (`#1A3A55→#1E4A70`). `empresas.html` → turquesa/aguamarina (`#004F5E→#006D80`). `productos.html` → navy oscuro (`var(--navy)→#0E3050`). `autoempleo.html` y `lealtad.html` → diseño original (no modificar sin instrucción explícita).
 
 ---
 
@@ -168,7 +169,7 @@ git push origin main
 ### Contenido — cambios sesión Abril 2026
 - `autoempleo.html` → "Sin contratos" cambiado a **"Sin compromiso de largo plazo"**.
 - `index.html` → Título "Nuestro Espacio" ahora en un solo renglón (quitado `<br>`).
-- `empresas.html` → Botones "Solicitar cotización" → **"Contáctanos"**, email `info_ventas@cleancolors.mx`. Emoji salones de belleza: 💅. Script de burbujas estaba truncado → **reparado**.
+- `empresas.html` → Botones "Solicitar cotización" → **"Contáctanos"**, email `info_ventas@cleancolors.mx`. Emoji salones de belleza: 💅. Script de burbujas estaba truncado → **reparado**. **Paleta rediseñada (Abril 2026)**: secciones oscuras migradas de navy a turquesa/aguamarina (`#004F5E→#006D80→#008595` en hero; `#003D4A→#005F72` en prendas; `#004555→#006878` en pasos). Acentos: `#00C9AE`/`#00E6D2`. Burbujas en tono aguamarina.
 - `productos.html` → **Página nueva**. Línea de productos marca propia Clean Colors: Detergente (7ml), Detergente Neutro (7ml), Suavizante (5ml), Desengrasante (5ml). Todos biodegradables. CTA: solo en tienda. Hero con animación de burbujas (`.prod-bubbles` / `@keyframes prod-rise`).
 - `productos-botellas.svg` → **Archivo nuevo** (rediseñado Abril 2026). Botellas blancas con gradiente sutil; tapita de color por producto: navy (Detergente), azul medio (Det. Neutro), teal (Suavizante), azul cielo (Desengrasante).
 - `index.html` → Nueva sección `#productos` (teaser de 4 cards) antes de `#testimonios`.
@@ -178,7 +179,7 @@ git push origin main
 - Empresas: `info_ventas@cleancolors.mx` (botón "Contáctanos" en hero y CTA final).
 
 ### Últimos commits (Abril 2026)
+- `205594d` — "empresas: paleta turquesa/aguamarina — hero, prendas, pasos, burbujas, acentos"
+- `16d4469` — "docs: actualizar CLAUDE.md — burbujas hero, botellas blancas, cantidades 7ml/5ml, reglas 11-12"
 - `5c5e1f8` — "productos: botellas blancas con tapita de color, cantidades 7ml/7ml/5ml/5ml"
 - `f7158b1` — "productos.html: animación de burbujas en hero"
-- `822a066` — "docs: actualizar CLAUDE.md con estado completo Abril 2026"
-- `d9d3196` — "Sección y página de Productos Clean Colors: botellas SVG, biodegradables, marca propia, nav 9 ítems"
