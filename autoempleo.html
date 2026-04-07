@@ -10,19 +10,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
   <style>
-    .page-hero{background:var(--navy);color:var(--white);padding:10rem 5% 4.5rem;text-align:center;position:relative;overflow:hidden}
-    .page-hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(43,159,212,.15) 0%,transparent 65%);border-radius:50%;top:-200px;right:-100px;pointer-events:none}
-    .page-hero .s-label{display:inline-block;margin-bottom:1rem}
+    .page-hero{background:linear-gradient(135deg,#BF3A0C 0%,#E84F10 40%,#FF7733 75%,#FFB347 100%);color:var(--white);padding:10rem 5% 4.5rem;text-align:center;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;width:650px;height:650px;background:radial-gradient(circle,rgba(255,220,80,.18) 0%,transparent 65%);border-radius:50%;top:-220px;right:-120px;pointer-events:none}
+    .page-hero::after{content:'';position:absolute;width:450px;height:450px;background:radial-gradient(circle,rgba(191,58,12,.3) 0%,transparent 65%);border-radius:50%;bottom:-200px;left:-100px;pointer-events:none}
+    .page-hero .s-label{display:inline-block;margin-bottom:1rem;background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.35);color:#fff}
     .page-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,4vw,3rem);line-height:1.2;max-width:750px;margin:0 auto 1rem}
-    .page-hero h1 em{color:var(--aqua);font-style:normal}
-    .page-hero p{max-width:600px;margin:0 auto 2rem;color:rgba(255,255,255,.8);font-size:1.05rem;line-height:1.7}
+    .page-hero h1 em{color:#FFD166;font-style:normal;text-shadow:0 2px 12px rgba(0,0,0,.15)}
+    .page-hero p{max-width:600px;margin:0 auto 2rem;color:rgba(255,255,255,.9);font-size:1.05rem;line-height:1.7}
+    /* Burbujas hero */
+    .ae-bubbles{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+    .ae-bubble{position:absolute;border-radius:50%;opacity:0;animation:rise linear infinite;border:1.5px solid rgba(255,220,100,.3);background:radial-gradient(circle at 30% 30%,rgba(255,200,80,.15),transparent)}
+    .page-hero > *:not(.ae-bubbles){position:relative;z-index:1}
     .ae-container{max-width:1100px;margin:0 auto;padding:0 5%}
 
     /* Intro */
     .ae-intro{background:var(--off-white);padding:5rem 0}
     .ae-intro p{font-size:1.05rem;line-height:1.8;color:#3a4f63;margin-bottom:1.2rem;max-width:800px}
     .ae-intro p strong{color:var(--navy)}
-    .ae-precio-ref{display:inline-block;background:linear-gradient(135deg,#1277A8,#2EB5F0);color:#fff;border-radius:14px;padding:1rem 1.8rem;font-size:1rem;line-height:1.6;margin-top:.5rem}
+    .ae-precio-ref{display:inline-block;background:linear-gradient(135deg,#E84F10,#FF7733);color:#fff;border-radius:14px;padding:1rem 1.8rem;font-size:1rem;line-height:1.6;margin-top:.5rem;box-shadow:0 4px 20px rgba(232,79,16,.25)}
     .ae-precio-ref strong{font-family:'Syne',sans-serif;font-size:1.3rem;display:block;margin-bottom:.2rem}
 
     /* Pasos */
@@ -31,19 +36,20 @@
     .ae-pasos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:860px;margin:0 auto}
 
     /* Mensaje ancla (callout dentro de paso de capacitación) */
-    .ae-ancla{margin-top:1.2rem;background:linear-gradient(135deg,rgba(43,159,212,.12),rgba(0,201,174,.1));border-left:3px solid var(--aqua);border-radius:0 10px 10px 0;padding:.9rem 1.2rem;font-size:.9rem;color:var(--navy);line-height:1.6;font-style:italic}
+    .ae-ancla{margin-top:1.2rem;background:linear-gradient(135deg,rgba(232,79,16,.1),rgba(255,180,50,.08));border-left:3px solid #FF7733;border-radius:0 10px 10px 0;padding:.9rem 1.2rem;font-size:.9rem;color:var(--navy);line-height:1.6;font-style:italic}
     .ae-paso{background:var(--off-white);border-radius:20px;padding:2.5rem 2rem;text-align:center;border:1.5px solid rgba(0,0,0,.05);transition:transform .25s,box-shadow .25s}
-    .ae-paso:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(43,159,212,.12)}
-    .ae-paso-num{width:60px;height:60px;background:linear-gradient(135deg,var(--aqua),#00B89C);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;color:#fff;margin:0 auto 1.3rem;box-shadow:0 4px 16px rgba(0,201,174,.3)}
+    .ae-paso:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(232,79,16,.15)}
+    .ae-paso-num{width:60px;height:60px;background:linear-gradient(135deg,#FF7733,#E84F10);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;color:#fff;margin:0 auto 1.3rem;box-shadow:0 4px 18px rgba(232,79,16,.4)}
     .ae-paso h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:.7rem}
     .ae-paso p{font-size:.95rem;color:var(--gray);line-height:1.65}
 
     /* Beneficios */
-    .ae-beneficios{background:var(--navy);padding:5rem 0}
+    .ae-beneficios{background:linear-gradient(160deg,#8C2A00 0%,#BF3A0C 60%,#E84F10 100%);padding:5rem 0}
     .ae-beneficios h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);color:#fff;text-align:center;margin-bottom:2.5rem}
     .ae-beneficios-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:850px;margin:0 auto}
-    .ae-beneficio{display:flex;align-items:flex-start;gap:1rem;background:rgba(255,255,255,.07);border-radius:14px;padding:1.4rem 1.5rem;border:1px solid rgba(92,200,238,.15)}
-    .ae-beneficio-icon{color:var(--aqua);font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+    .ae-beneficio{display:flex;align-items:flex-start;gap:1rem;background:rgba(255,255,255,.08);border-radius:14px;padding:1.4rem 1.5rem;border:1px solid rgba(255,200,80,.2);transition:background .25s}
+    .ae-beneficio:hover{background:rgba(255,255,255,.13)}
+    .ae-beneficio-icon{color:#FFD166;font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
     .ae-beneficio p{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.6;margin:0}
     .ae-beneficio p strong{color:#fff}
 
@@ -52,7 +58,7 @@
     .ae-perfil h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);color:var(--navy);text-align:center;margin-bottom:2.5rem}
     .ae-perfil-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;max-width:900px;margin:0 auto}
     .ae-perfil-card{background:#fff;border-radius:16px;padding:1.8rem 1.5rem;text-align:center;box-shadow:0 2px 14px rgba(10,30,48,.06);transition:transform .25s,box-shadow .25s}
-    .ae-perfil-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(43,159,212,.1)}
+    .ae-perfil-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(232,79,16,.14)}
     .ae-perfil-icon{font-size:2.2rem;margin-bottom:.8rem}
     .ae-perfil-card p{font-size:.92rem;color:var(--gray);line-height:1.6;margin:0}
 
@@ -109,6 +115,7 @@
 <div class="nav-overlay" id="nav-overlay"></div>
 
 <section class="page-hero">
+  <div class="ae-bubbles" id="ae-bubbles"></div>
   <div class="s-label">Oportunidad de Negocio</div>
   <h1>Monta tu negocio de lavandería<br><em>sin invertir en equipo.</em></h1>
   <p>Tú pones las ganas — nosotros ponemos las máquinas.</p>
@@ -272,7 +279,18 @@
 </footer>
 
 <script>
-  // Hamburger menu
+  /* --- Burbujas hero --- */
+  (function(){
+    var ab=document.getElementById('ae-bubbles');
+    for(var i=0;i<55;i++){
+      var b=document.createElement('div');
+      b.className='ae-bubble';
+      var s=5+Math.random()*50;
+      b.style.cssText='width:'+s+'px;height:'+s+'px;left:'+(Math.random()*100)+'%;animation-duration:'+(4+Math.random()*14)+'s;animation-delay:'+(Math.random()*12)+'s;';
+      ab.appendChild(b);
+    }
+  })();
+  /* --- Hamburger menu --- */
   const hamburger = document.getElementById('nav-hamburger');
   const navLinks = document.getElementById('nav-links');
   const overlay = document.getElementById('nav-overlay');
