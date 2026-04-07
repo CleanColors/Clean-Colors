@@ -72,6 +72,11 @@
     .prod-cta p{font-size:1rem;color:var(--gray);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
     .prod-cta-store{display:inline-flex;align-items:center;gap:.8rem;background:var(--off-white);border:2px solid #E4EEF5;border-radius:16px;padding:1.2rem 2rem;margin-top:1.5rem;font-size:.9rem;color:var(--gray)}
     .prod-cta-store strong{color:var(--navy);display:block;font-size:1rem;margin-bottom:.2rem}
+    /* ---- Burbujas hero ---- */
+    .prod-bubbles{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+    .prod-bubble{position:absolute;border-radius:50%;opacity:0;animation:prod-rise linear infinite;border:1.5px solid rgba(92,200,238,.25);background:radial-gradient(circle at 30% 30%,rgba(168,228,247,.15),transparent)}
+    @keyframes prod-rise{0%{opacity:0;transform:translateY(100vh) scale(.5)}10%{opacity:.6}90%{opacity:.25}100%{opacity:0;transform:translateY(-100vh) scale(1)}}
+    .prod-hero > *:not(.prod-bubbles){position:relative;z-index:1}
     /* ---- Nav ---- */
     nav{padding:0 5% !important;}
     .nav-logo img{height:55px !important;width:auto !important;}
@@ -107,6 +112,7 @@
 
 <!-- HERO -->
 <section class="prod-hero">
+  <div class="prod-bubbles" id="prod-bubbles"></div>
   <div class="s-label">Marca Propia</div>
   <h1>Fórmulas <em style="color:var(--aqua);font-style:normal">Clean Colors</em> — limpias por dentro y por fuera</h1>
   <p>Desarrollamos nuestra propia línea de productos de lavandería: potentes, seguros y 100% biodegradables. Disponibles en nuestro local.</p>
@@ -319,6 +325,18 @@
 </footer>
 
 <script>
+  /* --- Burbujas hero --- */
+  (function(){
+    var pb=document.getElementById('prod-bubbles');
+    for(var i=0;i<55;i++){
+      var b=document.createElement('div');
+      b.className='prod-bubble';
+      var s=5+Math.random()*50;
+      b.style.cssText='width:'+s+'px;height:'+s+'px;left:'+(Math.random()*100)+'%;animation-duration:'+(4+Math.random()*14)+'s;animation-delay:'+(Math.random()*12)+'s;';
+      pb.appendChild(b);
+    }
+  })();
+  /* --- Hamburger --- */
   const hamburger=document.getElementById('nav-hamburger'),navLinks=document.getElementById('nav-links'),overlay=document.getElementById('nav-overlay');
   function closeMenu(){hamburger.classList.remove('active');hamburger.setAttribute('aria-expanded','false');navLinks.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
   hamburger.addEventListener('click',function(){const isOpen=navLinks.classList.toggle('open');hamburger.classList.toggle('active');hamburger.setAttribute('aria-expanded',isOpen);overlay.classList.toggle('open');document.body.style.overflow=isOpen?'hidden':'';});
