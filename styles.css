@@ -89,7 +89,7 @@ nav{
 .nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* Mobile nav */
-@media(max-width:1080px){
+@media(max-width:1140px){
   .nav-hamburger{display:flex}
   .nav-links{
     position:fixed;top:0;right:-100%;width:280px;height:100vh;

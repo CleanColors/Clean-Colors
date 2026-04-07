@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productos Clean Colors | Fórmulas Biodegradables</title>
+  <meta name="description" content="Productos de lavandería marca propia Clean Colors. Detergente, Detergente Neutro, Suavizante y Desengrasante. Fórmulas biodegradables, disponibles en tienda."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* ---- Hero ---- */
+    .prod-hero{background:linear-gradient(160deg,var(--navy) 0%,#0E3050 60%,#093248 100%);color:var(--white);padding:10rem 5% 4rem;text-align:center;position:relative;overflow:hidden}
+    .prod-hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(0,201,174,.12) 0%,transparent 65%);border-radius:50%;top:-180px;left:-150px;pointer-events:none}
+    .prod-hero::after{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(43,159,212,.12) 0%,transparent 65%);border-radius:50%;bottom:-200px;right:-100px;pointer-events:none}
+    .prod-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.15;max-width:700px;margin:0 auto 1rem}
+    .prod-hero p{max-width:560px;margin:0 auto 2.5rem;color:rgba(255,255,255,.75);font-size:1.05rem;line-height:1.65}
+    .prod-hero-badges{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+    .prod-hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,201,174,.12);border:1px solid rgba(0,201,174,.3);border-radius:50px;padding:.5rem 1.2rem;font-size:.85rem;font-weight:600;color:var(--aqua)}
+    /* ---- Ilustración botellas ---- */
+    .bottles-wrap{display:flex;justify-content:center;margin-top:1rem}
+    .bottles-wrap svg{max-width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,0.35))}
+    /* ---- Promesa ---- */
+    .prod-promesa{background:var(--white);padding:4.5rem 5%}
+    .prod-container{max-width:1100px;margin:0 auto}
+    .prod-promesa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+    .prod-promesa-card{text-align:center;padding:2rem 1.5rem;background:var(--off-white);border-radius:20px;border:1px solid #E4EEF5}
+    .prod-promesa-icon{font-size:2.5rem;margin-bottom:1rem}
+    .prod-promesa-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--navy);margin-bottom:.6rem}
+    .prod-promesa-card p{font-size:.9rem;color:var(--gray);line-height:1.6}
+    /* ---- Grid de productos ---- */
+    .prod-catalogo{background:linear-gradient(160deg,var(--navy) 0%,#0E3050 100%);padding:4.5rem 5%}
+    .prod-catalogo h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--white);text-align:center;margin-bottom:.5rem}
+    .prod-catalogo-sub{text-align:center;color:rgba(255,255,255,.6);font-size:1rem;margin-bottom:3rem}
+    .prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:900px;margin:0 auto}
+    .prod-card{background:rgba(255,255,255,.05);border:1.5px solid rgba(92,200,238,.15);border-radius:24px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+    .prod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:24px 24px 0 0}
+    .prod-card.c1::before{background:linear-gradient(90deg,#0E3050,#1277A8)}
+    .prod-card.c2::before{background:linear-gradient(90deg,#1277A8,#2EB5F0)}
+    .prod-card.c3::before{background:linear-gradient(90deg,#009B87,#00C9AE)}
+    .prod-card.c4::before{background:linear-gradient(90deg,#2EB5F0,#5CC8EE)}
+    .prod-card:hover{border-color:rgba(92,200,238,.4);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+    .prod-card-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+    .prod-card-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0}
+    .prod-card.c1 .prod-card-icon{background:linear-gradient(135deg,#0E3050,#1277A8)}
+    .prod-card.c2 .prod-card-icon{background:linear-gradient(135deg,#1277A8,#2EB5F0)}
+    .prod-card.c3 .prod-card-icon{background:linear-gradient(135deg,#009B87,#00C9AE)}
+    .prod-card.c4 .prod-card-icon{background:linear-gradient(135deg,#2EB5F0,#5CC8EE)}
+    .prod-card-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;color:var(--white)}
+    .prod-card-brand{font-size:.75rem;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-top:.15rem}
+    .prod-card-desc{font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1.2rem}
+    .prod-card-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+    .prod-tag{font-size:.75rem;font-weight:600;padding:.3rem .8rem;border-radius:50px;background:rgba(0,201,174,.12);color:var(--aqua);border:1px solid rgba(0,201,174,.2)}
+    .prod-tag-bio{background:rgba(0,201,174,.15);border-color:rgba(0,201,174,.4);color:#00E6C8}
+    /* ---- Beneficios eco ---- */
+    .prod-eco{background:var(--off-white);padding:4.5rem 5%}
+    .prod-eco-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1000px;margin:0 auto}
+    .prod-eco-text h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--navy);margin-bottom:1rem}
+    .prod-eco-text p{font-size:1rem;color:var(--gray);line-height:1.75;margin-bottom:1.2rem}
+    .prod-eco-list{display:flex;flex-direction:column;gap:.8rem;margin-top:1.5rem}
+    .prod-eco-item{display:flex;align-items:flex-start;gap:.8rem;font-size:.95rem;color:var(--gray)}
+    .prod-eco-item span.eco-check{color:var(--aqua);font-size:1.1rem;flex-shrink:0;margin-top:.1rem}
+    .prod-eco-visual{background:linear-gradient(135deg,var(--navy),#0E3050);border-radius:24px;padding:2.5rem;text-align:center}
+    .prod-eco-stat{margin-bottom:1.5rem}
+    .prod-eco-stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:2.8rem;color:var(--aqua);line-height:1}
+    .prod-eco-stat-label{font-size:.85rem;color:rgba(255,255,255,.6);margin-top:.3rem}
+    .prod-eco-divider{height:1px;background:rgba(92,200,238,.12);margin:1rem 0}
+    /* ---- CTA final ---- */
+    .prod-cta{background:var(--white);padding:4rem 5%;text-align:center}
+    .prod-cta h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.4rem,3vw,2rem);color:var(--navy);margin-bottom:.75rem}
+    .prod-cta p{font-size:1rem;color:var(--gray);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+    .prod-cta-store{display:inline-flex;align-items:center;gap:.8rem;background:var(--off-white);border:2px solid #E4EEF5;border-radius:16px;padding:1.2rem 2rem;margin-top:1.5rem;font-size:.9rem;color:var(--gray)}
+    .prod-cta-store strong{color:var(--navy);display:block;font-size:1rem;margin-bottom:.2rem}
+    /* ---- Nav ---- */
+    nav{padding:0 5% !important;}
+    .nav-logo img{height:55px !important;width:auto !important;}
+    @media(max-width:768px){.nav-logo img{height:45px !important;}}
+    /* ---- Responsive ---- */
+    @media(max-width:768px){
+      .prod-promesa-grid{grid-template-columns:1fr}
+      .prod-grid{grid-template-columns:1fr}
+      .prod-eco-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Clean Colors Logo"/></a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#instalaciones">Instalaciones</a></li>
+    <li><a href="index.html#promociones">Promociones</a></li>
+    <li><a href="productos.html">Productos</a></li>
+    <li><a href="lealtad.html">Plan de Lealtad</a></li>
+    <li><a href="autoempleo.html">Autoempleo</a></li>
+    <li><a href="empresas.html">Servicio a Empresas</a></li>
+    <li><a href="index.html#testimonios">Reseñas</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+  </ul>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<!-- HERO -->
+<section class="prod-hero">
+  <div class="s-label">Marca Propia</div>
+  <h1>Fórmulas <em style="color:var(--aqua);font-style:normal">Clean Colors</em> — limpias por dentro y por fuera</h1>
+  <p>Desarrollamos nuestra propia línea de productos de lavandería: potentes, seguros y 100% biodegradables. Disponibles en nuestro local.</p>
+  <div class="prod-hero-badges">
+    <span class="prod-hero-badge">🌿 100% Biodegradables</span>
+    <span class="prod-hero-badge">🏷️ Marca Propia</span>
+    <span class="prod-hero-badge">🧪 Fórmula Profesional</span>
+    <span class="prod-hero-badge">📍 En Tienda</span>
+  </div>
+  <div class="bottles-wrap">
+    <img src="productos-botellas.svg" alt="Productos Clean Colors — Detergente, Detergente Neutro, Suavizante, Desengrasante" style="max-width:540px;width:100%"/>
+  </div>
+</section>
+
+<!-- PROMESA -->
+<section class="prod-promesa">
+  <div class="prod-container">
+    <div class="s-header">
+      <div class="s-label">Por Qué Clean Colors</div>
+      <h2 class="s-title">Productos que <em>cuidamos</em> tanto como tu ropa</h2>
+    </div>
+    <div class="prod-promesa-grid">
+      <div class="prod-promesa-card">
+        <div class="prod-promesa-icon">🌿</div>
+        <h3>Biodegradables</h3>
+        <p>Fórmulas que se descomponen de forma natural, sin dejar residuos tóxicos en el agua ni en el medioambiente.</p>
+      </div>
+      <div class="prod-promesa-card">
+        <div class="prod-promesa-icon">🏷️</div>
+        <h3>Marca propia</h3>
+        <p>Desarrollados y distribuidos exclusivamente bajo la marca Clean Colors. Calidad que controlamos de principio a fin.</p>
+      </div>
+      <div class="prod-promesa-card">
+        <div class="prod-promesa-icon">🧪</div>
+        <h3>Fórmula profesional</h3>
+        <p>Los mismos productos que usamos en nuestras máquinas de alta capacidad. Resultados comprobados en cada carga.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section class="prod-catalogo">
+  <div class="prod-container">
+    <h2>Nuestros Productos</h2>
+    <p class="prod-catalogo-sub">4 productos esenciales para un lavado completo y responsable.</p>
+    <div class="prod-grid">
+
+      <!-- Detergente -->
+      <div class="prod-card c1">
+        <div class="prod-card-head">
+          <div class="prod-card-icon">🫧</div>
+          <div>
+            <div class="prod-card-name">Detergente</div>
+            <div class="prod-card-brand">Clean Colors · 10 ml</div>
+          </div>
+        </div>
+        <p class="prod-card-desc">Fórmula de alta eficiencia para ropa de uso cotidiano. Elimina manchas profundas, cuida las fibras y deja una frescura duradera. Compatible con todas las temperaturas.</p>
+        <div class="prod-card-tags">
+          <span class="prod-tag prod-tag-bio">🌿 Biodegradable</span>
+          <span class="prod-tag">Uso general</span>
+          <span class="prod-tag">Alta eficiencia</span>
+        </div>
+      </div>
+
+      <!-- Detergente Neutro -->
+      <div class="prod-card c2">
+        <div class="prod-card-head">
+          <div class="prod-card-icon">🧴</div>
+          <div>
+            <div class="prod-card-name">Detergente Neutro</div>
+            <div class="prod-card-brand">Clean Colors · 10 ml</div>
+          </div>
+        </div>
+        <p class="prod-card-desc">pH neutro especialmente formulado para prendas delicadas, ropa de bebé y telas sensibles. Limpia suavemente sin dañar las fibras ni irritar la piel.</p>
+        <div class="prod-card-tags">
+          <span class="prod-tag prod-tag-bio">🌿 Biodegradable</span>
+          <span class="prod-tag">pH Neutro</span>
+          <span class="prod-tag">Prendas delicadas</span>
+        </div>
+      </div>
+
+      <!-- Suavizante -->
+      <div class="prod-card c3">
+        <div class="prod-card-head">
+          <div class="prod-card-icon">☁️</div>
+          <div>
+            <div class="prod-card-name">Suavizante</div>
+            <div class="prod-card-brand">Clean Colors · 10 ml</div>
+          </div>
+        </div>
+        <p class="prod-card-desc">Acondiciona las fibras dejando la ropa suave, esponjosa y con fragancia fresca. Reduce la electricidad estática y facilita el planchado.</p>
+        <div class="prod-card-tags">
+          <span class="prod-tag prod-tag-bio">🌿 Biodegradable</span>
+          <span class="prod-tag">Suavidad premium</span>
+          <span class="prod-tag">Antielástico</span>
+        </div>
+      </div>
+
+      <!-- Desengrasante -->
+      <div class="prod-card c4">
+        <div class="prod-card-head">
+          <div class="prod-card-icon">⚡</div>
+          <div>
+            <div class="prod-card-name">Desengrasante</div>
+            <div class="prod-card-brand">Clean Colors · 10 ml</div>
+          </div>
+        </div>
+        <p class="prod-card-desc">Formulado para manchas difíciles de grasa, aceite y residuos industriales. Ideal para uniformes de trabajo, ropa de cocina y prendas de alto desgaste.</p>
+        <div class="prod-card-tags">
+          <span class="prod-tag prod-tag-bio">🌿 Biodegradable</span>
+          <span class="prod-tag">Acción potente</span>
+          <span class="prod-tag">Manchas difíciles</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ECO SECTION -->
+<section class="prod-eco">
+  <div class="prod-eco-grid">
+    <div class="prod-eco-text">
+      <div class="s-label">Compromiso Ambiental</div>
+      <h2>Biodegradables no es solo una palabra</h2>
+      <p>En Clean Colors elegimos fórmulas que respetan el medioambiente porque creemos que lavar bien no debería costarle nada al planeta.</p>
+      <div class="prod-eco-list">
+        <div class="prod-eco-item"><span class="eco-check">✓</span><span>Se degradan naturalmente sin dejar residuos tóxicos en el agua</span></div>
+        <div class="prod-eco-item"><span class="eco-check">✓</span><span>Sin fosfatos ni compuestos que dañen los ecosistemas acuáticos</span></div>
+        <div class="prod-eco-item"><span class="eco-check">✓</span><span>Envases de 10 ml: dosis exacta, cero desperdicio</span></div>
+        <div class="prod-eco-item"><span class="eco-check">✓</span><span>Compatibles con nuestras máquinas de bajo consumo de agua</span></div>
+      </div>
+    </div>
+    <div class="prod-eco-visual">
+      <div class="prod-eco-stat">
+        <div class="prod-eco-stat-num">100%</div>
+        <div class="prod-eco-stat-label">Biodegradables</div>
+      </div>
+      <div class="prod-eco-divider"></div>
+      <div class="prod-eco-stat">
+        <div class="prod-eco-stat-num">4</div>
+        <div class="prod-eco-stat-label">Productos de línea propia</div>
+      </div>
+      <div class="prod-eco-divider"></div>
+      <div class="prod-eco-stat">
+        <div class="prod-eco-stat-num">10 ml</div>
+        <div class="prod-eco-stat-label">Dosis exacta por carga</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="prod-cta">
+  <div class="prod-container">
+    <div class="s-label">Disponibilidad</div>
+    <h2>Encuéntralos en nuestra tienda</h2>
+    <p>Nuestros productos están disponibles directamente en el local. Pasa a conocerlos la próxima vez que nos visites.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem">
+      <a class="btn-primary" href="index.html#contacto">📍 Ver ubicación</a>
+      <a class="btn-outline" href="index.html#servicios" style="color:var(--navy);border-color:rgba(10,30,48,.25);">Ver servicios de lavandería</a>
+    </div>
+    <div class="prod-cta-store" style="margin:2rem auto 0;display:inline-flex">
+      <span style="font-size:1.5rem">📍</span>
+      <div>
+        <strong>Dr. Mariano Azuela 228</strong>
+        Col. Santa María la Ribera · CDMX · Lun–Dom 8am–8pm
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <img src="logo.png" alt="Clean Colors"/>
+      <p>Tu lavandería de confianza en Santa María la Ribera, CDMX. Autoservicio y lavado por encargo con la calidad que tu ropa merece.</p>
+      <div class="f-socials">
+        <a class="f-soc" href="https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/" target="_blank">📘</a>
+        <a class="f-soc" href="https://wa.me/525516570653" target="_blank">💬</a>
+        <a class="f-soc" href="https://www.google.com/maps/search/Clean+Colors+Lavander%C3%ADa+Dr+Mariano+Azuela+228+Santa+Mar%C3%ADa+la+Ribera+CDMX" target="_blank">🔍</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="index.html#servicios">Autoservicio</a></li>
+        <li><a href="index.html#servicios">Lavado por Encargo</a></li>
+        <li><a href="index.html#servicios">Encargo Xpress</a></li>
+        <li><a href="lealtad.html">Tarjeta Inteligente</a></li>
+        <li><a href="productos.html">Productos</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="index.html#promociones">Promociones</a></li>
+        <li><a href="lealtad.html">Plan de Lealtad</a></li>
+        <li><a href="index.html#testimonios">Reseñas</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Clean Colors · Lavandería de Auto Servicio. Todos los derechos reservados.</span>
+    <a href="aviso-de-privacidad.html">Aviso de Privacidad</a>
+  </div>
+</footer>
+
+<script>
+  const hamburger=document.getElementById('nav-hamburger'),navLinks=document.getElementById('nav-links'),overlay=document.getElementById('nav-overlay');
+  function closeMenu(){hamburger.classList.remove('active');hamburger.setAttribute('aria-expanded','false');navLinks.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
+  hamburger.addEventListener('click',function(){const isOpen=navLinks.classList.toggle('open');hamburger.classList.toggle('active');hamburger.setAttribute('aria-expanded',isOpen);overlay.classList.toggle('open');document.body.style.overflow=isOpen?'hidden':'';});
+  overlay.addEventListener('click',closeMenu);
+  navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+</script>
+</body>
+</html>

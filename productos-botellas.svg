@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="520" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1E30;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#0A1E30;stop-opacity:0"/>
+    </linearGradient>
+    <!-- Gradientes de cada botella -->
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0E3050"/>
+      <stop offset="100%" style="stop-color:#1277A8"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1277A8"/>
+      <stop offset="100%" style="stop-color:#2EB5F0"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#009B87"/>
+      <stop offset="100%" style="stop-color:#00C9AE"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2EB5F0"/>
+      <stop offset="100%" style="stop-color:#5CC8EE"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="label-shadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Sombra de piso -->
+  <ellipse cx="260" cy="198" rx="230" ry="6" fill="rgba(0,0,0,0.12)"/>
+
+  <!-- === BOTELLA 1: DETERGENTE === -->
+  <g transform="translate(40, 10)" filter="url(#shadow)">
+    <!-- Cap -->
+    <rect x="16" y="2" width="28" height="18" rx="5" fill="#061420"/>
+    <!-- Rim del cap -->
+    <rect x="13" y="17" width="34" height="6" rx="2" fill="#0A1E30"/>
+    <!-- Neck -->
+    <rect x="18" y="23" width="24" height="12" fill="#0A1E30"/>
+    <!-- Shoulder -->
+    <path d="M8,35 Q8,32 18,32 L42,32 Q52,32 52,35 L52,42 L8,42 Z" fill="url(#g1)"/>
+    <!-- Body -->
+    <rect x="8" y="40" width="44" height="130" rx="10" fill="url(#g1)"/>
+    <!-- Highlight -->
+    <rect x="12" y="44" width="8" height="120" rx="4" fill="rgba(255,255,255,0.1)"/>
+    <!-- Label bg -->
+    <rect x="11" y="55" width="38" height="80" rx="5" fill="white" opacity="0.95" filter="url(#label-shadow)"/>
+    <!-- Label top color bar -->
+    <rect x="11" y="55" width="38" height="12" rx="5" fill="#1277A8"/>
+    <rect x="11" y="61" width="38" height="6" fill="#1277A8"/>
+    <!-- CC logo text en label -->
+    <text x="30" y="66" text-anchor="middle" font-size="7" font-family="Arial Black, sans-serif" font-weight="900" fill="white" letter-spacing="0.5">CC</text>
+    <!-- Linea decorativa -->
+    <line x1="15" y1="72" x2="45" y2="72" stroke="#E4EEF5" stroke-width="0.5"/>
+    <!-- Product name -->
+    <text x="30" y="84" text-anchor="middle" font-size="7.5" font-family="Arial, sans-serif" font-weight="700" fill="#0A1E30">DETER-</text>
+    <text x="30" y="94" text-anchor="middle" font-size="7.5" font-family="Arial, sans-serif" font-weight="700" fill="#0A1E30">GENTE</text>
+    <!-- Brand name -->
+    <text x="30" y="106" text-anchor="middle" font-size="5" font-family="Arial, sans-serif" fill="#1277A8" letter-spacing="0.8">CLEAN COLORS</text>
+    <!-- Bio badge -->
+    <text x="30" y="120" text-anchor="middle" font-size="5" font-family="Arial, sans-serif" fill="#00C9AE">🌿 Biodegradable</text>
+    <!-- 10ml -->
+    <text x="30" y="131" text-anchor="middle" font-size="5.5" font-family="Arial, sans-serif" fill="#5A6E80">10 ml</text>
+    <!-- Bottom taper -->
+    <path d="M8,170 L8,178 Q8,182 18,182 L42,182 Q52,182 52,178 L52,170 Z" fill="url(#g1)" opacity="0.8"/>
+  </g>
+
+  <!-- === BOTELLA 2: DETERGENTE NEUTRO === -->
+  <g transform="translate(155, 10)" filter="url(#shadow)">
+    <rect x="16" y="2" width="28" height="18" rx="5" fill="#061420"/>
+    <rect x="13" y="17" width="34" height="6" rx="2" fill="#0A1E30"/>
+    <rect x="18" y="23" width="24" height="12" fill="#0A1E30"/>
+    <path d="M8,35 Q8,32 18,32 L42,32 Q52,32 52,35 L52,42 L8,42 Z" fill="url(#g2)"/>
+    <rect x="8" y="40" width="44" height="130" rx="10" fill="url(#g2)"/>
+    <rect x="12" y="44" width="8" height="120" rx="4" fill="rgba(255,255,255,0.1)"/>
+    <rect x="11" y="55" width="38" height="80" rx="5" fill="white" opacity="0.95" filter="url(#label-shadow)"/>
+    <rect x="11" y="55" width="38" height="12" rx="5" fill="#2EB5F0"/>
+    <rect x="11" y="61" width="38" height="6" fill="#2EB5F0"/>
+    <text x="30" y="66" text-anchor="middle" font-size="7" font-family="Arial Black, sans-serif" font-weight="900" fill="white" letter-spacing="0.5">CC</text>
+    <line x1="15" y1="72" x2="45" y2="72" stroke="#E4EEF5" stroke-width="0.5"/>
+    <text x="30" y="82" text-anchor="middle" font-size="6.5" font-family="Arial, sans-serif" font-weight="700" fill="#0A1E30">DETER.</text>
+    <text x="30" y="92" text-anchor="middle" font-size="6.5" font-family="Arial, sans-serif" font-weight="700" fill="#0A1E30">NEUTRO</text>
+    <text x="30" y="106" text-anchor="middle" font-size="5" font-family="Arial, sans-serif" fill="#1277A8" letter-spacing="0.8">CLEAN COLORS</text>
+    <text x="30" y="120" text-anchor="middle" font-size="5" font-family="Arial, sans-serif" fill="#00C9AE">🌿 Biodegradable</text>
+    <text x="30" y="131" text-anchor="middle" font-size="5.5" font-family="Arial, sans-serif" fill="#5A6E80">10 ml</text>
+    <path d="M8,170 L8,178 Q8,182 18,182 L42,182 Q52,182 52,178 L52,170 Z" fill="url(#g2)" opacity="0.8"/>
+  </g>
+
+  <!-- === BOTELLA 3: SUAVIZANTE (más alta, destacada) === -->
+  <g transform="translate(270, 5)" filter="url(#shadow)">
+    <rect x="16" y="2" width="28" height="18" rx="5" fill="#005F52"/>
+    <rect x="13" y="17" width="34" height="6" rx="2" fill="#007A6A"/>
+    <rect x="18" y="23" width="24" height="12" fill="#007A6A"/>
+    <path d="M8,35 Q8,32 18,32 L42,32 Q52,32 52,35 L52,42 L8,42 Z" fill="url(#g3)"/>
+    <rect x="8" y="40" width="44" height="130" rx="10" fill="url(#g3)"/>
+    <rect x="12" y="44" width="8" height="120" rx="4" fill="rgba(255,255,255,0.15)"/>
+    <rect x="11" y="55" width="38" height="80" rx="5" fill="white" opacity="0.95" filter="url(#label-shadow)"/>
+    <rect x="11" y="55" width="38" height="12" rx="5" fill="#00C9AE"/>
+    <rect x="11" y="61" width="38" height="6" fill="#00C9AE"/>
+    <text x="30" y="66" text-anchor="middle" font-size="7" font-family="Arial Black, sans-serif" font-weight="900" fill="white" letter-spacing="0.5">CC</text>
+    <line x1="15" y1="72" x2="45" y2="72" stroke="#E4EEF5" stroke-width="0.5"/>
+    <text x="30" y="84" text-anchor="middle" font-size="7.5" font-family="Arial, sans-serif" font-weight="700" fill="#0A1E30">SUAVI-</text>
+    <text x="30" y="94" text-anchor="middle" font-size="7.5" font-family="Arial, sans-serif" font-weight="700" fill="#0A1E30">ZANTE</text>
+    <text x="30" y="106" text-anchor="middle" font-size="5" font-family="Arial, sans-serif" fill="#009B87" letter-spacing="0.8">CLEAN COLORS</text>
+    <text x="30" y="120" text-anchor="middle" font-size="5" font-family="Arial, sans-serif" fill="#00C9AE">🌿 Biodegradable</text>
+    <text x="30" y="131" text-anchor="middle" font-size="5.5" font-family="Arial, sans-serif" fill="#5A6E80">10 ml</text>
+    <path d="M8,170 L8,178 Q8,182 18,182 L42,182 Q52,182 52,178 L52,170 Z" fill="url(#g3)" opacity="0.8"/>
+  </g>
+
+  <!-- === BOTELLA 4: DESENGRASANTE === -->
+  <g transform="translate(385, 10)" filter="url(#shadow)">
+    <rect x="16" y="2" width="28" height="18" rx="5" fill="#061420"/>
+    <rect x="13" y="17" width="34" height="6" rx="2" fill="#0A1E30"/>
+    <rect x="18" y="23" width="24" height="12" fill="#0A1E30"/>
+    <path d="M8,35 Q8,32 18,32 L42,32 Q52,32 52,35 L52,42 L8,42 Z" fill="url(#g4)"/>
+    <rect x="8" y="40" width="44" height="130" rx="10" fill="url(#g4)"/>
+    <rect x="12" y="44" width="8" height="120" rx="4" fill="rgba(255,255,255,0.1)"/>
+    <rect x="11" y="55" width="38" height="80" rx="5" fill="white" opacity="0.95" filter="url(#label-shadow)"/>
+    <rect x="11" y="55" width="38" height="12" rx="5" fill="#5CC8EE"/>
+    <rect x="11" y="61" width="38" height="6" fill="#5CC8EE"/>
+    <text x="30" y="66" text-anchor="middle" font-size="7" font-family="Arial Black, sans-serif" font-weight="900" fill="white" letter-spacing="0.5">CC</text>
+    <line x1="15" y1="72" x2="45" y2="72" stroke="#E4EEF5" stroke-width="0.5"/>
+    <text x="30" y="84" text-anchor="middle" font-size="7.5" font-family="Arial, sans-serif" font-weight="700" fill="#0A1E30">DESEN-</text>
+    <text x="30" y="94" text-anchor="middle" font-size="7.5" font-family="Arial, sans-serif" font-weight="700" fill="#0A1E30">GRASANTE</text>
+    <text x="30" y="106" text-anchor="middle" font-size="5" font-family="Arial, sans-serif" fill="#1277A8" letter-spacing="0.8">CLEAN COLORS</text>
+    <text x="30" y="120" text-anchor="middle" font-size="5" font-family="Arial, sans-serif" fill="#00C9AE">🌿 Biodegradable</text>
+    <text x="30" y="131" text-anchor="middle" font-size="5.5" font-family="Arial, sans-serif" fill="#5A6E80">10 ml</text>
+    <path d="M8,170 L8,178 Q8,182 18,182 L42,182 Q52,182 52,178 L52,170 Z" fill="url(#g4)" opacity="0.8"/>
+  </g>
+
+</svg>
