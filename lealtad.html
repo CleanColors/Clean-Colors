@@ -21,8 +21,16 @@
     .tarjeta-info p{color:var(--gray);line-height:1.7;margin-bottom:1.5rem}
     .tarjeta-detail{display:flex;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
     .tarjeta-detail span:last-child{font-weight:700;color:var(--blue-dark)}
-    .tarjeta-visual{background:linear-gradient(135deg,var(--navy),#153a54);border-radius:20px;padding:2.5rem;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(11,29,53,.2)}
-    .tarjeta-visual img{width:100%;max-width:300px;filter:drop-shadow(0 0 3px rgba(255,255,255,0.5))}
+    .tarjeta-visual{background:linear-gradient(135deg,#F0F8FC 0%,#E4EEF5 100%);border-radius:20px;padding:3rem 2rem;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(11,29,53,.2);perspective:1200px}
+    /* --- Tarjeta Clean Colors (card real, orientación vertical) --- */
+    .cc-card{position:relative;width:100%;max-width:220px;aspect-ratio:1/1.586;border-radius:16px;background:linear-gradient(135deg,#0A1E30 0%,#153D5A 45%,#1E4A70 100%);box-shadow:0 18px 40px rgba(10,30,48,.45),0 6px 14px rgba(10,30,48,.25),inset 0 1px 0 rgba(255,255,255,.1);transform:rotate(-4deg);transition:transform .4s;overflow:hidden}
+    .cc-card:hover{transform:rotate(-1deg) translateY(-3px)}
+    .cc-card::before{content:'';position:absolute;top:-30%;left:-60%;width:220%;height:80%;background:linear-gradient(105deg,transparent 40%,rgba(92,200,238,.18) 50%,transparent 60%);transform:rotate(18deg);pointer-events:none}
+    .cc-card::after{content:'';position:absolute;bottom:-40%;right:-20%;width:120%;height:60%;background:radial-gradient(circle,rgba(0,201,174,.18) 0%,transparent 65%);border-radius:50%;pointer-events:none}
+    .cc-card-logo{position:absolute;top:18%;left:50%;transform:translateX(-50%);width:70%;height:auto;z-index:2;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+    .cc-card-strip{position:absolute;left:10%;right:10%;bottom:10%;height:14%;background:linear-gradient(180deg,#fff 0%,#F4F8FC 100%);border-radius:3px;box-shadow:inset 0 1px 2px rgba(0,0,0,.12);z-index:2}
+    .cc-card-strip::before{content:'';position:absolute;left:6%;right:6%;top:50%;height:1px;background:repeating-linear-gradient(90deg,rgba(10,30,48,.25) 0 5px,transparent 5px 9px);transform:translateY(-50%)}
+    .cc-card-brand{position:absolute;top:4%;left:50%;transform:translateX(-50%);font-family:'Syne',sans-serif;font-weight:800;font-size:.55rem;color:rgba(255,255,255,.55);letter-spacing:2px;z-index:2}
     .beneficios-section{padding:5rem 5%;background:var(--white)}
     .beneficios-section .s-header{text-align:center;margin-bottom:3rem}
     .beneficios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}
@@ -87,7 +95,13 @@
       <div class="tarjeta-detail"><span>Válida en</span><span>Todos los servicios</span></div>
       <p style="margin-top:1.5rem;font-size:.9rem;color:var(--blue-dark);">💰 $10 de cashback por cada $100 abonados en múltiplos de $100.</p>
     </div>
-    <div class="tarjeta-visual"><img src="logo.png" alt="Clean Colors Tarjeta"/></div>
+    <div class="tarjeta-visual">
+      <div class="cc-card" aria-label="Tarjeta Clean Colors">
+        <div class="cc-card-brand">MEMBER</div>
+        <img src="logo-vertical-small.png" alt="Clean Colors" class="cc-card-logo"/>
+        <div class="cc-card-strip" aria-hidden="true"></div>
+      </div>
+    </div>
   </div>
 </section>
 

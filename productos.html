@@ -19,8 +19,22 @@
     .prod-hero-badges{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
     .prod-hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,201,174,.12);border:1px solid rgba(0,201,174,.3);border-radius:50px;padding:.5rem 1.2rem;font-size:.85rem;font-weight:600;color:var(--aqua)}
     /* ---- Ilustración botellas ---- */
-    .bottles-wrap{display:flex;justify-content:center;margin-top:1rem}
-    .bottles-wrap svg{max-width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,0.35))}
+    .bottles-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:720px;margin:1rem auto 0}
+    .bottle-item{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .bottle-stage{position:relative;width:100%;max-width:150px;filter:drop-shadow(0 12px 24px rgba(0,0,0,.3))}
+    .bottle-stage svg{width:100%;height:auto;display:block}
+    .bottle-logo{position:absolute;top:38%;left:50%;transform:translate(-50%,-50%);width:58%;height:auto;pointer-events:none}
+    .bottle-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#fff;margin-top:1rem;line-height:1.2;letter-spacing:.3px}
+    .bottle-qty{font-family:'DM Sans',sans-serif;font-weight:600;font-size:.8rem;margin-top:.25rem;letter-spacing:.5px;padding:.2rem .7rem;border-radius:50px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
+    /* Colores por producto (variable CSS para la botella) */
+    .bottle-item.p1{--cap-color:#0E3050}
+    .bottle-item.p2{--cap-color:#1277A8}
+    .bottle-item.p3{--cap-color:#009B87}
+    .bottle-item.p4{--cap-color:#2EB5F0}
+    .bottle-item.p1 .bottle-qty{color:#8EC4E8;border-color:rgba(142,196,232,.4);background:rgba(14,48,80,.35)}
+    .bottle-item.p2 .bottle-qty{color:#7ECEF0;border-color:rgba(126,206,240,.4);background:rgba(18,119,168,.35)}
+    .bottle-item.p3 .bottle-qty{color:#5EDAC7;border-color:rgba(94,218,199,.45);background:rgba(0,155,135,.35)}
+    .bottle-item.p4 .bottle-qty{color:#A8DFF2;border-color:rgba(168,223,242,.45);background:rgba(46,181,240,.3)}
     /* ---- Promesa ---- */
     .prod-promesa{background:var(--white);padding:4.5rem 5%}
     .prod-container{max-width:1100px;margin:0 auto}
@@ -86,6 +100,9 @@
       .prod-promesa-grid{grid-template-columns:1fr}
       .prod-grid{grid-template-columns:1fr}
       .prod-eco-grid{grid-template-columns:1fr}
+      .bottles-wrap{grid-template-columns:repeat(2,1fr);gap:1.8rem 1rem;max-width:360px}
+      .bottle-name{font-size:.9rem}
+      .bottle-qty{font-size:.75rem}
     }
   </style>
 </head>
@@ -123,7 +140,127 @@
     <span class="prod-hero-badge">📍 En Tienda</span>
   </div>
   <div class="bottles-wrap">
-    <img src="productos-botellas.svg" alt="Productos Clean Colors — Detergente, Detergente Neutro, Suavizante, Desengrasante" style="max-width:540px;width:100%"/>
+    <div class="bottle-item p1">
+      <div class="bottle-stage">
+        <svg viewBox="0 0 160 280" xmlns="http://www.w3.org/2000/svg" class="bottle-svg" aria-label="Botella Detergente">
+          <defs>
+            <linearGradient id="bc1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#D8E6F0"/><stop offset="15%" stop-color="#F4F8FC"/><stop offset="50%" stop-color="#FFFFFF"/><stop offset="85%" stop-color="#EEF3F8"/><stop offset="100%" stop-color="#C8D8E6"/></linearGradient>
+            <linearGradient id="sc1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#C8D8E6"/><stop offset="50%" stop-color="#F8FBFD"/><stop offset="100%" stop-color="#BDCFDE"/></linearGradient>
+          </defs>
+          <ellipse cx="80" cy="270" rx="60" ry="5" fill="rgba(0,0,0,0.14)"/>
+          <g>
+            <rect x="52" y="10" width="56" height="30" rx="6" fill="var(--cap-color)"/>
+            <rect x="56" y="14" width="14" height="7" rx="3" fill="rgba(255,255,255,0.28)"/>
+            <rect x="44" y="37" width="72" height="10" rx="3" fill="var(--cap-color)" opacity="0.92"/>
+            <rect x="54" y="47" width="52" height="18" fill="#D8E6F0"/>
+            <rect x="54" y="47" width="52" height="4" fill="#B8CADB"/>
+            <path d="M20,65 Q20,60 40,60 L120,60 Q140,60 140,65 L140,82 L20,82 Z" fill="url(#sc1)"/>
+            <rect x="20" y="78" width="120" height="14" fill="var(--cap-color)" opacity="0.88"/>
+            <rect x="20" y="88" width="120" height="2" fill="rgba(0,0,0,0.15)"/>
+            <rect x="20" y="90" width="120" height="150" rx="14" fill="url(#bc1)"/>
+            <rect x="26" y="100" width="10" height="130" rx="5" fill="rgba(255,255,255,0.55)"/>
+            <rect x="124" y="110" width="4" height="110" rx="2" fill="rgba(255,255,255,0.35)"/>
+            <path d="M20,240 L20,252 Q20,258 34,258 L126,258 Q140,258 140,252 L140,240 Z" fill="#C8D8E6"/>
+            <rect x="20" y="252" width="120" height="2" fill="rgba(0,0,0,0.12)"/>
+          </g>
+          <text x="80" y="200" text-anchor="middle" font-family="'Syne','DM Sans',Arial,sans-serif" font-weight="800" font-size="10" fill="var(--cap-color)" letter-spacing="0.3">DETERGENTE</text>
+        </svg>
+        <img src="logo-vertical-small.png" alt="Clean Colors" class="bottle-logo"/>
+      </div>
+      <div class="bottle-qty">70 ml</div>
+    </div>
+
+    <div class="bottle-item p2">
+      <div class="bottle-stage">
+        <svg viewBox="0 0 160 280" xmlns="http://www.w3.org/2000/svg" class="bottle-svg" aria-label="Botella Detergente Neutro">
+          <defs>
+            <linearGradient id="bc2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#D8E6F0"/><stop offset="15%" stop-color="#F4F8FC"/><stop offset="50%" stop-color="#FFFFFF"/><stop offset="85%" stop-color="#EEF3F8"/><stop offset="100%" stop-color="#C8D8E6"/></linearGradient>
+            <linearGradient id="sc2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#C8D8E6"/><stop offset="50%" stop-color="#F8FBFD"/><stop offset="100%" stop-color="#BDCFDE"/></linearGradient>
+          </defs>
+          <ellipse cx="80" cy="270" rx="60" ry="5" fill="rgba(0,0,0,0.14)"/>
+          <g>
+            <rect x="52" y="10" width="56" height="30" rx="6" fill="var(--cap-color)"/>
+            <rect x="56" y="14" width="14" height="7" rx="3" fill="rgba(255,255,255,0.28)"/>
+            <rect x="44" y="37" width="72" height="10" rx="3" fill="var(--cap-color)" opacity="0.92"/>
+            <rect x="54" y="47" width="52" height="18" fill="#D8E6F0"/>
+            <rect x="54" y="47" width="52" height="4" fill="#B8CADB"/>
+            <path d="M20,65 Q20,60 40,60 L120,60 Q140,60 140,65 L140,82 L20,82 Z" fill="url(#sc2)"/>
+            <rect x="20" y="78" width="120" height="14" fill="var(--cap-color)" opacity="0.88"/>
+            <rect x="20" y="88" width="120" height="2" fill="rgba(0,0,0,0.15)"/>
+            <rect x="20" y="90" width="120" height="150" rx="14" fill="url(#bc2)"/>
+            <rect x="26" y="100" width="10" height="130" rx="5" fill="rgba(255,255,255,0.55)"/>
+            <rect x="124" y="110" width="4" height="110" rx="2" fill="rgba(255,255,255,0.35)"/>
+            <path d="M20,240 L20,252 Q20,258 34,258 L126,258 Q140,258 140,252 L140,240 Z" fill="#C8D8E6"/>
+            <rect x="20" y="252" width="120" height="2" fill="rgba(0,0,0,0.12)"/>
+          </g>
+          <text x="80" y="198" text-anchor="middle" font-family="'Syne','DM Sans',Arial,sans-serif" font-weight="800" font-size="9" fill="var(--cap-color)" letter-spacing="0.2">DETERGENTE</text>
+          <text x="80" y="211" text-anchor="middle" font-family="'Syne','DM Sans',Arial,sans-serif" font-weight="800" font-size="9" fill="var(--cap-color)" letter-spacing="0.2">NEUTRO</text>
+        </svg>
+        <img src="logo-vertical-small.png" alt="Clean Colors" class="bottle-logo"/>
+      </div>
+      <div class="bottle-qty">70 ml</div>
+    </div>
+
+    <div class="bottle-item p3">
+      <div class="bottle-stage">
+        <svg viewBox="0 0 160 280" xmlns="http://www.w3.org/2000/svg" class="bottle-svg" aria-label="Botella Suavizante">
+          <defs>
+            <linearGradient id="bc3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#D8E6F0"/><stop offset="15%" stop-color="#F4F8FC"/><stop offset="50%" stop-color="#FFFFFF"/><stop offset="85%" stop-color="#EEF3F8"/><stop offset="100%" stop-color="#C8D8E6"/></linearGradient>
+            <linearGradient id="sc3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#C8D8E6"/><stop offset="50%" stop-color="#F8FBFD"/><stop offset="100%" stop-color="#BDCFDE"/></linearGradient>
+          </defs>
+          <ellipse cx="80" cy="270" rx="60" ry="5" fill="rgba(0,0,0,0.14)"/>
+          <g>
+            <rect x="52" y="10" width="56" height="30" rx="6" fill="var(--cap-color)"/>
+            <rect x="56" y="14" width="14" height="7" rx="3" fill="rgba(255,255,255,0.28)"/>
+            <rect x="44" y="37" width="72" height="10" rx="3" fill="var(--cap-color)" opacity="0.92"/>
+            <rect x="54" y="47" width="52" height="18" fill="#D8E6F0"/>
+            <rect x="54" y="47" width="52" height="4" fill="#B8CADB"/>
+            <path d="M20,65 Q20,60 40,60 L120,60 Q140,60 140,65 L140,82 L20,82 Z" fill="url(#sc3)"/>
+            <rect x="20" y="78" width="120" height="14" fill="var(--cap-color)" opacity="0.88"/>
+            <rect x="20" y="88" width="120" height="2" fill="rgba(0,0,0,0.15)"/>
+            <rect x="20" y="90" width="120" height="150" rx="14" fill="url(#bc3)"/>
+            <rect x="26" y="100" width="10" height="130" rx="5" fill="rgba(255,255,255,0.55)"/>
+            <rect x="124" y="110" width="4" height="110" rx="2" fill="rgba(255,255,255,0.35)"/>
+            <path d="M20,240 L20,252 Q20,258 34,258 L126,258 Q140,258 140,252 L140,240 Z" fill="#C8D8E6"/>
+            <rect x="20" y="252" width="120" height="2" fill="rgba(0,0,0,0.12)"/>
+          </g>
+          <text x="80" y="205" text-anchor="middle" font-family="'Syne','DM Sans',Arial,sans-serif" font-weight="800" font-size="10" fill="var(--cap-color)" letter-spacing="0.3">SUAVIZANTE</text>
+        </svg>
+        <img src="logo-vertical-small.png" alt="Clean Colors" class="bottle-logo"/>
+      </div>
+      <div class="bottle-qty">50 ml</div>
+    </div>
+
+    <div class="bottle-item p4">
+      <div class="bottle-stage">
+        <svg viewBox="0 0 160 280" xmlns="http://www.w3.org/2000/svg" class="bottle-svg" aria-label="Botella Desengrasante">
+          <defs>
+            <linearGradient id="bc4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#D8E6F0"/><stop offset="15%" stop-color="#F4F8FC"/><stop offset="50%" stop-color="#FFFFFF"/><stop offset="85%" stop-color="#EEF3F8"/><stop offset="100%" stop-color="#C8D8E6"/></linearGradient>
+            <linearGradient id="sc4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#C8D8E6"/><stop offset="50%" stop-color="#F8FBFD"/><stop offset="100%" stop-color="#BDCFDE"/></linearGradient>
+          </defs>
+          <ellipse cx="80" cy="270" rx="60" ry="5" fill="rgba(0,0,0,0.14)"/>
+          <g>
+            <rect x="52" y="10" width="56" height="30" rx="6" fill="var(--cap-color)"/>
+            <rect x="56" y="14" width="14" height="7" rx="3" fill="rgba(255,255,255,0.28)"/>
+            <rect x="44" y="37" width="72" height="10" rx="3" fill="var(--cap-color)" opacity="0.92"/>
+            <rect x="54" y="47" width="52" height="18" fill="#D8E6F0"/>
+            <rect x="54" y="47" width="52" height="4" fill="#B8CADB"/>
+            <path d="M20,65 Q20,60 40,60 L120,60 Q140,60 140,65 L140,82 L20,82 Z" fill="url(#sc4)"/>
+            <rect x="20" y="78" width="120" height="14" fill="var(--cap-color)" opacity="0.88"/>
+            <rect x="20" y="88" width="120" height="2" fill="rgba(0,0,0,0.15)"/>
+            <rect x="20" y="90" width="120" height="150" rx="14" fill="url(#bc4)"/>
+            <rect x="26" y="100" width="10" height="130" rx="5" fill="rgba(255,255,255,0.55)"/>
+            <rect x="124" y="110" width="4" height="110" rx="2" fill="rgba(255,255,255,0.35)"/>
+            <path d="M20,240 L20,252 Q20,258 34,258 L126,258 Q140,258 140,252 L140,240 Z" fill="#C8D8E6"/>
+            <rect x="20" y="252" width="120" height="2" fill="rgba(0,0,0,0.12)"/>
+          </g>
+          <text x="80" y="198" text-anchor="middle" font-family="'Syne','DM Sans',Arial,sans-serif" font-weight="800" font-size="10" fill="var(--cap-color)" letter-spacing="0.2">DESEN-</text>
+          <text x="80" y="212" text-anchor="middle" font-family="'Syne','DM Sans',Arial,sans-serif" font-weight="800" font-size="10" fill="var(--cap-color)" letter-spacing="0.2">GRASANTE</text>
+        </svg>
+        <img src="logo-vertical-small.png" alt="Clean Colors" class="bottle-logo"/>
+      </div>
+      <div class="bottle-qty">50 ml</div>
+    </div>
   </div>
 </section>
 
@@ -167,7 +304,7 @@
           <div class="prod-card-icon">🫧</div>
           <div>
             <div class="prod-card-name">Detergente</div>
-            <div class="prod-card-brand">Clean Colors · 7 ml</div>
+            <div class="prod-card-brand">Clean Colors · 70 ml</div>
           </div>
         </div>
         <p class="prod-card-desc">Fórmula de alta eficiencia para ropa de uso cotidiano. Elimina manchas profundas, cuida las fibras y deja una frescura duradera. Compatible con todas las temperaturas.</p>
@@ -184,7 +321,7 @@
           <div class="prod-card-icon">🧴</div>
           <div>
             <div class="prod-card-name">Detergente Neutro</div>
-            <div class="prod-card-brand">Clean Colors · 7 ml</div>
+            <div class="prod-card-brand">Clean Colors · 70 ml</div>
           </div>
         </div>
         <p class="prod-card-desc">pH neutro especialmente formulado para prendas delicadas, ropa de bebé y telas sensibles. Limpia suavemente sin dañar las fibras ni irritar la piel.</p>
@@ -201,7 +338,7 @@
           <div class="prod-card-icon">☁️</div>
           <div>
             <div class="prod-card-name">Suavizante</div>
-            <div class="prod-card-brand">Clean Colors · 5 ml</div>
+            <div class="prod-card-brand">Clean Colors · 50 ml</div>
           </div>
         </div>
         <p class="prod-card-desc">Acondiciona las fibras dejando la ropa suave, esponjosa y con fragancia fresca. Reduce la electricidad estática y facilita el planchado.</p>
@@ -218,7 +355,7 @@
           <div class="prod-card-icon">⚡</div>
           <div>
             <div class="prod-card-name">Desengrasante</div>
-            <div class="prod-card-brand">Clean Colors · 5 ml</div>
+            <div class="prod-card-brand">Clean Colors · 50 ml</div>
           </div>
         </div>
         <p class="prod-card-desc">Formulado para manchas difíciles de grasa, aceite y residuos industriales. Ideal para uniformes de trabajo, ropa de cocina y prendas de alto desgaste.</p>
@@ -243,7 +380,7 @@
       <div class="prod-eco-list">
         <div class="prod-eco-item"><span class="eco-check">✓</span><span>Se degradan naturalmente sin dejar residuos tóxicos en el agua</span></div>
         <div class="prod-eco-item"><span class="eco-check">✓</span><span>Sin fosfatos ni compuestos que dañen los ecosistemas acuáticos</span></div>
-        <div class="prod-eco-item"><span class="eco-check">✓</span><span>Envases de dosis exacta (5–7 ml): cero desperdicio, máximo rendimiento</span></div>
+        <div class="prod-eco-item"><span class="eco-check">✓</span><span>Envases de dosis exacta (50–70 ml): cero desperdicio, máximo rendimiento</span></div>
         <div class="prod-eco-item"><span class="eco-check">✓</span><span>Compatibles con nuestras máquinas de bajo consumo de agua</span></div>
       </div>
     </div>
@@ -259,7 +396,7 @@
       </div>
       <div class="prod-eco-divider"></div>
       <div class="prod-eco-stat">
-        <div class="prod-eco-stat-num">5–7 ml</div>
+        <div class="prod-eco-stat-num">50–70 ml</div>
         <div class="prod-eco-stat-label">Dosis exacta por carga</div>
       </div>
     </div>
