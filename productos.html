@@ -104,7 +104,84 @@
       .bottle-name{font-size:.9rem}
       .bottle-qty{font-size:.75rem}
     }
-  </style>
+  
+/* >>> CC realce (inicio) <<< */
+:root{--cc-a1:#2EB5F0;--cc-a2:#00C9AE;--cc-shadow:rgba(46,181,240,.20);}
+/* ============================================================
+   REALCE VISUAL — jul 2026 (solo estetica; NO cambia contenido)
+   Acento por-pagina via --cc-a1 / --cc-a2 / --cc-shadow (se define arriba por pagina).
+   Para revertir: borra el bloque ">>> CC realce <<<" y el <script> de realce.
+   ============================================================ */
+
+/* Logo del nav mas grande (para legibilidad del tagline): 80 escritorio · 64 movil */
+.nav-logo img{height:80px!important;width:auto!important}
+@media(max-width:768px){.nav-logo img{height:64px!important}}
+
+/* Barra de progreso de lectura */
+#cc-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:2000;pointer-events:none;
+  background:linear-gradient(90deg,var(--cc-a1,#5CC8EE),var(--cc-a2,#00C9AE));box-shadow:0 0 12px var(--cc-shadow,rgba(0,201,174,.5))}
+
+/* Nav se solidifica al hacer scroll */
+nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rgba(0,0,0,.30)}
+
+/* Reveal al entrar en viewport (clase agregada por JS; sin JS todo se ve normal) */
+.cc-reveal{opacity:0;transform:translateY(26px);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
+.cc-reveal.cc-in{opacity:1;transform:none}
+
+/* Tarjetas genericas (cualquier pagina): elevar + sombra en el tono de la pagina */
+.cc-card.cc-in{transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.cc-card.cc-in:hover{transform:translateY(-6px);box-shadow:0 18px 44px var(--cc-shadow,rgba(0,201,174,.18))}
+
+/* Botones: barrido de luz al pasar el cursor */
+.btn-primary,.form-btn{position:relative;overflow:hidden;isolation:isolate}
+.btn-primary::after,.form-btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;z-index:1;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg)}
+.btn-primary:hover::after,.form-btn:hover::after{animation:cc-shine .8s ease}
+@keyframes cc-shine{to{left:150%}}
+
+/* Subrayado animado del enfasis en titulos */
+.s-title em,.s-title strong{position:relative;display:inline-block}
+.s-title em::after,.s-title strong::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.13em;border-radius:4px;
+  background:linear-gradient(90deg,var(--cc-a2,#00C9AE),var(--cc-a1,#5CC8EE));transform:scaleX(0);transform-origin:left;transition:transform .6s .15s cubic-bezier(.2,.7,.2,1)}
+.s-title.cc-in em::after,.s-title.cc-in strong::after{transform:scaleX(1)}
+
+/* Campos de formulario: halo al enfocar */
+.fg input:focus,.fg select:focus,.fg textarea:focus{box-shadow:0 0 0 3px var(--cc-shadow,rgba(46,181,240,.16))}
+
+/* ===== detalles finos SOLO index (estas clases no existen en paginas internas) ===== */
+#hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(38% 48% at 18% 22%,var(--cc-aura1,rgba(0,201,174,.20)),transparent 70%),
+    radial-gradient(44% 54% at 82% 18%,var(--cc-aura2,rgba(92,200,238,.22)),transparent 72%),
+    radial-gradient(50% 60% at 62% 82%,rgba(18,119,168,.20),transparent 72%);
+  animation:cc-aurora 20s ease-in-out infinite alternate}
+@keyframes cc-aurora{0%{transform:scale(1) translate(0,0)}50%{transform:scale(1.1) translate(2%,-2%)}100%{transform:scale(1.05) translate(-2%,1%)}}
+#hero>.bubbles{z-index:1}
+#hero>.hero-content,#hero>.hero-badges,#hero>.hero-wave{position:relative;z-index:2}
+.hero-tag{animation:cc-glow 3.6s ease-in-out infinite}
+@keyframes cc-glow{0%,100%{box-shadow:0 0 0 rgba(92,200,238,0)}50%{box-shadow:0 0 20px rgba(92,200,238,.35)}}
+.badge{transition:transform .3s,box-shadow .3s,border-color .3s!important}
+.badge:hover{transform:translateY(-5px)!important;border-color:rgba(0,201,174,.5)!important;box-shadow:0 14px 32px rgba(0,201,174,.20)!important}
+.svc-card{position:relative;overflow:hidden}
+.svc-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;z-index:1;
+  background:linear-gradient(90deg,var(--cc-a1,#5CC8EE),var(--cc-a2,#00C9AE));transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-card:hover{box-shadow:0 20px 46px rgba(0,201,174,.16)!important;border-color:rgba(0,201,174,.28)!important}
+.svc-icon-wrap{transition:transform .45s ease}
+.svc-card:hover .svc-icon-wrap{transform:translateY(-3px) scale(1.04)}
+.svc-card .price-val{transition:color .2s}
+.svc-card:hover .price-val{color:var(--blue-dark)}
+.promo:hover{box-shadow:0 16px 42px rgba(0,201,174,.14)!important}
+.testi{overflow:hidden}
+.testi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;z-index:1;
+  background:linear-gradient(180deg,var(--cc-a1,#5CC8EE),var(--cc-a2,#00C9AE));transform:scaleY(0);transform-origin:top;transition:transform .4s ease}
+.testi:hover::before{transform:scaleY(1)}
+.gi{transition:box-shadow .4s,transform .4s}
+.gi:hover{box-shadow:0 22px 52px rgba(10,30,48,.30)}
+.gi-overlay{transition:padding .3s,background .3s}
+.gi:hover .gi-overlay{padding-bottom:1.4rem;background:linear-gradient(trans/* >>> CC realce (fin) <<< */
+</style>
 </head>
 <body>
 
@@ -479,6 +556,57 @@
   hamburger.addEventListener('click',function(){const isOpen=navLinks.classList.toggle('open');hamburger.classList.toggle('active');hamburger.setAttribute('aria-expanded',isOpen);overlay.classList.toggle('open');document.body.style.overflow=isOpen?'hidden':'';});
   overlay.addEventListener('click',closeMenu);
   navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+</script>
+<script>window.CC_REVEAL='.prod-card,.bottle-item';window.CC_CARDS='.prod-card,.bottle-item';</script>
+<script>
+/* Clean Colors - realce visual (jul 2026): solo animacion; no altera contenido.
+   Config por pagina via window.CC_REVEAL (selector a revelar) y window.CC_CARDS (selector de tarjetas). */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // Barra de progreso + nav solido al scroll
+  var bar=document.createElement('div'); bar.id='cc-progress'; document.body.appendChild(bar);
+  var nav=document.querySelector('nav');
+  function onScroll(){
+    var st=window.pageYOffset||document.documentElement.scrollTop;
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(st/h*100):0)+'%';
+    if(nav){ st>40?nav.classList.add('cc-scrolled'):nav.classList.remove('cc-scrolled'); }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var titles=document.querySelectorAll('.s-title');
+  if(reduce || !('IntersectionObserver' in window)){
+    titles.forEach(function(t){t.classList.add('cc-in');}); return;
+  }
+
+  function uniqPush(arr,el){ if(arr.indexOf(el)<0) arr.push(el); }
+
+  var revealSel = window.CC_REVEAL || '.s-header,.services-grid,.promos-grid,.testi-grid,.contact-form';
+  var cardSel   = window.CC_CARDS  || '';
+
+  var items=[].slice.call(document.querySelectorAll(revealSel));
+  // filas de galeria del index (si existen)
+  [].slice.call(document.querySelectorAll('#instalaciones > div:last-child > div')).forEach(function(el){uniqPush(items,el);});
+  // tarjetas: marcar como .cc-card y sumarlas al reveal
+  if(cardSel){
+    [].slice.call(document.querySelectorAll(cardSel)).forEach(function(el){ el.classList.add('cc-card'); uniqPush(items,el); });
+  }
+
+  items.forEach(function(el){el.classList.add('cc-reveal');});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('cc-in');io.unobserve(e.target);}});},
+    {threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  items.forEach(function(el){io.observe(el);});
+
+  // Subrayado animado de titulos
+  var tio=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('cc-in');tio.unobserve(e.target);}});},{threshold:.35});
+  titles.forEach(function(t){tio.observe(t);});
+
+  // Red de seguridad: revelar todo tras 3s por si algo falla
+  setTimeout(function(){[].forEach.call(document.querySelectorAll('.cc-reveal:not(.cc-in)'),function(el){el.classList.add('cc-in');});},3000);
+})();
 </script>
 </body>
 </html>
