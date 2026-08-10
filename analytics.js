@@ -34,7 +34,7 @@ var CC_GA_ID = "G-8580JB2VK6";
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = gtag;
   gtag("js", new Date());
-  gtag("config", CC_GA_ID, { anonymize_ip: true });
+  gtag("config", CC_GA_ID);
 
   // 2 · Dónde ocurrió el clic, para saber qué sección convierte
   function zona(el) {
