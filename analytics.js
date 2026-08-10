@@ -1,16 +1,20 @@
 /* ============================================================
    MEDICIÓN — Clean Colors
    ------------------------------------------------------------
-   👉 LO ÚNICO QUE HAY QUE CAMBIAR ESTÁ EN LA LÍNEA DE ABAJO.
+   ✅ ACTIVA desde el 9 de agosto de 2026.
 
-   Pega entre las comillas el ID que te da Google Analytics.
-   Empieza con G- seguido de letras y números. Ejemplo: "G-4XY7ZQ1B2C"
+   El ID de Google Analytics vive aquí y en ningún otro lugar.
+   Propiedad "cleancolors.mx", cuenta "Clean Colors",
+   creada con admin@cleancolors.mx.
 
-   Mientras diga G-XXXXXXXXXX, la medición queda apagada sola:
-   el sitio no carga nada de Google y no pasa absolutamente nada.
+   Si algún día hay que cambiarlo, se cambia SOLO esta línea
+   y se vuelve a subir este archivo. Nada más.
+
+   Para apagar la medición: pon "G-XXXXXXXXXX" y el sitio deja
+   de cargar cualquier cosa de Google, sin romper nada.
    ============================================================ */
 
-var CC_GA_ID = "G-XXXXXXXXXX";
+var CC_GA_ID = "G-8580JB2VK6";
 
 /* ------------------------------------------------------------
    De aquí para abajo no hace falta tocar nada.
