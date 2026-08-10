@@ -9,6 +9,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="favicon.ico" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="favicon-192.png" sizes="192x192"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <meta name="theme-color" content="#0A1E30"/>
+  <!-- ===== CC-META: vista previa al compartir (WhatsApp, Facebook) ===== -->
+  <link rel="canonical" href="https://cleancolors.mx/lealtad.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="es_MX"/>
+  <meta property="og:site_name" content="Clean Colors Lavandería"/>
+  <meta property="og:url" content="https://cleancolors.mx/lealtad.html"/>
+  <meta property="og:title" content="Plan de Lealtad Clean Colors | 10% de Cashback"/>
+  <meta property="og:description" content="Tarjeta Clean Colors: 10% de cashback en todos tus servicios de lavandería. Santa María la Ribera, CDMX."/>
+  <meta property="og:image" content="https://cleancolors.mx/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Plan de Lealtad Clean Colors | 10% de Cashback"/>
+  <meta name="twitter:description" content="Tarjeta Clean Colors: 10% de cashback en todos tus servicios de lavandería. Santa María la Ribera, CDMX."/>
+  <meta name="twitter:image" content="https://cleancolors.mx/og-image.jpg"/>
+  <meta name="robots" content="index, follow"/>
+  <!-- ===== MEDICIÓN =====
+       El ID de Google Analytics vive en UN SOLO lugar: el archivo analytics.js
+       Mientras ahí diga G-XXXXXXXXXX, la medición está apagada y no se carga nada. -->
+  <script defer src="analytics.js"></script>
+
   <style>
     .page-hero{background:var(--navy);color:var(--white);padding:10rem 5% 4rem;text-align:center;position:relative;overflow:hidden}
     .page-hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(43,159,212,.15) 0%,transparent 65%);border-radius:50%;top:-200px;right:-100px;pointer-events:none}
@@ -57,83 +83,54 @@
       .nav-logo img { height: 45px !important; }
     }
   
-/* >>> CC realce (inicio) <<< */
-:root{--cc-a1:#5CC8EE;--cc-a2:#00C9AE;--cc-shadow:rgba(43,159,212,.16);}
-/* ============================================================
-   REALCE VISUAL — jul 2026 (solo estetica; NO cambia contenido)
-   Acento por-pagina via --cc-a1 / --cc-a2 / --cc-shadow (se define arriba por pagina).
-   Para revertir: borra el bloque ">>> CC realce <<<" y el <script> de realce.
-   ============================================================ */
+    /* ===== Fondo animado del hero (ago-2026) ===== */
+    .page-hero { overflow: hidden; position: relative; }
+    .page-hero::after {
+      content: ""; position: absolute; inset: -8%; z-index: 0; pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(14,40,62,.52) 0%, rgba(14,40,62,.74) 100%),
+        url('hero-lealtad.jpg') center center / cover no-repeat;
+      animation: cc-hero-fondo 48s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+    @keyframes cc-hero-fondo {
+      0%   { transform: scale(1)    translate3d(0,0,0); }
+      100% { transform: scale(1.07) translate3d(-1.2%,-2.4%,0); }
+    }
+    .page-hero::before { z-index: 1 !important; }
+    .page-hero > * { position: relative; z-index: 2; }
+    @media (max-width: 768px) {
+      .page-hero::after {
+        background:
+          linear-gradient(180deg, rgba(14,40,62,.52) 0%, rgba(14,40,62,.74) 100%),
+          url('hero-lealtad-movil.jpg') center center / cover no-repeat;
+        animation-duration: 62s;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) { .page-hero::after { animation: none; } }
 
-/* Logo del nav mas grande (para legibilidad del tagline): 80 escritorio · 64 movil */
-.nav-logo img{height:80px!important;width:auto!important}
-@media(max-width:768px){.nav-logo img{height:64px!important}}
+  
+    /* ===== Set de iconos — el icono mide 1em y hereda el tamaño que tenía el emoji.
+       Así el acomodo de cada tarjeta queda EXACTAMENTE como estaba. ===== */
+    :root { --i1:#0A1E30; --i2:#1277A8; --i3:#00C9AE; }
+    .cc-ico { width:1.6em; height:1.6em; display:inline-block; vertical-align:-.34em; flex-shrink:0; }
+    .cc-ico-inline { width:1.35em; height:1.35em; vertical-align:-.28em; margin-right:.3em; }
 
-/* Barra de progreso de lectura */
-#cc-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:2000;pointer-events:none;
-  background:linear-gradient(90deg,var(--cc-a1,#5CC8EE),var(--cc-a2,#00C9AE));box-shadow:0 0 12px var(--cc-shadow,rgba(0,201,174,.5))}
+  
+    /* ===== Iconos del bloque de contacto y del pie =====
+       Antes heredaban el tamaño del texto (1.3rem en contacto, aún menos
+       en el pie) y quedaban diminutos. Aquí llevan medida propia. */
+    .c-ico { font-size: 0 !important; width: 2.6rem; height: 2.6rem; margin-top: 0; }
+    .c-ico .cc-ico { width: 2.6rem; height: 2.6rem; vertical-align: middle; margin: 0; }
+    .c-item { align-items: center; }
 
-/* Nav se solidifica al hacer scroll */
-nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rgba(0,0,0,.30)}
+    .c-hours h4 .cc-ico { width: 1.6em; height: 1.6em; vertical-align: -.36em; }
 
-/* Reveal al entrar en viewport (clase agregada por JS; sin JS todo se ve normal) */
-.cc-reveal{opacity:0;transform:translateY(26px);
-  transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
-.cc-reveal.cc-in{opacity:1;transform:none}
+    .f-soc { display: inline-flex !important; align-items: center; justify-content: center;
+             width: 44px; height: 44px; font-size: 0 !important; }
+    .f-soc .cc-ico { width: 24px; height: 24px; vertical-align: middle; margin: 0; }
 
-/* Tarjetas genericas (cualquier pagina): elevar + sombra en el tono de la pagina */
-.cc-card.cc-in{transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
-.cc-card.cc-in:hover{transform:translateY(-6px);box-shadow:0 18px 44px var(--cc-shadow,rgba(0,201,174,.18))}
-
-/* Botones: barrido de luz al pasar el cursor */
-.btn-primary,.form-btn{position:relative;overflow:hidden;isolation:isolate}
-.btn-primary::after,.form-btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;z-index:1;pointer-events:none;
-  background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg)}
-.btn-primary:hover::after,.form-btn:hover::after{animation:cc-shine .8s ease}
-@keyframes cc-shine{to{left:150%}}
-
-/* Subrayado animado del enfasis en titulos */
-.s-title em,.s-title strong{position:relative;display:inline-block}
-.s-title em::after,.s-title strong::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.13em;border-radius:4px;
-  background:linear-gradient(90deg,var(--cc-a2,#00C9AE),var(--cc-a1,#5CC8EE));transform:scaleX(0);transform-origin:left;transition:transform .6s .15s cubic-bezier(.2,.7,.2,1)}
-.s-title.cc-in em::after,.s-title.cc-in strong::after{transform:scaleX(1)}
-
-/* Campos de formulario: halo al enfocar */
-.fg input:focus,.fg select:focus,.fg textarea:focus{box-shadow:0 0 0 3px var(--cc-shadow,rgba(46,181,240,.16))}
-
-/* ===== detalles finos SOLO index (estas clases no existen en paginas internas) ===== */
-#hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(38% 48% at 18% 22%,var(--cc-aura1,rgba(0,201,174,.20)),transparent 70%),
-    radial-gradient(44% 54% at 82% 18%,var(--cc-aura2,rgba(92,200,238,.22)),transparent 72%),
-    radial-gradient(50% 60% at 62% 82%,rgba(18,119,168,.20),transparent 72%);
-  animation:cc-aurora 20s ease-in-out infinite alternate}
-@keyframes cc-aurora{0%{transform:scale(1) translate(0,0)}50%{transform:scale(1.1) translate(2%,-2%)}100%{transform:scale(1.05) translate(-2%,1%)}}
-#hero>.bubbles{z-index:1}
-#hero>.hero-content,#hero>.hero-badges,#hero>.hero-wave{position:relative;z-index:2}
-.hero-tag{animation:cc-glow 3.6s ease-in-out infinite}
-@keyframes cc-glow{0%,100%{box-shadow:0 0 0 rgba(92,200,238,0)}50%{box-shadow:0 0 20px rgba(92,200,238,.35)}}
-.badge{transition:transform .3s,box-shadow .3s,border-color .3s!important}
-.badge:hover{transform:translateY(-5px)!important;border-color:rgba(0,201,174,.5)!important;box-shadow:0 14px 32px rgba(0,201,174,.20)!important}
-.svc-card{position:relative;overflow:hidden}
-.svc-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;z-index:1;
-  background:linear-gradient(90deg,var(--cc-a1,#5CC8EE),var(--cc-a2,#00C9AE));transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
-.svc-card:hover::before{transform:scaleX(1)}
-.svc-card:hover{box-shadow:0 20px 46px rgba(0,201,174,.16)!important;border-color:rgba(0,201,174,.28)!important}
-.svc-icon-wrap{transition:transform .45s ease}
-.svc-card:hover .svc-icon-wrap{transform:translateY(-3px) scale(1.04)}
-.svc-card .price-val{transition:color .2s}
-.svc-card:hover .price-val{color:var(--blue-dark)}
-.promo:hover{box-shadow:0 16px 42px rgba(0,201,174,.14)!important}
-.testi{overflow:hidden}
-.testi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;z-index:1;
-  background:linear-gradient(180deg,var(--cc-a1,#5CC8EE),var(--cc-a2,#00C9AE));transform:scaleY(0);transform-origin:top;transition:transform .4s ease}
-.testi:hover::before{transform:scaleY(1)}
-.gi{transition:box-shadow .4s,transform .4s}
-.gi:hover{box-shadow:0 22px 52px rgba(10,30,48,.30)}
-.gi-overlay{transition:padding .3s,background .3s}
-.gi:hover .gi-overlay{padding-bottom:1.4rem;background:linear-gradient(trans/* >>> CC realce (fin) <<< */
-</style>
+  </style>
 </head>
 <body>
 <nav>
@@ -164,18 +161,18 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
 <section class="tarjeta-section">
   <div class="tarjeta-grid">
     <div class="tarjeta-info">
-      <h2>💳 Tarjeta Inteligente</h2>
+      <h2><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="24" width="76" height="50" rx="12" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><rect x="10" y="24" width="76" height="50" rx="12" stroke="var(--i1,#0A1E30)"/><path d="M10 40h76" stroke="var(--i1,#0A1E30)"/><rect x="22" y="50" width="18" height="13" rx="4" stroke="var(--i2,#1277A8)"/><path d="M54 58h22" stroke="var(--i3,#00C9AE)"/></g></svg> Tarjeta Inteligente</h2>
       <p>Nuestra tarjeta inteligente es tu llave para acceder a todos los beneficios del programa de lealtad. Recarga saldo, paga tus servicios y acumula cashback automáticamente.</p>
       <div class="tarjeta-detail"><span>Costo de la tarjeta</span><span>$40</span></div>
       <div class="tarjeta-detail"><span>Cashback</span><span>10%</span></div>
       <div class="tarjeta-detail"><span>Recarga mínima</span><span>$100</span></div>
       <div class="tarjeta-detail"><span>Válida en</span><span>Todos los servicios</span></div>
-      <p style="margin-top:1.5rem;font-size:.9rem;color:var(--blue-dark);">💰 $10 de cashback por cada $100 abonados en múltiplos de $100.</p>
+      <p style="margin-top:1.5rem;font-size:.9rem;color:var(--blue-dark);"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="48" r="34" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><circle cx="48" cy="48" r="34" stroke="var(--i1,#0A1E30)"/><path d="M48 32v32M41 39h11a6 6 0 0 1 0 12h-8a6 6 0 0 0 0 12h11" stroke="var(--i3,#00C9AE)"/></g></svg> $10 de cashback por cada $100 abonados en múltiplos de $100.</p>
     </div>
     <div class="tarjeta-visual">
       <div class="cc-card" aria-label="Tarjeta Clean Colors">
         <div class="cc-card-brand">MEMBER</div>
-        <img src="logo-vertical-small.png" alt="Clean Colors" class="cc-card-logo"/>
+        <img src="logo-vertical-small.png" alt="Clean Colors" class="cc-card-logo" loading="lazy" decoding="async"/>
         <div class="cc-card-strip" aria-hidden="true"></div>
       </div>
     </div>
@@ -196,17 +193,17 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
 
   <div class="beneficios-grid">
     <div class="beneficio-card">
-      <div class="beneficio-icon">💰</div>
+      <div class="beneficio-icon"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="48" r="34" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><circle cx="48" cy="48" r="34" stroke="var(--i1,#0A1E30)"/><circle cx="48" cy="48" r="24" stroke="var(--i2,#1277A8)"/><path d="M48 32v32M41 39h11a6 6 0 0 1 0 12h-8a6 6 0 0 0 0 12h11" stroke="var(--i3,#00C9AE)"/></g></svg></div>
       <div class="beneficio-title">10% Cashback</div>
       <div class="beneficio-desc">Gana $10 por cada $100 que recargues. Sin niveles, sin condiciones — desde el primer día.</div>
     </div>
     <div class="beneficio-card">
-      <div class="beneficio-icon">🎁</div>
+      <div class="beneficio-icon"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="42" width="64" height="40" rx="10" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><rect x="16" y="42" width="64" height="40" rx="10" stroke="var(--i1,#0A1E30)"/><rect x="12" y="28" width="72" height="16" rx="7" stroke="var(--i1,#0A1E30)"/><path d="M48 28v54" stroke="var(--i2,#1277A8)"/><path d="M48 28c-5-12-20-12-20-3 0 5 11 5 20 3zm0 0c5-12 20-12 20-3 0 5-11 5-20 3z" stroke="var(--i3,#00C9AE)"/></g></svg></div>
       <div class="beneficio-title">Promociones Especiales</div>
       <div class="beneficio-desc">Accede a descuentos y promociones exclusivas durante el año, disponibles solo para tarjetahabientes.</div>
     </div>
     <div class="beneficio-card">
-      <div class="beneficio-icon">📲</div>
+      <div class="beneficio-icon"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><rect x="26" y="10" width="36" height="76" rx="11" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><rect x="26" y="10" width="36" height="76" rx="11" stroke="var(--i1,#0A1E30)"/><path d="M39 21h10M39 74h10" stroke="var(--i2,#1277A8)"/><path d="M72 34a18 18 0 0 1 0 28M83 26a30 30 0 0 1 0 44" stroke="var(--i3,#00C9AE)"/></g></svg></div>
       <div class="beneficio-title">Avisos Prioritarios</div>
       <div class="beneficio-desc">Entérate primero de todas las ofertas y novedades de Clean Colors antes que el público general.</div>
     </div>
@@ -216,18 +213,19 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
 <section class="cta-section">
   <h2>¿Listo para empezar a ahorrar?</h2>
   <p>Visítanos y adquiere tu tarjeta inteligente hoy. Empieza a acumular cashback desde tu primera recarga.</p>
-  <a href="index.html#contacto" class="btn-primary">🫧 Solicitar Informes</a>
+  <a href="index.html#contacto" class="btn-primary"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="38" cy="56" r="22" fill="#00C9AE" fill-opacity=".22"/><circle cx="38" cy="56" r="22" stroke="#ffffff"/><circle cx="67" cy="33" r="13" stroke="rgba(255,255,255,.7)"/><circle cx="71" cy="67" r="8" stroke="rgba(255,255,255,.7)"/><path d="M30 48a10 10 0 0 1 8-6" stroke="#00C9AE"/></g></svg> Solicitar Informes</a>
 </section>
 
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
-      <img src="logo.png" alt="Clean Colors"/>
-      <p>Tu lavandería de confianza en Santa María la Ribera, CDMX. Autoservicio y lavado por encargo con la mejor tecnología.</p>
+      <img src="logo.png" alt="Clean Colors" loading="lazy" decoding="async"/>
+      <p>Tu lavandería de confianza en Santa María la Ribera, CDMX. Autoservicio y lavado por encargo con la calidad que tu ropa merece.</p>
       <div class="f-socials">
-        <a class="f-soc" href="https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/">📘</a>
-        <a class="f-soc" href="https://wa.me/525516570653">💬</a>
-        <a class="f-soc" href="https://www.google.com/maps/search/Clean+Colors+Lavander%C3%ADa+Dr+Mariano+Azuela+228+Santa+Mar%C3%ADa+la+Ribera+CDMX">🔍</a>
+        <a class="f-soc" href="https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/" target="_blank" rel="noopener" title="Facebook" aria-label="Clean Colors en Facebook"><svg class="f-soc-ico" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+        <a class="f-soc" href="https://instagram.com/clean_colors_lavanderia" target="_blank" rel="noopener" title="Instagram" aria-label="Clean Colors en Instagram"><svg class="f-soc-ico" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/></svg></a>
+        <a class="f-soc" href="https://wa.me/525516570653" target="_blank" rel="noopener" title="WhatsApp" aria-label="Escríbenos por WhatsApp"><svg class="f-soc-ico" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+        <a class="f-soc" href="https://www.google.com/maps/search/Clean+Colors+Lavander%C3%ADa+Dr+Mariano+Azuela+228+Santa+Mar%C3%ADa+la+Ribera+CDMX" target="_blank" rel="noopener" title="Cómo llegar" aria-label="Ubicación en Google Maps"><svg class="f-soc-ico" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></a>
       </div>
     </div>
     <div class="f-col">
@@ -245,15 +243,17 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
       <ul>
         <li><a href="index.html#promociones">Promociones</a></li>
         <li><a href="productos.html">Productos</a></li>
-    <li><a href="lealtad.html">Plan de Lealtad</a></li>
+        <li><a href="lealtad.html">Plan de Lealtad</a></li>
+        <li><a href="autoempleo.html">Autoempleo</a></li>
+        <li><a href="empresas.html">Servicio a Empresas</a></li>
         <li><a href="index.html#testimonios">Reseñas</a></li>
         <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Clean Colors · Lavandería de Auto Servicio. Todos los derechos reservados</span>
-    <a href="aviso-de-privacidad.html">Aviso de Privacidad</a>
+    <span>© 2026 Clean Colors · Lavandería de Auto Servicio. Todos los derechos reservados.</span>
+    <span><a href="aviso-de-privacidad.html">Aviso de Privacidad</a></span>
   </div>
 </footer>
 
@@ -278,57 +278,6 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
   });
   overlay.addEventListener('click', closeMenu);
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-</script>
-<script>window.CC_REVEAL='.beneficio-card,.tarjeta-detail,.s-header';window.CC_CARDS='.beneficio-card,.tarjeta-detail';</script>
-<script>
-/* Clean Colors - realce visual (jul 2026): solo animacion; no altera contenido.
-   Config por pagina via window.CC_REVEAL (selector a revelar) y window.CC_CARDS (selector de tarjetas). */
-(function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-
-  // Barra de progreso + nav solido al scroll
-  var bar=document.createElement('div'); bar.id='cc-progress'; document.body.appendChild(bar);
-  var nav=document.querySelector('nav');
-  function onScroll(){
-    var st=window.pageYOffset||document.documentElement.scrollTop;
-    var h=document.documentElement.scrollHeight-window.innerHeight;
-    bar.style.width=(h>0?(st/h*100):0)+'%';
-    if(nav){ st>40?nav.classList.add('cc-scrolled'):nav.classList.remove('cc-scrolled'); }
-  }
-  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
-
-  var titles=document.querySelectorAll('.s-title');
-  if(reduce || !('IntersectionObserver' in window)){
-    titles.forEach(function(t){t.classList.add('cc-in');}); return;
-  }
-
-  function uniqPush(arr,el){ if(arr.indexOf(el)<0) arr.push(el); }
-
-  var revealSel = window.CC_REVEAL || '.s-header,.services-grid,.promos-grid,.testi-grid,.contact-form';
-  var cardSel   = window.CC_CARDS  || '';
-
-  var items=[].slice.call(document.querySelectorAll(revealSel));
-  // filas de galeria del index (si existen)
-  [].slice.call(document.querySelectorAll('#instalaciones > div:last-child > div')).forEach(function(el){uniqPush(items,el);});
-  // tarjetas: marcar como .cc-card y sumarlas al reveal
-  if(cardSel){
-    [].slice.call(document.querySelectorAll(cardSel)).forEach(function(el){ el.classList.add('cc-card'); uniqPush(items,el); });
-  }
-
-  items.forEach(function(el){el.classList.add('cc-reveal');});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('cc-in');io.unobserve(e.target);}});},
-    {threshold:.12,rootMargin:'0px 0px -6% 0px'});
-  items.forEach(function(el){io.observe(el);});
-
-  // Subrayado animado de titulos
-  var tio=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('cc-in');tio.unobserve(e.target);}});},{threshold:.35});
-  titles.forEach(function(t){tio.observe(t);});
-
-  // Red de seguridad: revelar todo tras 3s por si algo falla
-  setTimeout(function(){[].forEach.call(document.querySelectorAll('.cc-reveal:not(.cc-in)'),function(el){el.classList.add('cc-in');});},3000);
-})();
 </script>
 </body>
 </html>

@@ -4,25 +4,155 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Clean Colors | Lavandería Autoservicio & Por Encargo</title>
-  <meta name="description" content="Lavandería de autoservicio y por encargo en Santa María la Ribera, CDMX. Máquinas de última generación, productos ecológicos y servicio Encargo Xpress en 3 horas."/>
+  <meta name="description" content="Lavandería de autoservicio y por encargo en Santa María la Ribera, CDMX. Máquinas de última generación, productos de calidad súper premium y servicio Encargo Xpress en 3 horas."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/cshhs2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="favicon.ico" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="favicon-192.png" sizes="192x192"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <meta name="theme-color" content="#0A1E30"/>
+  <!-- ===== CC-META: vista previa al compartir (WhatsApp, Facebook) ===== -->
+  <link rel="canonical" href="https://cleancolors.mx/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="es_MX"/>
+  <meta property="og:site_name" content="Clean Colors Lavandería"/>
+  <meta property="og:url" content="https://cleancolors.mx/"/>
+  <meta property="og:title" content="Clean Colors | Lavandería Autoservicio & Por Encargo"/>
+  <meta property="og:description" content="Lavandería de autoservicio y por encargo en Santa María la Ribera, CDMX. Máquinas de última generación y servicio Encargo Xpress en 3 horas."/>
+  <meta property="og:image" content="https://cleancolors.mx/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Interior de Clean Colors Lavandería en Santa María la Ribera"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Clean Colors | Lavandería Autoservicio & Por Encargo"/>
+  <meta name="twitter:description" content="Lavandería de autoservicio y por encargo en Santa María la Ribera, CDMX. Máquinas de última generación y servicio Encargo Xpress en 3 horas."/>
+  <meta name="twitter:image" content="https://cleancolors.mx/og-image.jpg"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="geo.region" content="MX-CMX"/>
+  <meta name="geo.placename" content="Santa María la Ribera, Ciudad de México"/>
+  <!-- ===== Marcado LocalBusiness — alimenta el paquete local de Google ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DryCleaningOrLaundry",
+    "@id": "https://cleancolors.mx/#negocio",
+    "name": "Clean Colors, Lavandería de Autoservicio y por Encargo",
+    "description": "Lavandería de autoservicio y por encargo en Santa María la Ribera, CDMX.",
+    "url": "https://cleancolors.mx",
+    "telephone": "+52-55-1657-0653",
+    "image": "https://cleancolors.mx/og-image.jpg",
+    "logo": "https://cleancolors.mx/logo.png",
+    "priceRange": "$$",
+    "currenciesAccepted": "MXN",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dr. Mariano Azuela 228, Local C",
+      "addressLocality": "Santa María la Ribera",
+      "addressRegion": "Ciudad de México",
+      "postalCode": "06400",
+      "addressCountry": "MX"
+    },
+    "areaServed": { "@type": "City", "name": "Ciudad de México" },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "19:30"
+    }],
+    "sameAs": [
+      "https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/",
+      "https://instagram.com/clean_colors_lavanderia"
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Impulsora Empresarial para el Autoempleo Naralev, S.A. de C.V."
+    }
+  }
+  </script>
+  <!-- ===== MEDICIÓN =====
+       El ID de Google Analytics vive en UN SOLO lugar: el archivo analytics.js
+       Mientras ahí diga G-XXXXXXXXXX, la medición está apagada y no se carga nada. -->
+  <script defer src="analytics.js"></script>
+
   <style>
     /* Botones del nav alineados a la base del logo */
     nav { padding: 0 5% !important; align-items: flex-end !important; }
-    #hero { padding-top: 4.5rem !important; justify-content: flex-start !important; background: linear-gradient(170deg,#1A3A55 0%,#1E4A70 50%,#153D5A 100%) !important; }
+    /* ===== HERO ANIMADO (ago-2026) =====
+       La imagen de fondo vive en #hero::after para poder moverla sin afectar
+       al resto. Deriva muy lento, así las burbujas de la foto "flotan".
+       El degradado navy va dentro del mismo ::after, encima de la imagen. */
+    #hero {
+      padding-top: 4.5rem !important;
+      justify-content: flex-start !important;
+      background: linear-gradient(170deg,#1A3A55 0%,#1E4A70 50%,#153D5A 100%) !important;
+      overflow: hidden;
+    }
+    #hero::after {
+      content: ""; position: absolute; inset: -8%; z-index: 0; pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(26,58,85,.50) 0%, rgba(20,48,72,.62) 55%, rgba(15,38,60,.74) 100%),
+        url('hero-bg.jpg') center center / cover no-repeat;
+      animation: cc-flotar 46s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+    @keyframes cc-flotar {
+      0%   { transform: scale(1)    translate3d(0,0,0); }
+      100% { transform: scale(1.07) translate3d(-1.2%,-2.4%,0); }
+    }
+    /* El aura queda por encima de la imagen */
+    #hero::before { z-index: 1 !important; opacity: .40 !important; }
+    #bubbles { opacity: .60 !important; }
+
+    /* Vaivén lateral de las burbujas animadas. Usa margin-left para no pelearse
+       con el transform de la animación 'rise' de styles.css */
+    @keyframes cc-vaiven {
+      0%, 100% { margin-left: calc(var(--vaiven, 20px) * -1); }
+      50%      { margin-left: var(--vaiven, 20px); }
+    }
+    #bubbles .bubble {
+      animation-name: rise, cc-vaiven;
+      animation-timing-function: linear, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #hero::after { animation: none; }
+      #bubbles .bubble { animation-name: rise; }
+    }
     .nav-logo img { height: 55px !important; width: auto !important; }
     @media(max-width:768px) {
       nav { padding: 0 5% !important; align-items: flex-end !important; }
       #hero { padding-top: 3.5rem !important; }
+      #hero::after {
+        background:
+          linear-gradient(180deg, rgba(24,54,80,.58) 0%, rgba(18,44,68,.68) 55%, rgba(14,36,58,.78) 100%),
+          url('hero-bg-movil.jpg') center center / cover no-repeat;
+        animation-duration: 60s;
+      }
       .nav-logo img { height: 45px !important; }
     }
       .badge { background: rgba(255,255,255,.14) !important; border: 1px solid rgba(92,200,238,.45) !important; min-width: 160px !important; padding: 1.2rem 1.6rem !important; }
     .badge-label { color: rgba(255,255,255,.88) !important; }
     .badge-num { font-size: 1.9rem !important; }
   
+
+    /* ===== SET DE ICONOS (ago-2026) — sustituye los SVG planos y los emojis ===== */
+    .svc-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 104px; height: 104px; padding: 18px; border-radius: 26px;
+      background: linear-gradient(140deg, rgba(0,201,174,.14), rgba(46,181,240,.12));
+      border: 1px solid rgba(0,201,174,.20);
+      transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s, background .35s;
+    }
+    .svc-card:hover .svc-icon {
+      transform: translateY(-4px) rotate(-4deg);
+      box-shadow: 0 14px 30px rgba(0,201,174,.22);
+      background: linear-gradient(140deg, rgba(0,201,174,.24), rgba(46,181,240,.18));
+    }
+
 /* >>> CC realce (inicio) <<< */
 :root{--cc-a1:#5CC8EE;--cc-a2:#00C9AE;--cc-shadow:rgba(0,201,174,.16);--cc-aura1:rgba(0,201,174,.20);--cc-aura2:rgba(92,200,238,.22);}
 /* ============================================================
@@ -98,8 +228,74 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
 .gi{transition:box-shadow .4s,transform .4s}
 .gi:hover{box-shadow:0 22px 52px rgba(10,30,48,.30)}
 .gi-overlay{transition:padding .3s,background .3s}
-.gi:hover .gi-overlay{padding-bottom:1.4rem;background:linear-gradient(trans/* >>> CC realce (fin) <<< */
-</style>
+.gi:hover .gi-overlay{padding-bottom:1.4rem;background:linear-gradient(transparent,rgba(10,30,48,.88))}
+/* >>> CC realce (fin) <<< */
+
+  
+    /* ===== Set de iconos — el icono mide 1em y hereda el tamaño que tenía el emoji.
+       Así el acomodo de cada tarjeta queda EXACTAMENTE como estaba. ===== */
+    :root { --i1:#0A1E30; --i2:#1277A8; --i3:#00C9AE; }
+    .cc-ico { width:1.6em; height:1.6em; display:inline-block; vertical-align:-.34em; flex-shrink:0; }
+    .cc-ico-inline { width:1.35em; height:1.35em; vertical-align:-.28em; margin-right:.3em; }
+    /* la pastilla de servicios sí lleva medida propia: es un contenedor, no texto */
+    .svc-icon { display:inline-flex; align-items:center; justify-content:center;
+                width:92px; height:92px; padding:18px; border-radius:26px;
+                background:linear-gradient(140deg,rgba(0,201,174,.14),rgba(46,181,240,.12));
+                border:1px solid rgba(0,201,174,.20);
+                transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s, background .35s; }
+    .svc-icon .cc-ico { width:72px; height:72px; }
+    .svc-card:hover .svc-icon { transform:translateY(-4px) rotate(-4deg);
+                box-shadow:0 14px 30px rgba(0,201,174,.22);
+                background:linear-gradient(140deg,rgba(0,201,174,.24),rgba(46,181,240,.18)); }
+
+  
+    /* La hojita del indicador Eco va sola en su recuadro: se dimensiona como
+       los números vecinos (1,000+ / 4.9★), no como texto en línea. */
+    .badge-num .cc-ico { width:1.85em; height:1.85em; vertical-align:-.38em; margin-right:0; }
+
+  
+    /* ===== Iconos de PROMOCIONES =====
+       Van sobre fondo navy: se pintan en blanco con acento turquesa.
+       Los tres van centrados ARRIBA de la pastilla y del texto.
+       El halo blanco los separa del fondo oscuro y mejora la lectura. */
+    #promociones .cc-ico {
+      --i1: #ffffff;
+      --i2: rgba(255,255,255,.75);
+      --i3: #00C9AE;
+    }
+    .promo-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: .9rem;
+    }
+    .promo-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 3.9rem; height: 3.9rem; flex-shrink: 0; line-height: 1;
+    }
+    .promo-icon .cc-ico {
+      width: 3.9rem; height: 3.9rem;
+      vertical-align: middle; margin: 0;
+      filter: drop-shadow(0 0 10px rgba(255,255,255,.55))
+              drop-shadow(0 0 22px rgba(255,255,255,.28))
+              drop-shadow(0 3px 6px rgba(0,0,0,.35));
+    }
+
+  
+    /* ===== Iconos del bloque de contacto y del pie =====
+       Antes heredaban el tamaño del texto (1.3rem en contacto, aún menos
+       en el pie) y quedaban diminutos. Aquí llevan medida propia. */
+    .c-ico { font-size: 0 !important; width: 2.6rem; height: 2.6rem; margin-top: 0; }
+    .c-ico .cc-ico { width: 2.6rem; height: 2.6rem; vertical-align: middle; margin: 0; }
+    .c-item { align-items: center; }
+
+    .c-hours h4 .cc-ico { width: 1.6em; height: 1.6em; vertical-align: -.36em; }
+
+    .f-soc { display: inline-flex !important; align-items: center; justify-content: center;
+             width: 44px; height: 44px; font-size: 0 !important; }
+    .f-soc .cc-ico { width: 24px; height: 24px; vertical-align: middle; margin: 0; }
+
+  </style>
 </head>
 <body>
 <nav>
@@ -127,19 +323,31 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
   <div class="bubbles" id="bubbles"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
-    <div class="hero-tag">🫧 Autoservicio &amp; Por Encargo</div>
+    <div class="hero-tag"><svg class="cc-ico cc-ico-inline" style="width:1.15em;height:1.15em" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="37" cy="55" r="21" fill="#00C9AE" fill-opacity=".22"/>
+<circle cx="37" cy="55" r="21" stroke="url(#gt)" stroke-width="4.2"/>
+<circle cx="66" cy="34" r="13" fill="#5CC8EE" fill-opacity=".26"/>
+<circle cx="66" cy="34" r="13" stroke="#5CC8EE" stroke-width="4.2"/>
+<circle cx="70" cy="66" r="8" fill="#1277A8" fill-opacity=".20"/>
+<circle cx="70" cy="66" r="8" stroke="#1277A8" stroke-width="4.2"/>
+<path d="M29 47a9 9 0 0 1 7-6" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".85"/></g></svg> Autoservicio &amp; Por Encargo</div>
     <h1 class="hero-h1">ROPA<br><span class="t1">LIMPIA</span><br><span class="t2">SIEMPRE.</span></h1>
     <p class="hero-sub">Tu lavandería de confianza en Santa María la Ribera, CDMX. Usa nuestras máquinas cuando quieras, o déjanos el trabajo — listo en 3 horas con Encargo Xpress.</p>
     <div class="hero-btns">
-      <a href="#contacto" class="btn-primary">🫧 Solicitar Informes</a>
+      <a href="#contacto" class="btn-primary"><svg class="cc-ico cc-ico-inline" style="width:1.1em;height:1.1em" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="37" cy="55" r="21" fill="#00C9AE" fill-opacity=".22"/>
+<circle cx="37" cy="55" r="21" stroke="url(#gt)" stroke-width="4.2"/>
+<circle cx="66" cy="34" r="13" fill="#5CC8EE" fill-opacity=".26"/>
+<circle cx="66" cy="34" r="13" stroke="#5CC8EE" stroke-width="4.2"/>
+<circle cx="70" cy="66" r="8" fill="#1277A8" fill-opacity=".20"/>
+<circle cx="70" cy="66" r="8" stroke="#1277A8" stroke-width="4.2"/>
+<path d="M29 47a9 9 0 0 1 7-6" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".85"/></g></svg> Solicitar Informes</a>
       <a href="#promociones" class="btn-outline">Ver Promociones →</a>
     </div>
   </div>
   <div class="hero-badges">
     <div class="badge"><div class="badge-num">1,000+</div><div class="badge-label">Clientes Felices</div></div>
-    <div class="badge"><div class="badge-num">5★</div><div class="badge-label">Calificación Google</div></div>
+    <div class="badge"><div class="badge-num">4.9★</div><div class="badge-label">Google · 92 reseñas</div></div>
     <div class="badge"><div class="badge-num">3H</div><div class="badge-label">Encargo Xpress*</div></div>
-    <div class="badge"><div class="badge-num">100%</div><div class="badge-label">Ecológico</div></div>
+    <div class="badge"><div class="badge-num"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 78C18 46 42 20 78 18c2 36-22 60-54 60z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M18 78C18 46 42 20 78 18c2 36-22 60-54 60z" stroke="var(--i1,#0A1E30)"/><path d="M22 80C36 62 52 46 70 34" stroke="var(--i3,#00C9AE)"/></g></svg> </div><div class="badge-label">Eco Amigable</div></div>
     <div class="badge"><div class="badge-num">+10</div><div class="badge-label">Máquinas Disponibles</div></div>
   </div>
   <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -157,23 +365,7 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
 
     <!-- AUTOSERVICIO -->
     <div class="svc-card">
-      <div class="svc-icon-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100" width="100%" height="90">
-          <circle cx="42" cy="50" r="44" fill="#00C9AE"/>
-          <circle cx="34" cy="18" r="8" fill="#ffffff"/>
-          <rect x="24" y="28" width="20" height="22" rx="4" fill="#ffffff"/>
-          <rect x="25" y="48" width="7" height="18" rx="3" fill="#ffffff"/>
-          <rect x="36" y="48" width="7" height="18" rx="3" fill="#ffffff"/>
-          <line x1="44" y1="32" x2="57" y2="44" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
-          <ellipse cx="63" cy="56" rx="11" ry="13" fill="#1277A8"/>
-          <path d="M56 45 Q63 41 70 45" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <line x1="55" y1="53" x2="71" y2="53" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
-          <line x1="54" y1="59" x2="72" y2="59" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
-          <text x="90" y="34" font-family="Syne, sans-serif" font-weight="800" font-size="14" fill="#0B1D35" letter-spacing="1">AUTO</text>
-          <text x="90" y="52" font-family="Syne, sans-serif" font-weight="800" font-size="13" fill="#0B1D35" letter-spacing="0.5">SERVICIO</text>
-          <rect x="90" y="57" width="65" height="2" rx="1" fill="#00C9AE"/>
-        </svg>
-      </div>
+      <div class="svc-icon-wrap"><span class="svc-icon"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="10" width="64" height="76" rx="16" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><rect x="16" y="10" width="64" height="76" rx="16" stroke="var(--i1,#0A1E30)"/><path d="M16 32h64" stroke="var(--i1,#0A1E30)"/><circle cx="48" cy="59" r="19" stroke="var(--i2,#1277A8)"/><path d="M33 61c5-6.5 10-6.5 15 0s10 6.5 15 0" stroke="var(--i3,#00C9AE)"/><circle cx="68" cy="21" r="3.4" fill="var(--i2,#1277A8)"/></g></svg></span></div>
       <h3 class="svc-name">Autoservicio</h3>
       <p class="svc-desc">Usa nuestras lavadoras y secadoras cuando quieras. Sin citas ni esperas.</p>
       <div style="margin-top:1.2rem;">
@@ -186,62 +378,33 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
         <div class="price-row"><span>+ Detergente (70ml)</span><span class="price-val">$7</span></div>
         <div class="price-row"><span>+ Suavizante (50ml)</span><span class="price-val">$6</span></div>
         <div class="price-row"><span>+ Quitamanchas</span><span class="price-val">$7</span></div>
-        <div style="font-size:.72rem;margin-top:.5rem;color:var(--gray);">* Productos concentrados calidad súper premium. * Contamos con detergente neutro. * Todos nuestros productos son amigables con el medio ambiente. * Las cargas de los equipos son indicativas. Aplican restricciones dependiendo del tipo de prenda, tamaño y textil.</div>
+        <div style="font-size:.72rem;margin-top:.5rem;color:var(--gray);">* Productos de calidad súper premium. * Contamos con detergente neutro. * Todos nuestros productos son amigables con el medio ambiente. * Las cargas de los equipos son indicativas. Aplican restricciones dependiendo del tipo de prenda, tamaño y textil.</div>
       </div>
     </div>
 
     <!-- LAVADO POR ENCARGO -->
     <div class="svc-card">
-      <div class="svc-icon-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100" width="100%" height="90">
-          <circle cx="42" cy="50" r="44" fill="#2EB5F0"/>
-          <rect x="18" y="38" width="50" height="12" rx="3" fill="#ffffff"/>
-          <rect x="20" y="28" width="46" height="12" rx="3" fill="#E8F7FD"/>
-          <rect x="22" y="19" width="42" height="11" rx="3" fill="#ffffff"/>
-          <rect x="40" y="19" width="6" height="31" rx="3" fill="#00C9AE"/>
-          <rect x="18" y="32" width="50" height="5" rx="2.5" fill="#00C9AE"/>
-          <path d="M40 19 Q34 10 38 14 Q42 8 46 14 Q50 10 46 19" fill="#00C9AE"/>
-          <text x="90" y="30" font-family="Syne, sans-serif" font-weight="800" font-size="13" fill="#0B1D35" letter-spacing="0.5">LAVADO</text>
-          <text x="90" y="48" font-family="Syne, sans-serif" font-weight="800" font-size="10.5" fill="#0B1D35" letter-spacing="0.5">POR ENCARGO</text>
-          <rect x="90" y="54" width="65" height="2" rx="1" fill="#2EB5F0"/>
-        </svg>
-      </div>
+      <div class="svc-icon-wrap"><span class="svc-icon"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="56" width="56" height="16" rx="8" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><rect x="20" y="56" width="56" height="16" rx="8" stroke="var(--i1,#0A1E30)"/><rect x="25" y="38" width="46" height="16" rx="8" stroke="var(--i1,#0A1E30)"/><rect x="30" y="20" width="36" height="16" rx="8" stroke="var(--i2,#1277A8)"/><path d="M20 82h56" stroke="var(--i3,#00C9AE)"/></g></svg></span></div>
       <h3 class="svc-name">Lavado por Encargo</h3>
       <p class="svc-desc">Incluye lavado, secado, detergente, suavizante, doblado y empacado. Mínimo 5 Kg.</p>
       <div style="margin-top:1.2rem;">
         <div class="price-row"><span>Por Kg (mín. 5 Kg)</span><span class="price-val">$29/kg</span></div>
         <div class="price-row"><span>Planchado por pieza</span><span class="price-val">$18</span></div>
         <div class="price-row"><span>Planchado por docena</span><span class="price-val">$200</span></div>
-        <div class="xpress-row"><span>⚡ Encargo Xpress <span style="font-size:.72rem;color:var(--gray);">+$60</span></span><strong style="color:var(--aqua);">3 hrs</strong></div>
+        <div class="xpress-row"><span><svg class="cc-ico cc-ico-inline" style="width:1.05em;height:1.05em" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M52 8L20 54h22l-6 34 32-46H46l6-34z" fill="#00C9AE" fill-opacity=".30"/>
+<path d="M52 8L20 54h22l-6 34 32-46H46l6-34z" stroke="url(#gt)" stroke-width="4.2" stroke-linejoin="round"/>
+<path d="M10 30h12M6 48h16M12 66h10" stroke="#5CC8EE" stroke-width="4.2" stroke-linecap="round"/></g></svg> Encargo Xpress <span style="font-size:.72rem;color:var(--gray);">+$60</span></span><strong style="color:var(--aqua);">3 hrs</strong></div>
       </div>
       <div class="price-note">
         Pantalón, camisa, blusa o falda. El planchado no incluye ganchos ni bolsas.<br/>
         * Bolsa $6 · * Gancho $5 (retornable)<br/>
-        <span style="color:var(--navy);font-weight:600;">⚡ Encargo Xpress:</span> entrega 3 hrs después de recepción. Sobrecosto $60. Carga máx. 10 kg. Se recibe hasta las 4:00 PM.
+        <span style="color:var(--navy);font-weight:600;">Encargo Xpress:</span> entrega 3 hrs después de recepción. Sobrecosto $60. Carga máx. 10 kg. Se recibe hasta las 4:00 PM.
       </div>
     </div>
 
     <!-- EDREDONES -->
     <div class="svc-card">
-      <div class="svc-icon-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100" width="100%" height="90">
-          <circle cx="42" cy="50" r="44" fill="#00C9AE"/>
-          <path d="M14 40 Q18 30 26 36 Q30 24 38 32 Q42 22 50 28 Q56 22 62 28 Q68 24 72 34 Q76 40 72 52 Q68 62 62 56 Q56 64 50 56 Q44 64 38 56 Q32 64 26 56 Q18 62 14 52 Q10 46 14 40 Z" fill="#ffffff"/>
-          <ellipse cx="28" cy="44" rx="7" ry="5" fill="#E8F7FD" opacity="0.7"/>
-          <ellipse cx="42" cy="38" rx="7" ry="5" fill="#E8F7FD" opacity="0.7"/>
-          <ellipse cx="56" cy="44" rx="7" ry="5" fill="#E8F7FD" opacity="0.7"/>
-          <ellipse cx="35" cy="52" rx="6" ry="4" fill="#E8F7FD" opacity="0.7"/>
-          <ellipse cx="49" cy="52" rx="6" ry="4" fill="#E8F7FD" opacity="0.7"/>
-          <circle cx="28" cy="44" r="1.5" fill="#2EB5F0" opacity="0.5"/>
-          <circle cx="42" cy="38" r="1.5" fill="#2EB5F0" opacity="0.5"/>
-          <circle cx="56" cy="44" r="1.5" fill="#2EB5F0" opacity="0.5"/>
-          <circle cx="35" cy="52" r="1.5" fill="#2EB5F0" opacity="0.5"/>
-          <circle cx="49" cy="52" r="1.5" fill="#2EB5F0" opacity="0.5"/>
-          <text x="90" y="32" font-family="Syne, sans-serif" font-weight="800" font-size="12" fill="#0B1D35" letter-spacing="0.3">EDREDONES</text>
-          <text x="90" y="50" font-family="Syne, sans-serif" font-weight="800" font-size="10.5" fill="#0B1D35" letter-spacing="0.3">&amp; COBERTORES</text>
-          <rect x="90" y="56" width="65" height="2" rx="1" fill="#00C9AE"/>
-        </svg>
-      </div>
+      <div class="svc-icon-wrap"><span class="svc-icon"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 28v56M84 56v28" stroke="var(--i1,#0A1E30)"/><path d="M12 56h58a14 14 0 0 1 14 14v6H12z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M12 56h58a14 14 0 0 1 14 14v6H12z" stroke="var(--i1,#0A1E30)"/><rect x="20" y="40" width="26" height="16" rx="8" stroke="var(--i2,#1277A8)"/><path d="M12 70h72" stroke="var(--i3,#00C9AE)"/></g></svg></span></div>
       <h3 class="svc-name">Edredones &amp; Cobertores</h3>
       <p class="svc-desc">Lavado especial para ropa de cama de todos los tamaños.</p>
       <div style="margin-top:1.2rem;">
@@ -254,20 +417,7 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
 
     <!-- TARJETA -->
     <div class="svc-card">
-      <div class="svc-icon-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100" width="100%" height="90">
-          <circle cx="42" cy="50" r="44" fill="#1277A8"/>
-          <rect x="12" y="30" width="54" height="34" rx="5" fill="#ffffff"/>
-          <rect x="12" y="30" width="54" height="11" rx="5" fill="#2EB5F0"/>
-          <rect x="18" y="48" width="12" height="9" rx="2" fill="#00C9AE"/>
-          <rect x="18" y="62" width="20" height="2" rx="1" fill="#E4EEF5"/>
-          <rect x="43" y="62" width="15" height="2" rx="1" fill="#E4EEF5"/>
-          <text x="52" y="42" font-family="Syne, sans-serif" font-weight="800" font-size="12" fill="#ffffff">$</text>
-          <text x="90" y="34" font-family="Syne, sans-serif" font-weight="800" font-size="14" fill="#0B1D35" letter-spacing="0.5">TARJETA</text>
-          <text x="90" y="52" font-family="Syne, sans-serif" font-weight="800" font-size="11" fill="#0B1D35" letter-spacing="0.3">INTELIGENTE</text>
-          <rect x="90" y="57" width="65" height="2" rx="1" fill="#1277A8"/>
-        </svg>
-      </div>
+      <div class="svc-icon-wrap"><span class="svc-icon"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="24" width="76" height="50" rx="12" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><rect x="10" y="24" width="76" height="50" rx="12" stroke="var(--i1,#0A1E30)"/><path d="M10 40h76" stroke="var(--i1,#0A1E30)"/><rect x="22" y="50" width="18" height="13" rx="4" stroke="var(--i2,#1277A8)"/><path d="M54 58h22" stroke="var(--i3,#00C9AE)"/></g></svg></span></div>
       <h3 class="svc-name">Tarjeta Inteligente</h3>
       <p class="svc-desc">Adquiere tu tarjeta y acumula cashback desde tu primera recarga.</p>
       <div style="margin-top:1.2rem;">
@@ -275,7 +425,7 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
         <div class="price-row"><span>Cashback</span><span class="price-val">10%</span></div>
       </div>
       <div class="price-note price-note-highlight">
-        💰 $10 de cashback por cada $100 abonados.<br/>Válido en recargas en múltiplos de $100.
+        <svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="48" r="34" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><circle cx="48" cy="48" r="34" stroke="var(--i1,#0A1E30)"/><path d="M48 32v32M41 39h11a6 6 0 0 1 0 12h-8a6 6 0 0 0 0 12h11" stroke="var(--i3,#00C9AE)"/></g></svg> $10 de cashback por cada $100 abonados.<br/>Válido en recargas en múltiplos de $100.
       </div>
     </div>
 
@@ -302,7 +452,7 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
         </div>
       </div>
       <div class="gi" style="flex:1;border-radius:28px;overflow:hidden;position:relative;cursor:pointer;">
-        <div class="gi-photo" style="background-image:url('galeria-1.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
+        <div class="gi-photo" style="background-image:url('galeria-1.jpg');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
         <div class="gi-overlay">Vista panorámica del local</div>
       </div>
     </div>
@@ -310,7 +460,7 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
     <!-- Fila 2: Foto izquierda | Texto derecha -->
     <div style="display:flex;gap:1.5rem;align-items:stretch;min-height:340px;">
       <div class="gi" style="flex:1;border-radius:28px;overflow:hidden;position:relative;cursor:pointer;">
-        <div class="gi-photo" style="background-image:url('galeria-2.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
+        <div class="gi-photo" style="background-image:url('galeria-2.jpg');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
         <div class="gi-overlay">Entrada del local</div>
       </div>
       <div style="flex:0 0 35%;background:linear-gradient(135deg,#0A1E30 0%,#1277A8 100%);border-radius:28px;display:flex;align-items:center;justify-content:center;padding:3rem 2.5rem;">
@@ -330,14 +480,14 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
         </div>
       </div>
       <div class="gi" style="flex:1;border-radius:28px;overflow:hidden;position:relative;cursor:pointer;">
-        <div class="gi-photo" style="background-image:url('galeria-3.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
+        <div class="gi-photo" style="background-image:url('galeria-3.jpg');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
         <div class="gi-overlay">Vista general con clientes</div>
       </div>
     </div>
 
     <!-- Fila 4: Foto panorámica full width -->
     <div class="gi" style="border-radius:28px;overflow:hidden;position:relative;cursor:pointer;height:360px;">
-      <div class="gi-photo" style="background-image:url('galeria-4.png');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
+      <div class="gi-photo" style="background-image:url('galeria-4.jpg');width:100%;height:100%;background-size:cover;background-position:center;transition:transform .45s;"></div>
       <div class="gi-overlay">Vista desde el nivel superior</div>
     </div>
 
@@ -350,21 +500,63 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
     <h2 class="s-title s-title-white">Promociones <em style="color:var(--blue-light)">increíbles</em><br>para ti</h2>
   </div>
   <div class="promos-grid">
+    <!-- PROMO AGOSTO: 15% de cashback (miércoles y jueves) -->
+    <div class="promo" style="border:1.5px solid rgba(0,201,174,.5);background:linear-gradient(150deg,rgba(0,201,174,.10) 0%,rgba(255,255,255,.04) 70%);">
+      <div class="promo-top" style="flex-wrap:wrap;">
+        <span class="promo-icon"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="25" width="78" height="50" rx="11" fill="url(#gr)"/>
+<rect x="9" y="25" width="78" height="50" rx="11" stroke="#0A1E30" stroke-width="4.2"/>
+<path d="M9 41h78" stroke="#1277A8" stroke-width="4.2"/>
+<rect x="20" y="51" width="17" height="13" rx="4" fill="#00C9AE" fill-opacity=".35"/>
+<rect x="20" y="51" width="17" height="13" rx="4" stroke="url(#gt)" stroke-width="4.2"/>
+<path d="M52 57h24M52 66h13" stroke="#5CC8EE" stroke-width="4.2" stroke-linecap="round"/></g></svg></span>
+        <span class="promo-pill" style="background:var(--aqua);color:#0A1E30;font-size:1.05rem;padding:.55rem 1.3rem;letter-spacing:1.5px;font-weight:800;border-radius:50px;">15% DE CASHBACK</span>
+      </div>
+      <h3 class="promo-title">MIÉRCOLES y JUEVES tu recarga rinde más</h3>
+      <p class="promo-desc">Si ya tienes tu Tarjeta Clean Colors, los MIÉRCOLES y JUEVES tu recarga te devuelve <strong style="color:#fff;">15% de cashback</strong> en lugar del 10% de siempre. Recargas $500 y tienes $575 de saldo, para el servicio que quieras y el día que quieras.</p>
+      <div class="promo-deal deal-aqua">Recarga $500 → $575</div>
+      <div class="promo-hr"></div>
+      <div class="promo-note">Válido MIÉRCOLES y JUEVES · Recargas en múltiplos de $100 · Exclusivo para clientes con Tarjeta Clean Colors · El saldo no es canjeable por efectivo.</div>
+      <div class="promo-links" style="margin-top:1.1rem;"><a href="lealtad.html" style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(0,201,174,.15);color:var(--aqua);border:1px solid rgba(0,201,174,.35);padding:.6rem 1.2rem;border-radius:50px;font-weight:700;font-size:.85rem;text-decoration:none;">Ver el Plan de Lealtad →</a></div>
+    </div>
+    <!-- PROMO AGOSTO: Membresía con regalo -->
+    <div class="promo" style="border:1.5px solid rgba(92,200,238,.45);background:linear-gradient(150deg,rgba(92,200,238,.10) 0%,rgba(255,255,255,.04) 70%);">
+      <div class="promo-top">
+        <span class="promo-icon"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="40" width="68" height="42" rx="8" fill="url(#gr)"/>
+<rect x="14" y="40" width="68" height="42" rx="8" stroke="#0A1E30" stroke-width="4.2"/>
+<path d="M10 28h76v14H10z" fill="#5CC8EE" fill-opacity=".26"/>
+<path d="M10 28h76v14H10z" stroke="#1277A8" stroke-width="4.2" stroke-linejoin="round"/>
+<path d="M48 28v54" stroke="url(#gt)" stroke-width="4.2"/>
+<path d="M48 28c-6-14-22-14-22-4 0 6 12 6 22 4zM48 28c6-14 22-14 22-4 0 6-12 6-22 4z" fill="#00C9AE" fill-opacity=".28" stroke="url(#gt)" stroke-width="4.2" stroke-linejoin="round"/></g></svg></span>
+        <span class="promo-pill" style="background:var(--blue-light);color:#0A1E30;font-size:1.05rem;padding:.55rem 1.3rem;letter-spacing:1.5px;font-weight:800;border-radius:50px;">ESTRENA TU TARJETA</span>
+      </div>
+      <h3 class="promo-title">Tu membresía viene con regalo</h3>
+      <p class="promo-desc">¿Todavía no tienes Tarjeta Clean Colors? Al adquirir tu membresía de $40 te regalamos <strong style="color:#fff;">detergente y suavizante para todos los ciclos que recargues ese mismo día</strong>. Y desde esa primera recarga empiezas a acumular 10% de cashback en todos tus servicios.</p>
+      <div class="promo-deal deal-sky">Producto gratis en cada ciclo</div>
+      <div class="promo-hr"></div>
+      <div class="promo-note">Válido en tienda · El regalo aplica sobre los ciclos recargados el mismo día de la compra de la membresía · La tarjeta se entrega sin saldo: para usar el servicio hay que recargarla · Hasta agotar existencias.</div>
+      <div class="promo-links" style="margin-top:1.1rem;"><a href="lealtad.html" style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(92,200,238,.15);color:var(--blue-light);border:1px solid rgba(92,200,238,.35);padding:.6rem 1.2rem;border-radius:50px;font-weight:700;font-size:.85rem;text-decoration:none;">Cómo funciona la tarjeta →</a></div>
+    </div>
     <div class="promo" style="border:1.5px solid rgba(0,201,174,.35);">
-      <div class="promo-top"><span class="promo-icon" style="font-size:2.4rem;">⭐</span><span class="promo-pill pill-aqua" style="font-size:1.05rem;padding:.55rem 1.3rem;letter-spacing:1.5px;font-weight:800;">COMPARTE Y GANA</span></div>
+      <div class="promo-top"><span class="promo-icon"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="37" cy="55" r="21" fill="#00C9AE" fill-opacity=".22"/>
+<circle cx="37" cy="55" r="21" stroke="url(#gt)" stroke-width="4.2"/>
+<circle cx="66" cy="34" r="13" fill="#5CC8EE" fill-opacity=".26"/>
+<circle cx="66" cy="34" r="13" stroke="#5CC8EE" stroke-width="4.2"/>
+<circle cx="70" cy="66" r="8" fill="#1277A8" fill-opacity=".20"/>
+<circle cx="70" cy="66" r="8" stroke="#1277A8" stroke-width="4.2"/>
+<path d="M29 47a9 9 0 0 1 7-6" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".85"/></g></svg></span><span class="promo-pill pill-aqua" style="font-size:1.05rem;padding:.55rem 1.3rem;letter-spacing:1.5px;font-weight:800;">COMPARTE Y GANA</span></div>
       <h3 class="promo-title">Etiquétanos y llévate producto gratis</h3>
       <p class="promo-desc">Comparte tu experiencia en Instagram o Facebook etiquetando a Clean Colors, muéstranosla en caja y te regalamos detergente y suavizante para tu próxima carga.</p>
       <div class="promo-deal deal-aqua">Detergente + Suavizante gratis</div>
       <div class="promo-hr"></div>
-      <div class="promo-note">Válido en tienda · Santa María la Ribera · Julio 2026.</div>
-      <div class="promo-links" style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem;"><a href="https://instagram.com/clean_colors_lavanderia" target="_blank" style="display:inline-flex;align-items:center;gap:.4rem;background:#E1306C;color:#fff;padding:.6rem 1.2rem;border-radius:50px;font-weight:700;font-size:.85rem;text-decoration:none;">Etiquétanos en Instagram</a><a href="https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/" target="_blank" style="display:inline-flex;align-items:center;gap:.4rem;background:#1877F2;color:#fff;padding:.6rem 1.2rem;border-radius:50px;font-weight:700;font-size:.85rem;text-decoration:none;">Etiquétanos en Facebook</a></div>
+      <div class="promo-note">Válido en tienda · Santa María la Ribera · Agosto 2026.</div>
+      <div class="promo-links" style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem;"><a href="https://instagram.com/clean_colors_lavanderia" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;background:#E1306C;color:#fff;padding:.6rem 1.2rem;border-radius:50px;font-weight:700;font-size:.85rem;text-decoration:none;">Etiquétanos en Instagram</a><a href="https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;background:#1877F2;color:#fff;padding:.6rem 1.2rem;border-radius:50px;font-weight:700;font-size:.85rem;text-decoration:none;">Etiquétanos en Facebook</a></div>
     </div>
     <div class="promo" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:2px dashed rgba(92,200,238,.3);">
-      <div style="font-size:2.5rem;margin-bottom:1rem;">📲</div>
+      <div style="font-size:2.5rem;margin-bottom:1rem;"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><rect x="26" y="10" width="36" height="76" rx="11" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><rect x="26" y="10" width="36" height="76" rx="11" stroke="var(--i1,#0A1E30)"/><path d="M39 21h10M39 74h10" stroke="var(--i2,#1277A8)"/><path d="M72 34a18 18 0 0 1 0 28M83 26a30 30 0 0 1 0 44" stroke="var(--i3,#00C9AE)"/></g></svg> </div>
       <h3 class="promo-title">Recibe promos antes que nadie</h3>
-      <p class="promo-desc" style="margin-bottom:1.5rem;">Únete a nuestro Canal de WhatsApp y entérate primero de todas las ofertas y novedades de Clean Colors.</p>
-      <a href="https://wa.me/525516570653" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;padding:.7rem 1.5rem;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;">
-        💬 Unirse al Canal de WhatsApp
+      <p class="promo-desc" style="margin-bottom:1.5rem;">Mándanos un WhatsApp con la palabra <strong style="color:#fff;">PROMOS</strong> y te avisamos primero de cada oferta y novedad de Clean Colors.</p>
+      <a href="https://wa.me/525516570653" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;padding:.7rem 1.5rem;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;">
+        <svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M48 14a34 34 0 0 0-29 52l-5 20 21-5A34 34 0 1 0 48 14z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M48 14a34 34 0 0 0-29 52l-5 20 21-5A34 34 0 1 0 48 14z" stroke="var(--i1,#0A1E30)"/><path d="M38 38c0 13 9 22 22 22 3 0 5-2 5-5l-6-4-4 4c-5-2-8-5-10-10l4-4-4-6c-3 0-7 1-7 3z" stroke="var(--i3,#00C9AE)"/></g></svg> Avísenme de las promos
       </a>
     </div>
   </div>
@@ -376,41 +568,41 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
     <div class="s-header">
       <div class="s-label" style="background:rgba(0,201,174,.12);color:var(--aqua)">Marca Propia</div>
       <h2 class="s-title s-title-white">Productos <em>Clean Colors</em></h2>
-      <p class="s-desc" style="color:rgba(255,255,255,.65);margin:0 auto">Fórmulas biodegradables desarrolladas exclusivamente bajo nuestra marca. Los mismos productos que usamos en nuestras máquinas, disponibles para ti.</p>
+      <p class="s-desc" style="color:rgba(255,255,255,.65);margin:0 auto">Fórmulas de calidad súper premium desarrolladas exclusivamente bajo nuestra marca. Los mismos productos que usamos en nuestras máquinas, disponibles para ti.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-bottom:2.5rem">
       <!-- Detergente -->
       <div style="background:rgba(255,255,255,.05);border:1.5px solid rgba(92,200,238,.15);border-radius:18px;padding:1.5rem;transition:all .3s" onmouseover="this.style.borderColor='rgba(92,200,238,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(92,200,238,.15)';this.style.transform='translateY(0)'">
-        <div style="font-size:1.8rem;margin-bottom:.8rem">🫧</div>
+        <div style="font-size:1.8rem;margin-bottom:.8rem"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="38" cy="56" r="22" fill="#00C9AE" fill-opacity=".22"/><circle cx="38" cy="56" r="22" stroke="#ffffff"/><circle cx="67" cy="33" r="13" stroke="rgba(255,255,255,.7)"/><circle cx="71" cy="67" r="8" stroke="rgba(255,255,255,.7)"/><path d="M30 48a10 10 0 0 1 8-6" stroke="#00C9AE"/></g></svg> </div>
         <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;margin-bottom:.4rem">Detergente</h3>
         <p style="font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.5;margin-bottom:.8rem">Limpieza profunda para ropa de uso diario.</p>
-        <span style="font-size:.72rem;font-weight:600;padding:.25rem .7rem;border-radius:50px;background:rgba(0,201,174,.12);color:var(--aqua);border:1px solid rgba(0,201,174,.2)">🌿 Biodegradable</span>
+        <span style="font-size:.72rem;font-weight:600;padding:.25rem .7rem;border-radius:50px;background:rgba(0,201,174,.12);color:var(--aqua);border:1px solid rgba(0,201,174,.2)"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 78C18 46 42 20 78 18c2 36-22 60-54 60z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M18 78C18 46 42 20 78 18c2 36-22 60-54 60z" stroke="var(--i1,#0A1E30)"/><path d="M22 80C36 62 52 46 70 34" stroke="var(--i3,#00C9AE)"/></g></svg> Amigable con el medio ambiente</span>
       </div>
       <!-- Detergente Neutro -->
       <div style="background:rgba(255,255,255,.05);border:1.5px solid rgba(92,200,238,.15);border-radius:18px;padding:1.5rem;transition:all .3s" onmouseover="this.style.borderColor='rgba(92,200,238,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(92,200,238,.15)';this.style.transform='translateY(0)'">
-        <div style="font-size:1.8rem;margin-bottom:.8rem">🧴</div>
+        <div style="font-size:1.8rem;margin-bottom:.8rem"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><rect x="40" y="10" width="16" height="12" rx="4" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><rect x="40" y="10" width="16" height="12" rx="4" stroke="var(--i1,#0A1E30)"/><path d="M43 22h10" stroke="var(--i1,#0A1E30)"/><rect x="32" y="28" width="32" height="58" rx="12" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><rect x="32" y="28" width="32" height="58" rx="12" stroke="var(--i1,#0A1E30)"/><rect x="32" y="46" width="32" height="20" rx="2" stroke="var(--i2,#1277A8)"/><path d="M40 56h16" stroke="var(--i3,#00C9AE)"/></g></svg> </div>
         <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;margin-bottom:.4rem">Detergente Neutro</h3>
         <p style="font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.5;margin-bottom:.8rem">pH neutro para prendas delicadas y piel sensible.</p>
-        <span style="font-size:.72rem;font-weight:600;padding:.25rem .7rem;border-radius:50px;background:rgba(0,201,174,.12);color:var(--aqua);border:1px solid rgba(0,201,174,.2)">🌿 Biodegradable</span>
+        <span style="font-size:.72rem;font-weight:600;padding:.25rem .7rem;border-radius:50px;background:rgba(0,201,174,.12);color:var(--aqua);border:1px solid rgba(0,201,174,.2)"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 78C18 46 42 20 78 18c2 36-22 60-54 60z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M18 78C18 46 42 20 78 18c2 36-22 60-54 60z" stroke="var(--i1,#0A1E30)"/><path d="M22 80C36 62 52 46 70 34" stroke="var(--i3,#00C9AE)"/></g></svg> Amigable con el medio ambiente</span>
       </div>
       <!-- Suavizante -->
       <div style="background:rgba(255,255,255,.05);border:1.5px solid rgba(92,200,238,.15);border-radius:18px;padding:1.5rem;transition:all .3s" onmouseover="this.style.borderColor='rgba(92,200,238,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(92,200,238,.15)';this.style.transform='translateY(0)'">
         <div style="font-size:1.8rem;margin-bottom:.8rem">☁️</div>
         <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;margin-bottom:.4rem">Suavizante</h3>
         <p style="font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.5;margin-bottom:.8rem">Ropa suave, fresca y sin electricidad estática.</p>
-        <span style="font-size:.72rem;font-weight:600;padding:.25rem .7rem;border-radius:50px;background:rgba(0,201,174,.12);color:var(--aqua);border:1px solid rgba(0,201,174,.2)">🌿 Biodegradable</span>
+        <span style="font-size:.72rem;font-weight:600;padding:.25rem .7rem;border-radius:50px;background:rgba(0,201,174,.12);color:var(--aqua);border:1px solid rgba(0,201,174,.2)"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 78C18 46 42 20 78 18c2 36-22 60-54 60z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M18 78C18 46 42 20 78 18c2 36-22 60-54 60z" stroke="var(--i1,#0A1E30)"/><path d="M22 80C36 62 52 46 70 34" stroke="var(--i3,#00C9AE)"/></g></svg> Amigable con el medio ambiente</span>
       </div>
       <!-- Desengrasante -->
       <div style="background:rgba(255,255,255,.05);border:1.5px solid rgba(92,200,238,.15);border-radius:18px;padding:1.5rem;transition:all .3s" onmouseover="this.style.borderColor='rgba(92,200,238,.4)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(92,200,238,.15)';this.style.transform='translateY(0)'">
         <div style="font-size:1.8rem;margin-bottom:.8rem">⚡</div>
         <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;margin-bottom:.4rem">Desengrasante</h3>
         <p style="font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.5;margin-bottom:.8rem">Para manchas de grasa, aceite y uso intensivo.</p>
-        <span style="font-size:.72rem;font-weight:600;padding:.25rem .7rem;border-radius:50px;background:rgba(0,201,174,.12);color:var(--aqua);border:1px solid rgba(0,201,174,.2)">🌿 Biodegradable</span>
+        <span style="font-size:.72rem;font-weight:600;padding:.25rem .7rem;border-radius:50px;background:rgba(0,201,174,.12);color:var(--aqua);border:1px solid rgba(0,201,174,.2)"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 78C18 46 42 20 78 18c2 36-22 60-54 60z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M18 78C18 46 42 20 78 18c2 36-22 60-54 60z" stroke="var(--i1,#0A1E30)"/><path d="M22 80C36 62 52 46 70 34" stroke="var(--i3,#00C9AE)"/></g></svg> Amigable con el medio ambiente</span>
       </div>
     </div>
     <div style="text-align:center">
       <a class="btn-primary" href="productos.html">Ver todos los productos →</a>
-      <p style="font-size:.82rem;color:rgba(255,255,255,.4);margin-top:1rem">📍 Disponibles en tienda · Dr. Mariano Azuela 228, Santa María la Ribera</p>
+      <p style="font-size:.82rem;color:rgba(255,255,255,.4);margin-top:1rem"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M48 12a24 24 0 0 0-24 24c0 18 24 48 24 48s24-30 24-48a24 24 0 0 0-24-24z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M48 12a24 24 0 0 0-24 24c0 18 24 48 24 48s24-30 24-48a24 24 0 0 0-24-24z" stroke="var(--i1,#0A1E30)"/><circle cx="48" cy="36" r="9" stroke="var(--i3,#00C9AE)"/></g></svg> Disponibles en tienda · Dr. Mariano Azuela 228, Local C, Santa María la Ribera</p>
     </div>
   </div>
 </section>
@@ -425,29 +617,29 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
       <div class="testi-q">"</div>
       <div class="testi-stars">★★★★★</div>
       <p class="testi-text">El servicio por encargo es increíble. Dejé mi ropa en la mañana y la recogí perfectamente doblada y con un olor a limpio espectacular.</p>
-      <div class="testi-author"><div class="testi-av av-a">👩</div><div><div class="testi-name">María G.</div><div class="testi-loc">Cliente frecuente</div></div></div>
+      <div class="testi-author"><div class="testi-av av-a">M</div><div><div class="testi-name">María G.</div><div class="testi-loc">Cliente frecuente</div></div></div>
     </div>
     <div class="testi">
       <div class="testi-q">"</div>
       <div class="testi-stars">★★★★★</div>
       <p class="testi-text">El autoservicio es rapidísimo. Las máquinas siempre en perfecto estado, el local limpio y el personal muy amable. ¡Nunca voy a otro lugar!</p>
-      <div class="testi-author"><div class="testi-av av-b">👨</div><div><div class="testi-name">Carlos M.</div><div class="testi-loc">Cliente desde 2025</div></div></div>
+      <div class="testi-author"><div class="testi-av av-b">C</div><div><div class="testi-name">Carlos M.</div><div class="testi-loc">Cliente desde 2025</div></div></div>
     </div>
     <div class="testi">
       <div class="testi-q">"</div>
       <div class="testi-stars">★★★★★</div>
       <p class="testi-text">El plan de lealtad es buenísimo. Ya canjé dos lavadas gratis. Me encanta que se preocupan por sus clientes con estas promociones.</p>
-      <div class="testi-author"><div class="testi-av av-c">👩‍🦱</div><div><div class="testi-name">Lucía R.</div><div class="testi-loc">Miembro Lealtad</div></div></div>
+      <div class="testi-author"><div class="testi-av av-c">L</div><div><div class="testi-name">Lucía R.</div><div class="testi-loc">Miembro Lealtad</div></div></div>
     </div>
     <div class="testi">
       <div class="testi-q">"</div>
       <div class="testi-stars">★★★★★</div>
       <p class="testi-text">Traje mis cobertores y los lavaron increíble. Desde esa vez no llevo nada a otro lugar. Precio justo y calidad de lujo. 100% recomendado.</p>
-      <div class="testi-author"><div class="testi-av av-d">🧑</div><div><div class="testi-name">Roberto S.</div><div class="testi-loc">Nuevo cliente</div></div></div>
+      <div class="testi-author"><div class="testi-av av-d">R</div><div><div class="testi-name">Roberto S.</div><div class="testi-loc">Nuevo cliente</div></div></div>
     </div>
   </div>
   <div style="text-align:center;margin-top:2.5rem;">
-    <a href="https://www.google.com/maps/search/Clean+Colors+Lavandería+Dr+Mariano+Azuela+228+Santa+María+la+Ribera+CDMX" target="_blank"
+    <a href="https://www.google.com/maps/search/Clean+Colors+Lavandería+Dr+Mariano+Azuela+228+Santa+María+la+Ribera+CDMX" target="_blank" rel="noopener"
        style="display:inline-flex;align-items:center;gap:.7rem;background:var(--white);border:2px solid #E4EEF5;border-radius:50px;padding:.8rem 2rem;font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:var(--navy);text-decoration:none;box-shadow:0 4px 18px rgba(43,159,212,.1);transition:box-shadow .2s,transform .2s;">
       <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
@@ -466,31 +658,30 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
       <div class="s-label">Encuéntranos</div>
       <h2 class="s-title">¿Listo para<br><em>comenzar?</em></h2>
       <div class="contact-items">
-        <div class="c-item"><div class="c-ico">📍</div><div><div class="c-lbl">Dirección</div><div class="c-val">Dr. Mariano Azuela 228, Santa María la Ribera, Cuauhtémoc, 06400 CDMX</div></div></div>
-        <div class="c-item"><div class="c-ico">📞</div><div><div class="c-lbl">Teléfono / WhatsApp</div><div class="c-val"><a href="https://wa.me/525516570653" target="_blank" style="color:var(--blue-mid);text-decoration:none;">+52 55 1657 0653 💬</a></div></div></div>
-        <div class="c-item"><div class="c-ico">📘</div><div><div class="c-lbl">Síguenos en Facebook</div><div class="c-val"><a href="https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/" target="_blank" style="color:var(--blue-mid);text-decoration:none;">Clean Colors Lavandería</a></div></div></div>
+        <div class="c-item"><div class="c-ico"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M48 12a24 24 0 0 0-24 24c0 18 24 48 24 48s24-30 24-48a24 24 0 0 0-24-24z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M48 12a24 24 0 0 0-24 24c0 18 24 48 24 48s24-30 24-48a24 24 0 0 0-24-24z" stroke="var(--i1,#0A1E30)"/><circle cx="48" cy="36" r="9" stroke="var(--i3,#00C9AE)"/></g></svg></div><div><div class="c-lbl">Dirección</div><div class="c-val">Dr. Mariano Azuela 228, Local C, Santa María la Ribera, Cuauhtémoc, 06400 CDMX</div></div></div>
+        <div class="c-item"><div class="c-ico"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M26 14h14l7 17-9 6c4 9 11 16 20 20l6-9 17 7v14c0 4-3 7-7 7C43 76 20 53 20 21c0-4 3-7 6-7z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M26 14h14l7 17-9 6c4 9 11 16 20 20l6-9 17 7v14c0 4-3 7-7 7C43 76 20 53 20 21c0-4 3-7 6-7z" stroke="var(--i1,#0A1E30)"/></g></svg></div><div><div class="c-lbl">Teléfono / WhatsApp</div><div class="c-val"><a href="https://wa.me/525516570653" target="_blank" rel="noopener" style="color:var(--blue-mid);text-decoration:none;">+52 55 1657 0653 <svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M48 14a34 34 0 0 0-29 52l-5 20 21-5A34 34 0 1 0 48 14z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M48 14a34 34 0 0 0-29 52l-5 20 21-5A34 34 0 1 0 48 14z" stroke="var(--i1,#0A1E30)"/><path d="M38 38c0 13 9 22 22 22 3 0 5-2 5-5l-6-4-4 4c-5-2-8-5-10-10l4-4-4-6c-3 0-7 1-7 3z" stroke="var(--i3,#00C9AE)"/></g></svg> </a></div></div></div>
+        <div class="c-item"><div class="c-ico"><svg class="cc-ico" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M56 30h10V16H54c-10 0-16 7-16 17v9H26v14h12v30h16V56h12l2-14H54v-7c0-3 1-5 2-5z" fill="var(--i3,#00C9AE)" fill-opacity=".22" stroke="var(--i1,#0A1E30)"/></g></svg></div><div><div class="c-lbl">Síguenos en Facebook</div><div class="c-val"><a href="https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/" target="_blank" rel="noopener" style="color:var(--blue-mid);text-decoration:none;">Clean Colors Lavandería</a></div></div></div>
       </div>
       <div class="c-hours">
-        <h4>🕐 Horario de Atención</h4>
+        <h4><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="48" r="34" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><circle cx="48" cy="48" r="34" stroke="var(--i1,#0A1E30)"/><path d="M48 26v22l15 9" stroke="var(--i3,#00C9AE)"/></g></svg> Horario de Atención</h4>
         <div class="hours-row"><span class="hours-day">Lunes – Domingo</span><span class="hours-time">8:00 AM – 7:30 PM</span></div>
       </div>
     </div>
     <div class="contact-form">
-      <div class="form-title">Envíanos un mensaje 💬</div>
-      <form method="POST" action="https://formsubmit.co/info_ventas@cleancolors.mx">
-        <input type="hidden" name="_cc" value="admin@cleancolors.mx"/>
-        <input type="hidden" name="_next" value="https://cleancolors.mx/gracias"/>
+      <div class="form-title">Envíanos un mensaje <svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M48 14a34 34 0 0 0-29 52l-5 20 21-5A34 34 0 1 0 48 14z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M48 14a34 34 0 0 0-29 52l-5 20 21-5A34 34 0 1 0 48 14z" stroke="var(--i1,#0A1E30)"/><path d="M38 38c0 13 9 22 22 22 3 0 5-2 5-5l-6-4-4 4c-5-2-8-5-10-10l4-4-4-6c-3 0-7 1-7 3z" stroke="var(--i3,#00C9AE)"/></g></svg> </div>
+      <form method="POST" action="https://formsubmit.co/admin@cleancolors.mx">
+        <input type="hidden" name="_next" value="https://cleancolors.mx/gracias.html"/>
         <input type="hidden" name="_subject" value="Nuevo mensaje - Clean Colors Lavandería"/>
         <input type="hidden" name="_captcha" value="false"/>
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"/>
         <div class="form-row">
-          <div class="fg"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre" required/></div>
-          <div class="fg"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+52 000 000 0000"/></div>
+          <div class="fg"><label for="f-nombre">Nombre</label><input type="text" id="f-nombre" name="nombre" placeholder="Tu nombre" required/></div>
+          <div class="fg"><label for="f-telefono">Teléfono</label><input type="tel" id="f-telefono" name="telefono" placeholder="+52 000 000 0000"/></div>
         </div>
-        <div class="fg"><label>Correo electrónico</label><input type="email" name="correo" placeholder="tu@correo.com"/></div>
+        <div class="fg"><label for="f-correo">Correo electrónico</label><input type="email" id="f-correo" name="correo" placeholder="tu@correo.com"/></div>
         <div class="fg">
-          <label>Servicio de interés</label>
-          <select name="servicio">
+          <label for="f-servicio">Servicio de interés</label>
+          <select id="f-servicio" name="servicio">
             <option value="">Selecciona un servicio...</option>
             <option>Autoservicio</option>
             <option>Lavado por Encargo</option>
@@ -501,8 +692,8 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
             <option>Otro</option>
           </select>
         </div>
-        <div class="fg"><label>Mensaje</label><textarea name="mensaje" placeholder="¿En qué podemos ayudarte?"></textarea></div>
-        <button type="submit" class="form-btn">🫧 Enviar Mensaje</button>
+        <div class="fg"><label for="f-mensaje">Mensaje</label><textarea id="f-mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?"></textarea></div>
+        <button type="submit" class="form-btn"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="38" cy="56" r="22" fill="#00C9AE" fill-opacity=".22"/><circle cx="38" cy="56" r="22" stroke="#ffffff"/><circle cx="67" cy="33" r="13" stroke="rgba(255,255,255,.7)"/><circle cx="71" cy="67" r="8" stroke="rgba(255,255,255,.7)"/><path d="M30 48a10 10 0 0 1 8-6" stroke="#00C9AE"/></g></svg> Enviar Mensaje</button>
       </form>
     </div>
   </div>
@@ -511,12 +702,13 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
-      <img src="logo.png" alt="Clean Colors"/>
+      <img src="logo.png" alt="Clean Colors" loading="lazy" decoding="async"/>
       <p>Tu lavandería de confianza en Santa María la Ribera, CDMX. Autoservicio y lavado por encargo con la calidad que tu ropa merece.</p>
       <div class="f-socials">
-        <a class="f-soc" href="https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/" target="_blank" title="Facebook">📘</a>
-        <a class="f-soc" href="https://wa.me/525516570653" target="_blank" title="WhatsApp">💬</a>
-        <a class="f-soc" href="https://www.google.com/maps/search/Clean+Colors+Lavandería+Dr+Mariano+Azuela+228+Santa+María+la+Ribera+CDMX" target="_blank" title="Google">🔍</a>
+        <a class="f-soc" href="https://www.facebook.com/p/Clean-Colors-Lavander%C3%ADa-de-Autoservicio-61575397217774/" target="_blank" rel="noopener" title="Facebook" aria-label="Clean Colors en Facebook"><svg class="f-soc-ico" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+        <a class="f-soc" href="https://instagram.com/clean_colors_lavanderia" target="_blank" rel="noopener" title="Instagram" aria-label="Clean Colors en Instagram"><svg class="f-soc-ico" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/></svg></a>
+        <a class="f-soc" href="https://wa.me/525516570653" target="_blank" rel="noopener" title="WhatsApp" aria-label="Escríbenos por WhatsApp"><svg class="f-soc-ico" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+        <a class="f-soc" href="https://www.google.com/maps/search/Clean+Colors+Lavander%C3%ADa+Dr+Mariano+Azuela+228+Santa+Mar%C3%ADa+la+Ribera+CDMX" target="_blank" rel="noopener" title="Cómo llegar" aria-label="Ubicación en Google Maps"><svg class="f-soc-ico" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></a>
       </div>
     </div>
     <div class="f-col">
@@ -526,7 +718,7 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
         <li><a href="#servicios">Lavado por Encargo</a></li>
         <li><a href="#servicios">Encargo Xpress</a></li>
         <li><a href="#servicios">Edredones &amp; Cobertores</a></li>
-        <li><a href="#servicios">Tarjeta Inteligente</a></li>
+        <li><a href="lealtad.html">Tarjeta Inteligente</a></li>
       </ul>
     </div>
     <div class="f-col">
@@ -534,7 +726,9 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
       <ul>
         <li><a href="#promociones">Promociones</a></li>
         <li><a href="productos.html">Productos</a></li>
-    <li><a href="lealtad.html">Plan de Lealtad</a></li>
+        <li><a href="lealtad.html">Plan de Lealtad</a></li>
+        <li><a href="autoempleo.html">Autoempleo</a></li>
+        <li><a href="empresas.html">Servicio a Empresas</a></li>
         <li><a href="#testimonios">Reseñas</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
@@ -549,11 +743,22 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
 <script>
   // Animated bubbles
   const container = document.getElementById('bubbles');
-  for (let i = 0; i < 55; i++) {
+  const totalBurbujas = window.innerWidth < 768 ? 55 : 95;
+  for (let i = 0; i < totalBurbujas; i++) {
     const b = document.createElement('div');
     b.className = 'bubble';
-    const size = 5 + Math.random() * 50;
-    b.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${4+Math.random()*14}s;animation-delay:${Math.random()*12}s;`;
+    // Distribución sesgada: muchas chicas, pocas grandes (se ve más natural)
+    const size  = 4 + Math.pow(Math.random(), 1.7) * 74;
+    const subir = 10 + Math.random() * 22;          // lentas: flotan, no corren
+    const vaiv  = 4 + Math.random() * 7;
+    const prof  = Math.random();                     // profundidad de campo
+    b.style.cssText =
+      `width:${size}px;height:${size}px;left:${Math.random()*100}%;` +
+      `animation-duration:${subir.toFixed(1)}s, ${vaiv.toFixed(1)}s;` +
+      // delay negativo: arrancan a media trayectoria, sin pantalla vacía al cargar
+      `animation-delay:${(-Math.random()*subir).toFixed(1)}s, ${(-Math.random()*vaiv).toFixed(1)}s;` +
+      `filter:blur(${(prof*prof*2.2).toFixed(1)}px);` +
+      `--vaiven:${(10+Math.random()*36).toFixed(0)}px;`;
     container.appendChild(b);
   }
   // Hamburger menu

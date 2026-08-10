@@ -439,3 +439,10 @@ footer{
   .hero-badges{flex-direction:column;align-items:center}
   .hero-btns{flex-direction:column;align-items:center}
 }
+
+/* === Iconos SVG globales (antes sólo estaban en el <style> de algunas páginas) === */
+.cc-ico{width:1.6em;height:1.6em;display:inline-block;vertical-align:-.34em;flex-shrink:0}
+.cc-ico-inline{width:1.35em;height:1.35em;vertical-align:-.28em;margin-right:.3em}
+/* === Iconos de redes en el pie === */
+.f-soc-ico{width:18px;height:18px;display:block;color:#fff;transition:color .25s}
+.f-soc:hover .f-soc-ico{color:var(--blue-light,#5CC8EE)}
