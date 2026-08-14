@@ -248,6 +248,50 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
              width: 44px; height: 44px; font-size: 0 !important; }
     .f-soc .cc-ico { width: 24px; height: 24px; vertical-align: middle; margin: 0; }
 
+    /* El nav es `position:fixed` y mide 81 px. Las secciones tienen 80 px de
+       padding, así que un salto de ancla dejaba el título 1 px por debajo del
+       nav: se veía cortado. `scroll-margin-top` corrige el punto de aterrizaje.
+       Va sólo en estas anclas para no alterar las que ya existían en el sitio. */
+    #programa, #oficios { scroll-margin-top: 110px; }
+
+    /* ===== DOS PUERTAS · autoempleo (13-ago-2026) =====
+       Mismo bloque en index.html. Si se toca aquí, tocarlo allá. */
+    .cc-puertas{background:var(--off-white);padding:3.5rem 5% 4rem}
+    .cc-puertas-wrap{max-width:1100px;margin:0 auto}
+    .cc-puertas-titulo{font-family:'Syne',sans-serif;font-weight:800;
+      font-size:clamp(1.35rem,2.6vw,1.8rem);color:var(--navy);text-align:center;margin:0 0 2rem}
+    .cc-puertas-titulo em{font-style:normal;color:var(--blue-dark)}
+    .cc-puertas-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:stretch}
+    .cc-puerta{display:flex;flex-direction:column;background:#fff;border-radius:20px;overflow:hidden;
+      text-decoration:none;color:inherit;border:1.5px solid rgba(10,30,48,.08);
+      box-shadow:0 6px 20px rgba(10,30,48,.06);
+      transition:transform .28s,box-shadow .28s,border-color .28s}
+    .cc-puerta:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(10,30,48,.15)}
+    .cc-puerta-foto{height:200px;overflow:hidden}
+    .cc-puerta-foto img{display:block;width:100%;height:100%;object-fit:cover}
+    .cc-puerta-cuerpo{padding:1.5rem 1.7rem 1.7rem;display:flex;flex-direction:column;flex:1}
+    .cc-puerta-tag{align-self:flex-start;font-size:.66rem;font-weight:700;letter-spacing:.12em;
+      text-transform:uppercase;padding:.38rem .9rem;border-radius:50px;color:#fff;margin-bottom:.85rem}
+    .cc-puerta h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--navy);
+      margin:0 0 .55rem;line-height:1.3}
+    .cc-puerta p{font-size:.95rem;color:var(--gray);line-height:1.65;margin:0 0 1rem}
+    .cc-puerta ul{list-style:none;margin:0 0 1.3rem;padding:0}
+    .cc-puerta li{font-size:.9rem;color:var(--navy);padding-left:1.4rem;position:relative;margin-bottom:.42rem}
+    .cc-puerta li::before{content:'';position:absolute;left:0;top:.52em;width:8px;height:8px;border-radius:50%}
+    .cc-puerta-cta{margin-top:auto;font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem}
+    .cc-puerta-a .cc-puerta-tag{background:linear-gradient(135deg,#1277A8,#00C9AE)}
+    .cc-puerta-a li::before{background:#00C9AE}
+    .cc-puerta-a .cc-puerta-cta{color:#1277A8}
+    .cc-puerta-a:hover{border-color:rgba(0,201,174,.45)}
+    .cc-puerta-b .cc-puerta-tag{background:linear-gradient(135deg,#E84F10,#FF7733)}
+    .cc-puerta-b li::before{background:#FF7733}
+    .cc-puerta-b .cc-puerta-cta{color:#E84F10}
+    .cc-puerta-b:hover{border-color:rgba(232,79,16,.45)}
+    @media(max-width:768px){
+      .cc-puertas-grid{grid-template-columns:1fr}
+      .cc-puerta-foto{height:180px}
+    }
+
     /* ===== Convocatoria de oficios · manicure (13-ago-2026) ===== */
     .ae-oficios{background:#fff;padding:5rem 0;border-top:1px solid rgba(10,30,48,.06)}
     .ae-oficios .ae-container{max-width:1100px;margin:0 auto;padding:0 5%}
@@ -316,13 +360,60 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
 <section class="page-hero">
   <div class="ae-bubbles" id="ae-bubbles"></div>
   <div class="s-label">Oportunidad de Negocio</div>
-  <h1>Monta tu negocio de lavandería<br><em>sin invertir en equipo.</em></h1>
-  <p>Tú pones las ganas — nosotros ponemos las máquinas.</p>
+  <h1>Gana dinero<br><em>con Clean Colors.</em></h1>
+  <p>Dos formas de trabajar con nosotros — sin rentar un local ni invertir en equipo.</p>
   <a href="#contacto-ae" class="btn-primary"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="38" cy="56" r="22" fill="#00C9AE" fill-opacity=".22"/><circle cx="38" cy="56" r="22" stroke="#ffffff"/><circle cx="67" cy="33" r="13" stroke="rgba(255,255,255,.7)"/><circle cx="71" cy="67" r="8" stroke="rgba(255,255,255,.7)"/><path d="M30 48a10 10 0 0 1 8-6" stroke="#00C9AE"/></g></svg> Quiero saber más →</a>
 </section>
 
+<!-- DOS PUERTAS (13-ago-2026) — el hero ya no promete una sola cosa, así que
+     aquí se elige camino antes de leer nada. -->
+<section class="cc-puertas">
+  <div class="cc-puertas-wrap">
+    <h2 class="cc-puertas-titulo">¿Cuál de las dos <em>es la tuya?</em></h2>
+    <div class="cc-puertas-grid">
+
+      <a class="cc-puerta cc-puerta-a" href="#programa">
+        <div class="cc-puerta-foto">
+          <img src="puerta-lavanderia.jpg" width="1100" height="825" loading="lazy" decoding="async"
+               alt="Clientas dentro de Clean Colors con sus bolsas de ropa, junto a las lavadoras"/>
+        </div>
+        <div class="cc-puerta-cuerpo">
+          <div class="cc-puerta-tag">Programa de autoempleo</div>
+          <h3>Monta tu negocio de lavandería</h3>
+          <p>Tú consigues a tus clientes y les cobras lo que decidas. Nosotros ponemos las máquinas y el respaldo.</p>
+          <ul>
+            <li>Sin invertir en equipo</li>
+            <li>Tú pones el precio y tu horario</li>
+            <li>Precio preferencial de asociado</li>
+          </ul>
+          <span class="cc-puerta-cta">Ver cómo funciona →</span>
+        </div>
+      </a>
+
+      <a class="cc-puerta cc-puerta-b" href="#oficios">
+        <div class="cc-puerta-foto">
+          <img src="banner-manicure-card.jpg" width="1400" height="1050" loading="lazy" decoding="async"
+               alt="Mano con uñas pintadas de rosa, amarillo y azul junto a tres esmaltes de colores"/>
+        </div>
+        <div class="cc-puerta-cuerpo">
+          <div class="cc-puerta-tag">Convocatoria abierta</div>
+          <h3>Trae tu oficio a la tienda</h3>
+          <p>¿Haces uñas? Te damos un espacio dentro de la lavandería para atender a tus clientas y a las nuestras.</p>
+          <ul>
+            <li>No pagas renta</li>
+            <li>Comisión sólo cuando vendes</li>
+            <li>Público que ya está aquí esperando</li>
+          </ul>
+          <span class="cc-puerta-cta">Ver la convocatoria →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- Intro -->
-<section class="ae-intro">
+<section class="ae-intro" id="programa">
   <div class="ae-container">
     <p>¿Alguna vez has pensado en tener tu propio negocio, pero el costo del equipo te ha detenido? En Clean Colors tenemos una solución para ti.</p>
     <p>Clean Colors te invita a participar en su programa de Autoempleo!! Aprovecha nuestro precio preferencial para asociados.</p>

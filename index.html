@@ -295,6 +295,44 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
              width: 44px; height: 44px; font-size: 0 !important; }
     .f-soc .cc-ico { width: 24px; height: 24px; vertical-align: middle; margin: 0; }
 
+    /* Nav fijo de 81 px: sin esto el salto de ancla deja el título tapado. */
+    #gana-dinero { scroll-margin-top: 110px; }
+
+    /* ===== DOS PUERTAS · autoempleo (13-ago-2026) =====
+       Copia exacta del bloque de autoempleo.html. Si se toca allá, tocarlo aquí. */
+    .cc-puertas{background:var(--off-white);padding:4rem 5%}
+    .cc-puertas-wrap{max-width:1100px;margin:0 auto}
+    .cc-puertas-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:stretch;margin-top:2.4rem}
+    .cc-puerta{display:flex;flex-direction:column;background:#fff;border-radius:20px;overflow:hidden;
+      text-decoration:none;color:inherit;border:1.5px solid rgba(10,30,48,.08);
+      box-shadow:0 6px 20px rgba(10,30,48,.06);
+      transition:transform .28s,box-shadow .28s,border-color .28s}
+    .cc-puerta:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(10,30,48,.15)}
+    .cc-puerta-foto{height:200px;overflow:hidden}
+    .cc-puerta-foto img{display:block;width:100%;height:100%;object-fit:cover}
+    .cc-puerta-cuerpo{padding:1.5rem 1.7rem 1.7rem;display:flex;flex-direction:column;flex:1}
+    .cc-puerta-tag{align-self:flex-start;font-size:.66rem;font-weight:700;letter-spacing:.12em;
+      text-transform:uppercase;padding:.38rem .9rem;border-radius:50px;color:#fff;margin-bottom:.85rem}
+    .cc-puerta h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--navy);
+      margin:0 0 .55rem;line-height:1.3}
+    .cc-puerta p{font-size:.95rem;color:var(--gray);line-height:1.65;margin:0 0 1rem}
+    .cc-puerta ul{list-style:none;margin:0 0 1.3rem;padding:0}
+    .cc-puerta li{font-size:.9rem;color:var(--navy);padding-left:1.4rem;position:relative;margin-bottom:.42rem}
+    .cc-puerta li::before{content:'';position:absolute;left:0;top:.52em;width:8px;height:8px;border-radius:50%}
+    .cc-puerta-cta{margin-top:auto;font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem}
+    .cc-puerta-a .cc-puerta-tag{background:linear-gradient(135deg,#1277A8,#00C9AE)}
+    .cc-puerta-a li::before{background:#00C9AE}
+    .cc-puerta-a .cc-puerta-cta{color:#1277A8}
+    .cc-puerta-a:hover{border-color:rgba(0,201,174,.45)}
+    .cc-puerta-b .cc-puerta-tag{background:linear-gradient(135deg,#E84F10,#FF7733)}
+    .cc-puerta-b li::before{background:#FF7733}
+    .cc-puerta-b .cc-puerta-cta{color:#E84F10}
+    .cc-puerta-b:hover{border-color:rgba(232,79,16,.45)}
+    @media(max-width:768px){
+      .cc-puertas-grid{grid-template-columns:1fr}
+      .cc-puerta-foto{height:180px}
+    }
+
   </style>
 </head>
 <body>
@@ -558,6 +596,56 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
       <a href="https://wa.me/525516570653" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;padding:.7rem 1.5rem;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;">
         <svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><path d="M48 14a34 34 0 0 0-29 52l-5 20 21-5A34 34 0 1 0 48 14z" fill="var(--i3,#00C9AE)" fill-opacity=".22"/><path d="M48 14a34 34 0 0 0-29 52l-5 20 21-5A34 34 0 1 0 48 14z" stroke="var(--i1,#0A1E30)"/><path d="M38 38c0 13 9 22 22 22 3 0 5-2 5-5l-6-4-4 4c-5-2-8-5-10-10l4-4-4-6c-3 0-7 1-7 3z" stroke="var(--i3,#00C9AE)"/></g></svg> Avísenme de las promos
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GANA DINERO / DOS PUERTAS (13-ago-2026) ==================== -->
+<section class="cc-puertas" id="gana-dinero">
+  <div class="cc-puertas-wrap">
+    <div class="s-header">
+      <div class="s-label">Trabaja con nosotros</div>
+      <h2 class="s-title">Gana dinero <em>con Clean Colors</em></h2>
+      <p class="s-desc" style="margin:0 auto">Dos formas de generar ingresos con la tienda, sin rentar un local ni invertir en equipo.</p>
+    </div>
+    <div class="cc-puertas-grid">
+
+      <a class="cc-puerta cc-puerta-a" href="autoempleo.html#programa">
+        <div class="cc-puerta-foto">
+          <img src="puerta-lavanderia.jpg" width="1100" height="825" loading="lazy" decoding="async"
+               alt="Clientas dentro de Clean Colors con sus bolsas de ropa, junto a las lavadoras"/>
+        </div>
+        <div class="cc-puerta-cuerpo">
+          <div class="cc-puerta-tag">Programa de autoempleo</div>
+          <h3>Monta tu negocio de lavandería</h3>
+          <p>Tú consigues a tus clientes y les cobras lo que decidas. Nosotros ponemos las máquinas y el respaldo.</p>
+          <ul>
+            <li>Sin invertir en equipo</li>
+            <li>Tú pones el precio y tu horario</li>
+            <li>Precio preferencial de asociado</li>
+          </ul>
+          <span class="cc-puerta-cta">Ver cómo funciona →</span>
+        </div>
+      </a>
+
+      <a class="cc-puerta cc-puerta-b" href="autoempleo.html#oficios">
+        <div class="cc-puerta-foto">
+          <img src="banner-manicure-card.jpg" width="1400" height="1050" loading="lazy" decoding="async"
+               alt="Mano con uñas pintadas de rosa, amarillo y azul junto a tres esmaltes de colores"/>
+        </div>
+        <div class="cc-puerta-cuerpo">
+          <div class="cc-puerta-tag">Convocatoria abierta</div>
+          <h3>Trae tu oficio a la tienda</h3>
+          <p>¿Haces uñas? Te damos un espacio dentro de la lavandería para atender a tus clientas y a las nuestras.</p>
+          <ul>
+            <li>No pagas renta</li>
+            <li>Comisión sólo cuando vendes</li>
+            <li>Público que ya está aquí esperando</li>
+          </ul>
+          <span class="cc-puerta-cta">Ver la convocatoria →</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
