@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- ===================================================================
   <title>Autoempleo | Clean Colors Lavandería</title>
-  <meta name="description" content="Monta tu negocio de lavandería sin invertir en equipo. Usa las máquinas de Clean Colors y genera ingresos desde el primer día."/>
+  <meta name="description" content="Tres formas de trabajar con Clean Colors sin rentar un local: usa nuestras máquinas, trae tu oficio a la tienda o maneja: el coche lo ponemos nosotros."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -261,15 +262,15 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
     .cc-puertas-titulo{font-family:'Syne',sans-serif;font-weight:800;
       font-size:clamp(1.35rem,2.6vw,1.8rem);color:var(--navy);text-align:center;margin:0 0 2rem}
     .cc-puertas-titulo em{font-style:normal;color:var(--blue-dark)}
-    .cc-puertas-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:stretch}
+    .cc-puertas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem;align-items:stretch}
     .cc-puerta{display:flex;flex-direction:column;background:#fff;border-radius:20px;overflow:hidden;
       text-decoration:none;color:inherit;border:1.5px solid rgba(10,30,48,.08);
       box-shadow:0 6px 20px rgba(10,30,48,.06);
       transition:transform .28s,box-shadow .28s,border-color .28s}
     .cc-puerta:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(10,30,48,.15)}
-    .cc-puerta-foto{height:200px;overflow:hidden}
+    .cc-puerta-foto{height:186px;overflow:hidden}
     .cc-puerta-foto img{display:block;width:100%;height:100%;object-fit:cover}
-    .cc-puerta-cuerpo{padding:1.5rem 1.7rem 1.7rem;display:flex;flex-direction:column;flex:1}
+    .cc-puerta-cuerpo{padding:1.4rem 1.45rem 1.6rem;display:flex;flex-direction:column;flex:1}
     .cc-puerta-tag{align-self:flex-start;font-size:.66rem;font-weight:700;letter-spacing:.12em;
       text-transform:uppercase;padding:.38rem .9rem;border-radius:50px;color:#fff;margin-bottom:.85rem}
     .cc-puerta h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--navy);
@@ -287,6 +288,15 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
     .cc-puerta-b li::before{background:#FF7733}
     .cc-puerta-b .cc-puerta-cta{color:#E84F10}
     .cc-puerta-b:hover{border-color:rgba(232,79,16,.45)}
+    /* Puerta C — chofer (20-ago-2026). Acento azul profundo: se separa del teal
+       de la puerta A y del naranja de la B sin salirse de la paleta de marca. */
+    .cc-puerta-c .cc-puerta-tag{background:linear-gradient(135deg,#0C314A,#2090C0)}
+    .cc-puerta-c li::before{background:#2090C0}
+    .cc-puerta-c .cc-puerta-cta{color:#0C314A}
+    .cc-puerta-c:hover{border-color:rgba(32,144,192,.45)}
+    /* La foto de la puerta C se ancla abajo: el recorte se come el cielo de
+       arriba y nunca los pies de las dos personas, que cortados se ven mal. */
+    .cc-puerta-c .cc-puerta-foto img{object-position:50% 100%}
     @media(max-width:768px){
       .cc-puertas-grid{grid-template-columns:1fr}
       .cc-puerta-foto{height:180px}
@@ -335,6 +345,57 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
       .ae-banner-card img{height:240px}
     }
 
+    /* ---- Seccion CHOFER (tercera puerta, 20-ago-2026) --------------------
+       Mismo esqueleto que .ae-oficios con el acento azul profundo de la
+       puerta C. Fondo off-white para que se separe de la seccion de oficios,
+       que es blanca. */
+    .ae-chofer{background:var(--off-white);padding:5rem 0;border-top:1px solid rgba(10,30,48,.06)}
+    .ae-chofer .ae-container{max-width:1100px;margin:0 auto;padding:0 5%}
+    .ae-chofer .s-label{display:inline-block;background:linear-gradient(135deg,#0C314A,#2090C0);color:#fff;
+      font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+      padding:.4rem 1rem;border-radius:50px;margin-bottom:1rem}
+    .ae-chofer h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);
+      color:var(--navy);line-height:1.25;margin:0 0 1.4rem}
+    .ae-chofer h2 em{font-style:normal;color:#1277A8}
+    .ae-chofer-intro{font-size:1.05rem;line-height:1.8;color:#3a4f63;max-width:780px;margin:0 0 .9rem}
+    .ae-chofer-intro strong{color:var(--navy)}
+    /* Banner de la seccion: mismo esqueleto que el de oficios (.ae-split +
+       .ae-banner-card, ya definidos arriba); aqui solo cambia el color de la
+       sombra al azul de la puerta C. La foto se ancla abajo para no cortar
+       los pies de las dos personas. */
+    .ae-chofer .ae-banner-card{box-shadow:0 14px 34px rgba(18,119,168,.22)}
+    .ae-chofer .ae-banner-card img{object-position:50% 100%}
+    .ae-chofer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:900px;margin:2.4rem 0 0}
+    .ae-chofer-pto{display:flex;align-items:flex-start;gap:1rem;background:#fff;
+      border-radius:16px;padding:1.3rem 1.4rem;transition:all .3s}
+    .ae-chofer-pto:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(18,119,168,.16)}
+    .ae-chofer-num{flex-shrink:0;width:38px;height:38px;border-radius:50%;
+      background:linear-gradient(135deg,#2090C0,#0C314A);color:#fff;
+      font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;
+      display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(12,49,74,.32)}
+    .ae-chofer-pto h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:.3rem}
+    .ae-chofer-pto p{font-size:.93rem;color:var(--gray);line-height:1.6;margin:0}
+    .ae-req{margin-top:2.2rem;background:#fff;border:1px solid rgba(18,119,168,.22);
+      border-radius:16px;padding:1.5rem 1.7rem;max-width:900px}
+    .ae-req h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;color:var(--navy);margin:0 0 .9rem}
+    .ae-req ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem 1.6rem}
+    .ae-req li{font-size:.95rem;color:var(--navy);padding-left:1.7rem;position:relative;line-height:1.55}
+    .ae-req li::before{content:'';position:absolute;left:0;top:.42em;width:11px;height:11px;
+      border-radius:50%;border:3px solid #2090C0}
+    .ae-chofer-cierre{margin-top:2.4rem;background:linear-gradient(135deg,rgba(18,119,168,.10),rgba(0,201,174,.07));
+      border-left:3px solid #2090C0;border-radius:0 14px 14px 0;padding:1.4rem 1.6rem;max-width:900px}
+    .ae-chofer-cierre p{font-size:1rem;color:var(--navy);line-height:1.7;margin:0}
+    .ae-chofer-cierre p + p{margin-top:.7rem}
+    .ae-chofer-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+    .ae-chofer-btns .btn-wa{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;
+      border-radius:50px;font-size:.95rem;font-weight:700;color:#fff;background:#25D366;
+      text-decoration:none;transition:all .3s}
+    .ae-chofer-btns .btn-wa:hover{background:#1ebd5a;transform:translateY(-2px)}
+    @media(max-width:768px){
+      .ae-chofer-grid{grid-template-columns:1fr}
+      .ae-req ul{grid-template-columns:1fr}
+    }
+
   </style>
 </head>
 <body>
@@ -361,7 +422,7 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
   <div class="ae-bubbles" id="ae-bubbles"></div>
   <div class="s-label">Oportunidad de Negocio</div>
   <h1>Gana dinero<br><em>con Clean Colors.</em></h1>
-  <p>Dos formas de trabajar con nosotros — sin rentar un local ni invertir en equipo.</p>
+  <p>Tres formas de trabajar con nosotros — sin rentar un local ni invertir en equipo.</p>
   <a href="#contacto-ae" class="btn-primary"><svg class="cc-ico cc-ico-inline" viewBox="0 0 96 96" fill="none" aria-hidden="true"><g stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="38" cy="56" r="22" fill="#00C9AE" fill-opacity=".22"/><circle cx="38" cy="56" r="22" stroke="#ffffff"/><circle cx="67" cy="33" r="13" stroke="rgba(255,255,255,.7)"/><circle cx="71" cy="67" r="8" stroke="rgba(255,255,255,.7)"/><path d="M30 48a10 10 0 0 1 8-6" stroke="#00C9AE"/></g></svg> Quiero saber más →</a>
 </section>
 
@@ -369,7 +430,7 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
      aquí se elige camino antes de leer nada. -->
 <section class="cc-puertas">
   <div class="cc-puertas-wrap">
-    <h2 class="cc-puertas-titulo">¿Cuál de las dos <em>es la tuya?</em></h2>
+    <h2 class="cc-puertas-titulo">¿Cuál de las tres <em>es la tuya?</em></h2>
     <div class="cc-puertas-grid">
 
       <a class="cc-puerta cc-puerta-a" href="#programa">
@@ -403,6 +464,24 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
             <li>No pagas renta</li>
             <li>Comisión sólo cuando vendes</li>
             <li>Público que ya está aquí esperando</li>
+          </ul>
+          <span class="cc-puerta-cta">Ver la convocatoria →</span>
+        </div>
+      </a>
+
+      <a class="cc-puerta cc-puerta-c" href="#chofer">
+        <div class="cc-puerta-foto">
+          <img src="puerta-chofer.jpg" width="1264" height="848" loading="lazy" decoding="async"
+               alt="Una mujer y un hombre con playera turquesa de Clean Colors suben ropa limpia y doblada a la cajuela de un coche rotulado, frente a fachadas de colores"/>
+        </div>
+        <div class="cc-puerta-cuerpo">
+          <div class="cc-puerta-tag">Convocatoria abierta</div>
+          <h3>Maneja: el coche lo ponemos nosotros</h3>
+          <p>Nosotros ponemos el coche, tú lo trabajas en plataforma. Y cuando hay que llevar ropa a domicilio, ése es tu viaje.</p>
+          <ul>
+            <li>No inviertes en el vehículo</li>
+            <li>Lo que haces en la app es tuyo</li>
+            <li>Empiezas esta semana</li>
           </ul>
           <span class="cc-puerta-cta">Ver la convocatoria →</span>
         </div>
@@ -558,6 +637,104 @@ nav.cc-scrolled{background:rgba(10,30,48,.94)!important;box-shadow:0 8px 26px rg
     </div>
 
     <div class="ae-oficios-btns">
+      <a href="https://wa.me/525516570653" target="_blank" rel="noopener" class="btn-wa">
+        <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Escribir por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================================
+     TERCERA PUERTA · CHOFER / REPARTIDOR
+     Borrador 20-ago-2026 · reescrito 25-ago-2026
+
+     REGLA DE ESTA SECCION (instruccion de Tono, 25-ago-2026):
+     esto es un ANUNCIO, no un contrato. Su trabajo es llamar la atencion de los
+     choferes de la colonia con una oferta atractiva — el gancho es "EL COCHE LO
+     PONEMOS NOSOTROS", canon ratificado por Tono el 25-ago-2026 (no derogarlo:
+     entre el 23 y el 25 se dio por muerto por error y costo media sesion).
+     Las condiciones y la dinamica se platican en persona y NO
+     se explican aqui. Nada de "se te paga X por entrega", nada de ventanas de
+     trabajo, nada de "con numeros claros y por escrito": eso alarga el texto,
+     enfria el anuncio y no es lo que la persona vino a leer.
+
+     PENDIENTE: falta el encuadre de que la figura no constituye relacion
+     laboral. Lo revisa el abogado — ver TASKS.md de Clean Colors.
+     ============================================================================ -->
+<section class="ae-chofer" id="chofer">
+  <div class="ae-container">
+    <div class="s-label">Convocatoria abierta</div>
+    <h2>¿Cuentas con licencia de manejo y conoces la ciudad?
+      <em>El coche lo ponemos nosotros.</em></h2>
+
+    <div class="ae-split">
+      <div>
+        <p class="ae-chofer-intro">
+          Hay gente que sabe manejar, quiere trabajar por su cuenta y no tiene con qué. Ése es el
+          único obstáculo, y es el que aquí ya está resuelto:
+          <strong>el coche lo ponemos nosotros</strong>. Tú lo trabajas en plataforma y lo que ganas
+          en tus viajes es tuyo.
+        </p>
+        <p class="ae-chofer-intro">
+          Buscamos a alguien de la colonia que lo maneje y que lleve la ropa de nuestr@s client@s
+          a domicilio.
+        </p>
+      </div>
+      <figure class="ae-banner-card">
+        <img src="puerta-chofer.jpg" width="1264" height="848" loading="lazy" decoding="async"
+             alt="Una mujer y un hombre con playera turquesa de Clean Colors suben ropa limpia y doblada a la cajuela de un coche rotulado, frente a fachadas de colores"/>
+      </figure>
+    </div>
+
+    <div class="ae-chofer-grid">
+      <div class="ae-chofer-pto">
+        <div class="ae-chofer-num">1</div>
+        <div>
+          <h3>El coche lo ponemos nosotros</h3>
+          <p>Ni enganche, ni mensualidades, ni un coche que comprar. Tú nada más lo trabajas.</p>
+        </div>
+      </div>
+      <div class="ae-chofer-pto">
+        <div class="ae-chofer-num">2</div>
+        <div>
+          <h3>Lo que haces en la app es tuyo</h3>
+          <p>Manejas en plataforma como cualquier socio conductor: tus viajes, tus ganancias, tu cuenta.</p>
+        </div>
+      </div>
+      <div class="ae-chofer-pto">
+        <div class="ae-chofer-num">3</div>
+        <div>
+          <h3>La ropa de la lavandería la mueves tú</h3>
+          <p>Cuando un@ client@ pida su ropa a domicilio, ése es tu viaje.</p>
+        </div>
+      </div>
+      <div class="ae-chofer-pto">
+        <div class="ae-chofer-num">4</div>
+        <div>
+          <h3>Aquí mismo, en tu colonia</h3>
+          <p>Sin cruzar la ciudad para empezar el día. La base está en Santa María la Ribera.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ae-req">
+      <h3>Lo que sí te pedimos</h3>
+      <ul>
+        <li>Licencia de conducir vigente</li>
+        <li>Que vivas en Santa María la Ribera o cerca</li>
+        <li>Referencias comprobables de dónde has trabajado</li>
+        <li>Ganas de tomarlo en serio</li>
+      </ul>
+    </div>
+
+    <div class="ae-chofer-cierre">
+      <p><strong>No buscamos a alguien de paso.</strong> Va un coche de por medio y va la ropa de
+      nuestr@s client@s: buscamos a alguien de casa.</p>
+      <p>¿Te late? Escríbenos y lo platicamos aquí en la tienda, sin compromiso.</p>
+    </div>
+
+    <div class="ae-chofer-btns">
       <a href="https://wa.me/525516570653" target="_blank" rel="noopener" class="btn-wa">
         <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Escribir por WhatsApp
